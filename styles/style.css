@@ -1,0 +1,51 @@
+/* header page */
+
+.Nav {
+    text-align: center;
+    text-decoration: none;
+    margin: 0, 0, 0, 0;
+}
+
+/* Homepage */
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+/* AboutPage */
+
+
+
+/* User page */
+
+
+
+/* Micro blog page */
+
+/* settings */
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 6;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 5 / 6;
+}
+
+.div3 {
+    grid-area: 5 / 1 / 6 / 6;
+}
