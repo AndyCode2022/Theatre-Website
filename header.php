@@ -34,9 +34,9 @@ setcookie("test_cookie", "test", time() + 3600, '/');
 
     <nav class="Nav">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>MicroBlog</li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="microBlog.php">MicroBlog</a></li>
         </ul>
     </nav>
 
@@ -56,5 +56,3 @@ setcookie("test_cookie", "test", time() + 3600, '/');
         echo "Value is: " . $_COOKIE[$cookie_name];
     }
     ?>
-
-</body>

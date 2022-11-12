@@ -1,9 +1,6 @@
-</main>
-</div>
-<footer class="row col-12">
+<footer>
     Theatre
 </footer>
-</div>
 </body>
 
 </html>
