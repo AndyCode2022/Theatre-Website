@@ -19,7 +19,8 @@ setcookie("test_cookie", "test", time() + 3600, '/');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theatre</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="JavaScript/app.js"></script>
 </head>
 
 <body>
@@ -37,6 +38,8 @@ setcookie("test_cookie", "test", time() + 3600, '/');
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="microBlog.php">MicroBlog</a></li>
+            <li><a href="register.php">Register</a></li>
+            <li><a href="Login.php">Login</a></li>
         </ul>
     </nav>
 
@@ -47,6 +50,8 @@ setcookie("test_cookie", "test", time() + 3600, '/');
     </div>
 
     <h1>Welcome to the theatre website</h1>
+
+    <p class="time"></p>
 
     <?php
     if (!isset($_COOKIE[$cookie_name])) {
