@@ -6,7 +6,7 @@
   include("DbConnect.php");              // Add in the database connection details
 
   // Now get the information from the Form
-  $Email	 = $_POST['Email'];
+  $Email	     = $_POST['Email'];
   $Password 	 = $_POST['Password'];
   
 //echo $Email;

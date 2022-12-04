@@ -25,14 +25,6 @@ setcookie("test_cookie", "test", time() + 3600, '/');
 
 <body>
 
-    <?php
-    if (count($_COOKIE) > 0) {
-        echo "Cookies are enabled.";
-    } else {
-        echo "Cookies are disabled.";
-    }
-    ?>
-
     <nav class="Nav">
         <ul>
             <li><a href="index.php">Home</a></li>
@@ -42,12 +34,6 @@ setcookie("test_cookie", "test", time() + 3600, '/');
             <li><a href="Login.php">Login</a></li>
         </ul>
     </nav>
-
-    <div class="parent">
-        <div class="div1"> </div>
-        <div class="div2"> </div>
-        <div class="div3"> </div>
-    </div>
 
     <h1>Welcome to the theatre website</h1>
 
@@ -59,5 +45,13 @@ setcookie("test_cookie", "test", time() + 3600, '/');
     } else {
         echo "Cookie '" . $cookie_name . "' is set!<br>";
         echo "Value is: " . $_COOKIE[$cookie_name];
+    }
+    ?>
+
+    <?php
+    if (count($_COOKIE) > 0) {
+        echo "Cookies are enabled.";
+    } else {
+        echo "Cookies are disabled.";
     }
     ?>
