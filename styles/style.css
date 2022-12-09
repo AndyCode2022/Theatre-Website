@@ -11,32 +11,31 @@ body {
 /* Nav Bar */
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 500px;
+    padding: 50px;
     text-align: center;
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
     border-radius: 25px;
-    text-decoration: none;
+    width: 50%;
 }
 
 li {
     width: 100px;
     margin: auto;
     display: inline-block;
-    text-decoration: none;
 }
 
 a {
-    text-decoration: none;
     color: white;
-    display: inline;
+    font-size: 20px;
+    text-decoration: none!important;
 }
 
 li a:hover {
     background-color: black;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 /* Homepage */
