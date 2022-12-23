@@ -11,13 +11,10 @@ body {
 /* Nav Bar */
 
 ul {
-    margin: 500px;
-    padding: 50px;
     text-align: center;
     overflow: hidden;
-    background-color: black;
-    border-radius: 25px;
-    width: 50%;
+    background-color: crimson;
+    width: 100%;
 }
 
 li {
@@ -27,7 +24,7 @@ li {
 }
 
 a {
-    color: white;
+    color: black;
     font-size: 20px;
     text-decoration: none!important;
 }

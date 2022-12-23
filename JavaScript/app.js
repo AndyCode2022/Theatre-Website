@@ -1,3 +1,4 @@
+// Javascript time button that updates to the current time
 function checkTime(i) {
     if (i < 10) {
         i = "0" + i;
@@ -17,3 +18,9 @@ function time() {
     ss = checkTime(ss);
     document.getElementById('datebtn').innerHTML = hh + ":" + mm + ":" + ss;
 }
+
+// Pop up to remind user to enter username and password
+function getValue() {
+      var retVal = prompt("Enter your name : ", "your name here");
+      document.write("You have entered : " + retVal);
+    }
