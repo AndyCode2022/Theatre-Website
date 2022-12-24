@@ -1,5 +1,5 @@
 <footer>
-    Theatre
+    <div class="footer">Theatre</div>
 </footer>
 </body>
 

@@ -2,7 +2,7 @@
 
 <?php
 $cookie_name = "user";
-$cookie_value = "Andrew Webster";
+$cookie_value = "Theatre";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 
@@ -25,7 +25,7 @@ setcookie("test_cookie", "test", time() + 3600, '/');
 
 <body>
 
-    <nav class="Nav">
+    <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
@@ -55,3 +55,5 @@ setcookie("test_cookie", "test", time() + 3600, '/');
         echo "Cookies are disabled.";
     }
     ?>
+
+

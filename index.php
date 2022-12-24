@@ -14,8 +14,6 @@
     </div>
 </div>
 
-<p id="datebtn">time is =</p>
-
-<button type="button" onclick="time()">click to show the time</button>
+<div id="clock"></div>
 
 <?php require 'footer.php' ?>
