@@ -1,14 +1,18 @@
+<!-- PHP saving data for user on website -->
 <?php session_start(); ?>
 
+<!-- Setting the cookie name and value -->
 <?php
 $cookie_name = "user";
 $cookie_value = "Theatre";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 
+<!-- HTML DOCUMENT WITH DATA -->
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Setting the cookie up on the website -->
 <?php
 setcookie("test_cookie", "test", time() + 3600, '/');
 ?>
@@ -24,7 +28,7 @@ setcookie("test_cookie", "test", time() + 3600, '/');
 </head>
 
 <body>
-
+    <!-- Navbar for navigating through the website -->
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
@@ -35,10 +39,12 @@ setcookie("test_cookie", "test", time() + 3600, '/');
         </ul>
     </nav>
 
-    <h1>Welcome to the theatre website</h1>
+    <h1>Welcome To The Theatre Website</h1>
 
+    <!-- Clock that continuously updates using JavaScript -->
     <p class="time"></p>
 
+    <!-- Code to detemine whether the cookie is set on the website or not -->
     <?php
     if (!isset($_COOKIE[$cookie_name])) {
         echo "Cookie named '" . $cookie_name . "' is not set!";
@@ -47,7 +53,7 @@ setcookie("test_cookie", "test", time() + 3600, '/');
         echo "Value is: " . $_COOKIE[$cookie_name];
     }
     ?>
-
+    
     <?php
     if (count($_COOKIE) > 0) {
         echo "Cookies are enabled.";
@@ -55,5 +61,3 @@ setcookie("test_cookie", "test", time() + 3600, '/');
         echo "Cookies are disabled.";
     }
     ?>
-
-

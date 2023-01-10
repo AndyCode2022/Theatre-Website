@@ -3,7 +3,7 @@
         <h2>Theatre User Login</h2>
         <h2>Please enter your Email address and password</h2>
 
-        <form id="loginForm" method="post" action="CheckUser.php">
+        <form id="loginForm" method="post" action="authenticate.php">
             <table>
                 <tr>
                     <td>Email address :</td>

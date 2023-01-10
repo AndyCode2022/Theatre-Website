@@ -7,7 +7,7 @@
 
 <h2>Register User details</h2>
 
-<form id="registerForm" method="POST" action="WriteUser.php">
+<form id="registerForm" method="POST" action="processNewUser.php">
 
 <table>
     <tr>
