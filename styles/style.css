@@ -32,6 +32,8 @@ li {
 
 a {
     padding: 20px;
+    text-decoration: none !important;
+    color: Black !important;
 }
 
 /* Homepage */

@@ -6,13 +6,13 @@ require 'header.php';
 
 <?php
 
-require "dbaccess.php";
+require "dbconnect.php";
 
-$username = $_POST['username'];
+$username = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "SELECT customerno, firstname, lastname, password FROM customers
-        WHERE username = '$username'";
+$sql = "SELECT customerno, password FROM customers
+        WHERE email = '$email'";
 
 $result = $conn->query($sql);
 
@@ -21,7 +21,7 @@ if ($result->num_rows == 1){
     $row = $result->fetch_assoc();
 
     if (password_verify($password, $row['password'])){
-      echo "Hi " . $row['firstname'] . " " . $row['lastname'];
+      echo "Hi " . $row['email'];
       echo "<br>You have successfully logged in.";
       
       $_SESSION['loggedin'] = true;
