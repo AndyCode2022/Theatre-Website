@@ -33,7 +33,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo "<p>Sorry that username is taken. Please try a different email.</p>";
+    echo "<p>Sorry that username is taken. Please try a different username.</p>";
     $isValid = false;
 }
 
@@ -41,7 +41,7 @@ if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (firstname , lastname, address, town, postcode, email, username, password))
+$stmt = $conn->prepare("INSERT INTO users (firstname , lastname, address, town, postcode, email, username, password)
 VALUES (?,?,?,?,?,?,?,?)");
 
     $stmt->bind_param("ssssssss", $firstname, $lastname, $address, $town, $postcode, $email, $username, $hash);
