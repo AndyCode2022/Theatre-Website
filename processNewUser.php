@@ -1,16 +1,19 @@
-<?php
-
-require 'header.php';
-
-?>
+<?php require 'header.php'; ?>
 
 <?php
 
 require "dbconnect.php";
 
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$address = $_POST['address'];
+$town = $_POST['town'];
+$postcode = $_POST['postcode'];
 $email = $_POST['email'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
+
 
 $isValid = true;
 //form validation to be added
@@ -24,8 +27,8 @@ if (strlen($password) < 8){
     echo "<p>Password is too short.";
 }
 
-$stmt = $conn->prepare("SELECT email FROM customers WHERE email = ?");
-$stmt->bind_param("s", $email);
+$stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -38,10 +41,10 @@ if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO customers (email, password)
-VALUES (?,?)");
+$stmt = $conn->prepare("INSERT INTO users (firstname , lastname, address, town, postcode, email, username, password))
+VALUES (?,?,?,?,?,?,?,?)");
 
-$stmt->bind_param("ss", $email, $hash);
+    $stmt->bind_param("ssssssss", $firstname, $lastname, $address, $town, $postcode, $email, $username, $hash);
 
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
