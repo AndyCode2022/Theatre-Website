@@ -8,11 +8,11 @@ require 'header.php';
 
 require "dbconnect.php";
 
-$username = $_POST['email'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT customerno, password FROM customers
-        WHERE email = '$email'";
+$sql = "SELECT userno, password FROM users
+        WHERE username = '$username'";
 
 $result = $conn->query($sql);
 
@@ -25,7 +25,7 @@ if ($result->num_rows == 1){
       echo "<br>You have successfully logged in.";
       
       $_SESSION['loggedin'] = true;
-      $_SESSION['customerno'] = $row['customerno'];
+      $_SESSION['userno'] = $row['userno'];
     }
     else {
         echo "Password not recognised";
