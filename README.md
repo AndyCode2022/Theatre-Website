@@ -1,11 +1,14 @@
 # Theatre-Website
 Assessment 3
 # Make a responsive design
+bootstrap 5 used for responsiveness
 
 # Set up a database
 
 In progress
 
-find out if users can be added with mysql workbench
+xampp used
 
-asked a query on web dev discord server
+# fixes
+
+passwords not recognized?

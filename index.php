@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            Column
+            What's on?!
         </div>
         <div class="col">
             Column

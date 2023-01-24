@@ -15,10 +15,10 @@
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type="password" name="password" size="10" /></td>
+            <td><input type="text" name="password" size="10" /></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="Check User" /></td>
+            <td colspan="2"><input type="submit" value="Login" /></td>
         </tr>
     </table>
 </form>
