@@ -1,8 +1,4 @@
-<?php
-
-require 'header.php';
-
-?>
+<?php require 'header.php'; ?>
 
 <?php
 
@@ -16,22 +12,20 @@ $sql = "SELECT userno, firstname, lastname, password FROM users
 
 $result = $conn->query($sql);
 
-if ($result->num_rows == 1){
+if ($result->num_rows == 1) {
 
     $row = $result->fetch_assoc();
 
     if (password_verify($password, $row['password'])) {
         echo "Hi " . $row['firstname'] . " " . $row['lastname'];
         echo "<br>You have successfully logged in.";
-      
-      $_SESSION['loggedin'] = true;
-      $_SESSION['userno'] = $row['userno'];
-    }
-    else {
+
+        $_SESSION['loggedin'] = true;
+        $_SESSION['userno'] = $row['userno'];
+    } else {
         echo "Password not recognised";
     }
-}
-else {
+} else {
     echo "Your username or password is incorrect";
 }
 
@@ -39,10 +33,4 @@ $conn->close();
 
 ?>
 
-<p></p>
-
-<?php
-
-require 'footer.php';
-
-?>
+<?php require 'footer.php'; ?>

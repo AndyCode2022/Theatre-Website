@@ -48,14 +48,11 @@ VALUES (?,?,?,?,?,?,?,?)");
 
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
-        echo "<p>New record has been created. Your customer ID is: $lastId </p>";
-
-                }
-                else {
-                    echo "Something went wrong";
-                }
-            }
-else {
+        echo "<p>New record has been created. Your user ID is: $lastId </p>";
+    } else {
+        echo "Something went wrong";
+    }
+} else {
     echo "<p>Problem validating the form. Please try again <a href='register.php'>click here</a></p>";
 }
 
@@ -63,8 +60,4 @@ $conn->close();
 
 ?>
 
-<?php
-
-require 'footer.php';
-
-?>
+<?php require 'footer.php'; ?>

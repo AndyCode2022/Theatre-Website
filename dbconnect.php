@@ -1,7 +1,7 @@
 <?php
 DEFINE ('DB_USER', 'root');                       // The username
 DEFINE ('DB_PASSWORD','');                        // The password
-DEFINE ('DB_HOST', 'localhost');             // The mysql server host address 
+DEFINE ('DB_HOST', 'localhost');                  // The mysql server host address 
 DEFINE ('DB_NAME', 'theatre');                    // The database name
 @$conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 if (mysqli_connect_errno())
