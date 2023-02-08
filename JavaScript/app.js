@@ -33,3 +33,10 @@ function showTime() {
         .innerHTML = currentTime;
 }
 showTime();
+
+// Darkmode
+
+function functionDark() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}

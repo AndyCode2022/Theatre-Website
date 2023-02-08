@@ -24,8 +24,7 @@ setcookie("test_cookie", "test", time() + 3600, '/');
     <title>Theatre</title>
     <link rel="stylesheet" href="styles/style.css">
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="JavaScript/app.js"></script>
 </head>
 
@@ -38,6 +37,9 @@ setcookie("test_cookie", "test", time() + 3600, '/');
             <li><a href="microBlog.php">MicroBlog</a></li>
             <li><a href="register.php">Register</a></li>
             <li><a href="Login.php">Login</a></li>
+            <div class="button1">
+                <button onclick="functionDark()">Dark Mode</button>
+            </div>
         </ul>
     </nav>
 
