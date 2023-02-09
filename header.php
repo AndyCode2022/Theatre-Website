@@ -33,7 +33,6 @@ setcookie("test_cookie", "test", time() + 3600, '/');
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
             <li><a href="microBlog.php">MicroBlog</a></li>
             <li><a href="register.php">Register</a></li>
             <li><a href="Login.php">Login</a></li>
