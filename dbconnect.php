@@ -1,9 +1,9 @@
 <?php
-DEFINE ('DB_USER', 'root');                       // The username
-DEFINE ('DB_PASSWORD','');                        // The password
-DEFINE ('DB_HOST', 'localhost');                  // The mysql server host address 
-DEFINE ('DB_NAME', 'theatre');                    // The database name
-@$conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+define ('db_user', 'root');               // username
+define ('db_password','');                // password
+define ('db_host', 'localhost');          // mysql server host address 
+define ('db_name', 'theatre');            // database name
+@$conn = mysqli_connect(db_host, db_user, db_password, db_name);
 if (mysqli_connect_errno())
   {
   echo 'Cannot connect to the database: ' . mysqli_connect_error();

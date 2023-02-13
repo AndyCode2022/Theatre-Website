@@ -1,4 +1,4 @@
-<!-- PHP saving data for user on website -->
+<!-- PHP saving data for users on website -->
 <?php session_start(); ?>
 
 <!-- Setting the cookie name and value -->
