@@ -69,6 +69,11 @@ h2 {
 
 /* Micro blog page */
 
+#microblogForm {
+    margin: auto;
+    width: 450px;
+}
+
 /* Login Page */
 
 #loginForm {
@@ -131,4 +136,8 @@ footer {
     .example {
         background: pink;
     }
+}
+
+form {
+    text-align: center;
 }

@@ -1,13 +1,17 @@
 <?php require 'header.php' ?>
 
-<form action="microBlog.php" method="post">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title"><br>
-
-    <label for="body">Body:</label>
-    <textarea id="body" name="body"></textarea><br><br>
-
-    <input type="submit" name="submit" value="Submit">
+<form class="Form" id="microblogForm" action="microBlog.php" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">What are your thoughts today?</label>
+        <input type="text" class="form-control" id="title" name="title"><br>
+    </div>
+    <div class="mb-3">
+        <label for="body" class="form-label">Body:</label>
+        <textarea class="form-control" id="body" name="body" rows="10"></textarea><br><br>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" type="submit" name="submit" value="Submit">
+    </div>
 </form>
 
 <h2>Posts</h2>
