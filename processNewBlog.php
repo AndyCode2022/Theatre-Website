@@ -1,5 +1,15 @@
 <?php
+
+session_start();
+
 require 'dbconnect.php';
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
+    // Redirect to the login page if the user is not logged in
+    header("Location: login.php");
+    exit;
+}
+
 if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $body = $_POST['body'];
@@ -17,3 +27,5 @@ if (isset($_POST['submit'])) {
 }
 
 mysqli_close($conn);
+
+?>

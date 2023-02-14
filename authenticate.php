@@ -19,7 +19,7 @@ $sql = "SELECT userno, firstname, lastname, password FROM users
          echo "Hi " . $row['firstname'] . " " . $row['lastname'];
         echo "<br>You have successfully logged in.";
 
-         $_SESSION['loggedin'] = true;
+        $_SESSION['loggedin'] = true;
         $_SESSION['userno'] = $row['userno'];
      } else {
          echo "Password not recognised";
