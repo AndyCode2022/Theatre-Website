@@ -1,11 +1,30 @@
-<?php require 'header.php'; ?>
+<?php
+
+require 'checkLogin.php';
+require 'dbconnect.php';
+require 'updateUser.php';
+
+$customerno = $_SESSION['userno'];
+
+$sql = "SELECT * FROM theatre WHERE userno = $userno";
+$result = $conn->query($sql);
+
+if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+} else {
+    echo "Unable to retrieve user info.";
+}
+
+$conn->close();
+
+?>
 
 <?php
 
 require "checkLogin.php";
 require "dbconnect.php";
 
-$customerno = $_SESSION['customerNo'];
+$customerno = $_SESSION['userNo'];
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];

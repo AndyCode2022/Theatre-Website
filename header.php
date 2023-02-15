@@ -36,14 +36,13 @@ setcookie("test_cookie", "test", time() + 3600, '/');
             <li><a href="microBlog.php">MicroBlog</a></li>
             <li><a href="register.php">Register</a></li>
             <li><a href="Login.php">Login</a></li>
+            <li><a href="updateUser.php">Change Your Details</a></li>
         </ul>
     </nav>
-    
+
     <div class="button1">
         <button onclick="functionDark()">Dark Mode</button>
     </div>
-
-    <h1>Welcome To The Theatre Website</h1>
 
     <!-- Clock that continuously updates using JavaScript -->
     <p class="time"></p>
