@@ -31,10 +31,10 @@
         <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
     </div>
     <div class="mb-3">
-        <label for="Report" class="form-label">Please explain why you have chose
+        <label for="message" class="form-label">Please explain why you have chosen
             to report this user
         </label>
-        <textarea class="form-control" id="report" rows="3"></textarea>
+        <textarea class="form-control" id="message" rows="3"></textarea>
     </div>
     <div class="mb-3">
         <input class="form-control" type="submit" name="submit" value="Submit">

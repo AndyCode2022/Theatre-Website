@@ -1,7 +1,8 @@
 <?php
         include 'dbconnect.php';
         if (isset($_POST['submit'])) {
-            $email = $_POST['mail'];
+            $name = $_POST['name'];
+            $email = $_POST['email'];
             $message = $_POST['message'];
 
             $to = "andrewwebster1007@gmail.com";
@@ -14,7 +15,6 @@
             } else {
                 echo "There was an error sending the form.";
             }
-            header("Location: ?mailsend");
         }
 
         if (isset($fullName)) {

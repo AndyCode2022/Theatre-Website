@@ -8,14 +8,32 @@ $cookie_value = "Theatre";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 
-<!-- HTML DOCUMENT WITH DATA -->
-<!DOCTYPE html>
-<html lang="en">
-
 <!-- Setting the cookie up on the website -->
 <?php
 setcookie("test_cookie", "test", time() + 3600, '/');
 ?>
+
+<!-- Code to detemine whether the cookie is set on the website or not -->
+<?php
+if (!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+
+<?php
+if (count($_COOKIE) > 0) {
+    echo "Cookies are enabled.";
+} else {
+    echo "Cookies are disabled.";
+}
+?>
+
+<!-- HTML DOCUMENT WITH DATA -->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -46,21 +64,3 @@ setcookie("test_cookie", "test", time() + 3600, '/');
 
     <!-- Clock that continuously updates using JavaScript -->
     <p class="time"></p>
-
-    <!-- Code to detemine whether the cookie is set on the website or not -->
-    <?php
-    if (!isset($_COOKIE[$cookie_name])) {
-        echo "Cookie named '" . $cookie_name . "' is not set!";
-    } else {
-        echo "Cookie '" . $cookie_name . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookie_name];
-    }
-    ?>
-
-    <?php
-    if (count($_COOKIE) > 0) {
-        echo "Cookies are enabled.";
-    } else {
-        echo "Cookies are disabled.";
-    }
-    ?>
