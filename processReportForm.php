@@ -1,9 +1,7 @@
 <?php
         include 'dbconnect.php';
         if (isset($_POST['submit'])) {
-            $name = $_POST['name'];
             $email = $_POST['email'];
-            $message = $_POST['message'];
 
             $to = "andrewwebster1007@gmail.com";
             $subject = "Enquiry form submission";
