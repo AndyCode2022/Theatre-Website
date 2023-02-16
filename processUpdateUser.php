@@ -1,7 +1,7 @@
 <?php
 
-require 'checkLogin.php';
 require 'dbconnect.php';
+require 'checkLogin.php';
 require 'updateUser.php';
 
 $customerno = $_SESSION['userno'];
@@ -37,7 +37,6 @@ $sql = "UPDATE users SET firstname = '$firstname' , lastname = '$lastname' , add
         town = '$town' , postcode = '$postcode' , email = '$email'
         WHERE userno = $userno ";
 
-
 if ($conn->query($sql) == true) {
     echo "<p>Thanks your info has been updated.</p>";
 } else {
@@ -48,8 +47,4 @@ $conn->close();
 
 ?>
 
-<?php
-
-require 'footer.php';
-
-?>
+<?php require 'footer.php'; ?>
