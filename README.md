@@ -7,8 +7,13 @@ bootstrap 5 used for responsiveness
 
 In progress
 
+have users, admin and posts
+
 xampp used
 
 # fixes
 
 passwords not recognized?
+
+sorted by changing the password character count to 256 in
+MySQL database.
