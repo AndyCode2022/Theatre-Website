@@ -1,54 +1,59 @@
 <?php require 'header.php' ?>
 
-<h2>Enter your details</h2>
+<div class="container">
+  <h2>Enter your details</h2>
 
-<form id="registerForm" method="POST" action="processNewUser.php">
+  <form id="registerForm" method="POST" action="processNewUser.php">
 
-  <table>
-    <tr>
-      <td>First Name</td>
-      <td><input type="text" name="firstname" size="30" /></td>
-    </tr>
-    <tr>
-      <td>Last Name</td>
-      <td><input type="text" name="lastname" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Address</td>
-      <td><input type="text" name="address" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Town</td>
-      <td><input type="text" name="town" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Postcode</td>
-      <td><input type="text" name="postcode" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Email</td>
-      <td><input type="text" name="email" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Username</td>
-      <td><input type="text" name="username" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Password</td>
-      <td><input type="password" name="password" size="10" /></td>
-    </tr>
-    <tr>
-      <td>Confirm Password</td>
-      <td><input type="password" name="confirmPassword" size="10" /></td>
-    </tr>
+    <div class="mb-3">
+      <label for="firstname" class="form-label">First Name</label>
+      <input type="text" name="firstname" class="form-control" id="firstname" required>
+    </div>
 
-    <tr>
-      <td colspan="2"><input type="submit" value="Add User" /></td>
-    </tr>
-    <tr>
-      <td colspan="2"><input type="reset" value="Clear" /></td>
-    </tr>
-  </table>
-</form>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Last Name</label>
+      <input type="text" name="lastname" class="form-control" id="lastname" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input type="text" name="address" class="form-control" id="address" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="town" class="form-label">Town</label>
+      <input type="text" name="town" class="form-control" id="town" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="postcode" class="form-label">Postcode</label>
+      <input type="text" name="postcode" class="form-control" id="postcode" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" id="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" name="username" class="form-control" id="username" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" id="password" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add User</button>
+    <button type="reset" class="btn btn-secondary">Clear</button>
+
+  </form>
+</div>
 
 <?php require 'footer.php' ?>

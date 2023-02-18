@@ -1,12 +1,6 @@
-<footer>
-    <div class="footer">Theatre</div>
-</footer>
-
-<!-- Custom styles for this template -->
-
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <span class="text-muted">Theatre</span>
+<footer class="bg-dark text-white">
+    <div class="container py-3">
+        <div class="footer">Theatre</div>
     </div>
 </footer>
 </body>

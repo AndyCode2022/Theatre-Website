@@ -4,31 +4,37 @@
 
     <h2>Update User</h2>
 
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" value="<?php echo isset($row['firstname']) ?>">
-    <br>
+    <div class="mb-3">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="firstname" value="<?php echo isset($row['firstname']) ?>">
+    </div>
 
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname" value="<?php echo isset($row['lastname']) ?>">
-    <br>
+    <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo isset($row['lastname']) ?>">
+    </div>
 
-    <label for="address">Address</label>
-    <input type="text" name="address" id="address" value="<?php echo isset($row['address']) ?>">
-    <br>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" name="address" id="address" value="<?php echo isset($row['address']) ?>">
+    </div>
 
-    <label for="town">Town</label>
-    <input type="text" name="town" id="town" value="<?php echo isset($row['town']) ?>">
-    <br>
+    <div class="mb-3">
+        <label for="town" class="form-label">Town</label>
+        <input type="text" class="form-control" name="town" id="town" value="<?php echo isset($row['town']) ?>">
+    </div>
 
-    <label for="postcode">Postcode</label>
-    <input type="text" name="postcode" id="postcode" value="<?php echo isset($row['postcode']) ?>">
-    <br>
+    <div class="mb-3">
+        <label for="postcode" class="form-label">Postcode</label>
+        <input type="text" class="form-control" name="postcode" id="postcode" value="<?php echo isset($row['postcode']) ?>">
+    </div>
 
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" value="<?php echo isset($row['email']) ?>">
-    <br>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email" value="<?php echo isset($row['email']) ?>">
+    </div>
 
-    <input type="submit" value="Update">
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
 <?php require 'footer.php'; ?>

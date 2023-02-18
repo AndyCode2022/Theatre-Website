@@ -20,8 +20,7 @@
         }
 
         echo "<p>Thank you for submitting the report and keeping the community safer" . (isset($email)) . ".</p> 
-    <p>I will review this report and determine if action is necessary.</p>";
+        <p>I will review this report and determine if action is necessary.</p>";
 
         echo "<a href='index.php'>click me to get back to homepage!";
-
-    ?>
+?>

@@ -1,39 +1,38 @@
 <?php require 'header.php'; ?>
 
 <?php
-
 require "dbconnect.php";
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT users.userno, firstname, lastname, users.password 
-        password FROM users, admin
-        WHERE users.username = admin.username = '$username'
-        AND users.password = admin.password";
-
+$sql = "SELECT userno, firstname, lastname, password FROM users WHERE username = '$username'";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
-
     if (password_verify($password, $row['password'])) {
-        echo "Hi " . $row['firstname'] . " " . $row['lastname'];
-        echo "<br>You have successfully logged in.";
-    } elseif ($admin == $adminController) {
-        echo "Hi " . $row['username'];
-        echo "<br>You have successfully logged in as an admin.";
+        $message = "Hi " . $row['firstname'] . " " . $row['lastname'] . ". You have successfully logged in.";
         $_SESSION['loggedin'] = true;
         $_SESSION['userno'] = $row['userno'];
+        $alertClass = "alert-success";
+    } else {
+        $message = "Password not recognised";
+        $alertClass = "alert-danger";
     }
-    echo "Password not recognised";
-    }
-else {
-    echo "Your username or password is incorrect";
+} else {
+    $message = "Your username or password is incorrect";
+    $alertClass = "alert-danger";
 }
 
 $conn->close();
-
 ?>
+
+<div class="container my-3">
+    <div class="alert <?php echo $alertClass; ?> alert-dismissible fade show" role="alert">
+        <?php echo $message; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
 
 <?php require 'footer.php'; ?>
