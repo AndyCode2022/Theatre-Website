@@ -23,6 +23,7 @@ if (!isset($_COOKIE[$cookie_name])) {
 }
 ?>
 
+
 <?php
 if (count($_COOKIE) > 0) {
     echo "Cookies are enabled.";
@@ -61,6 +62,3 @@ if (count($_COOKIE) > 0) {
     <div class="button1">
         <button onclick="functionDark()">Dark Mode</button>
     </div>
-
-    <!-- Clock that continuously updates using JavaScript -->
-    <p class="time"></p>

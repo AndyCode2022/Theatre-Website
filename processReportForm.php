@@ -2,9 +2,10 @@
         include 'dbconnect.php';
         if (isset($_POST['submit'])) {
             $email = $_POST['email'];
+            $message = $_POST['message'];
 
             $to = "andrewwebster1007@gmail.com";
-            $subject = "Enquiry form submission";
+            $subject = "Theatre Website Report";
             $headers = "From: $email\r\n";
 
             // Use the PHP mail() function to send the email

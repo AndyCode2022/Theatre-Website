@@ -22,7 +22,17 @@
     </form>
 </div>
 
-<?php require 'post.php' ?>
+<div class="card">
+    <div class="card-header">
+        <?php echo isset($row['title']); ?>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><?php echo isset($row['body']); ?></p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted"><?php echo isset($row['date_created']); ?></small>
+    </div>
+</div>
 
 <h2>Report a User</h2>
 <form class="Form" id="ReportForm" action="processReportForm.php" method="post">
