@@ -49,6 +49,7 @@ if (count($_COOKIE) > 0) {
 
 <body>
     <!-- Navbar for navigating through the website -->
+    <!-- Make a bootstrap 5 navbar to allow dark mode to be compatible -->
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
