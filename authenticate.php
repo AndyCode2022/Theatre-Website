@@ -1,6 +1,15 @@
 <?php require 'header.php'; ?>
 
 <?php
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
+    header("Location: login.php");
+    exit;
+}
+
+?>
+
+<?php
 require "dbconnect.php";
 
 $username = $_POST['username'];
@@ -34,14 +43,5 @@ $conn->close();
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>
-
-<?php
-
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-    header("Location: login.php");
-    exit;
-}
-
-?>
 
 <?php require 'footer.php'; ?>

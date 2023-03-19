@@ -16,6 +16,4 @@
     </div>
 </div>
 
-<div id="clock"></div>
-
 <?php require 'footer.php' ?>

@@ -8,13 +8,6 @@ body {
     margin: auto;
 }
 
-#clock {
-   font-size: 80px;
-   font-weight: bold;
-   color: white;
-   text-align: center;
-}
-
 /* Dark Mode */
 
 .dark-mode {

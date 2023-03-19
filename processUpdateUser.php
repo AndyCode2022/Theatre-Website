@@ -1,8 +1,8 @@
 <?php
 
-require 'dbconnect.php';
-require 'checkLogin.php';
-require 'updateUser.php';
+include_once('dbconnect.php');
+include_once("authenticate.php");
+include_once('updateUser.php');
 
 $customerno = $_SESSION['userno'];
 
@@ -21,8 +21,8 @@ $conn->close();
 
 <?php
 
-require "checkLogin.php";
-require "dbconnect.php";
+include_once("authenticate.php");
+include_once("dbconnect.php");
 
 $customerno = $_SESSION['userNo'];
 
