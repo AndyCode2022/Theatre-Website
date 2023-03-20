@@ -7,6 +7,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
     exit;
 }
 
+// add a user status for admin and users
+
 ?>
 
 <?php

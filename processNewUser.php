@@ -14,7 +14,6 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 
-
 $isValid = true;
 //form validation to be added
 if ($password != $confirmPassword) {
