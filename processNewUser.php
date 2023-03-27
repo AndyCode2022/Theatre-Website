@@ -40,7 +40,7 @@ if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (firstname , lastname, address, town, postcode, email, username, password)
+$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, address, town, postcode, email, username, password)
 VALUES (?,?,?,?,?,?,?,?)");
 
     $stmt->bind_param("ssssssss", $firstname, $lastname, $address, $town, $postcode, $email, $username, $hash);

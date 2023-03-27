@@ -1,24 +1,60 @@
-<footer class="bg-dark text-white">
-    <div class="container py-3">
-        <div class="footer">Theatre</div>
-    </div>
+<footer class="bg-light text-center text-lg-start">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Footer Content</h5>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                    molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                    voluptatem veniam, est atque cumque eum delectus sint!
+                </p>
+            </div>
 
-    <!-- Clock that continuously updates using JavaScript -->
-    <div class="container-fluid bg-dark text-light py-5">
-        <div class="container">
-            <h1 class="text-center mb-5">Real Time Clock</h1>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p id="clock" class="fs-1"></p>
-                </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Links</h5>
+
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-dark">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Link 4</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0">Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!" class="text-dark">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-dark">Link 4</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
 
-<p>Designed by Andrew Webster</p>
-
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Theatre
+    </div>
 </footer>
+
 </body>
 
 </html>

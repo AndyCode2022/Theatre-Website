@@ -1,6 +1,6 @@
 <?php require 'header.php' ?>
 
-<form class="Form" id="microblogForm" action="microBlog.php" method="post">
+<form class="Form" id="microblogForm" action="processNewBlog.php" method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Announcement</label>
         <input type="text" class="form-control" id="title" name="title" required="yes"><br>

@@ -2,16 +2,6 @@
 
 <?php
 
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-    header("Location: login.php");
-    exit;
-}
-
-// add a user status for admin and users
-
-?>
-
-<?php
 require "dbconnect.php";
 
 $username = $_POST['username'];
@@ -37,13 +27,23 @@ if ($result->num_rows == 1) {
 }
 
 $conn->close();
+
 ?>
 
-<div class="container my-3">
+<?php
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
+    header("Location: login.php");
+    exit;
+}
+
+// add a user status for admin and users
+
+?>
+
+<!-- <div class="container my-3">
     <div class="alert <?php echo $alertClass; ?> alert-dismissible fade show" role="alert">
         <?php echo $message; ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-</div>
-
-<?php require 'footer.php'; ?>
+</div> -->
