@@ -1,5 +1,7 @@
 <?php require 'header.php' ?>
 
+<!-- Input form for admins to put announcements onto the microblog page -->
+<h2>Microblog</h2>
 <form class="Form" id="microblogForm" action="processNewBlog.php" method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Announcement</label>
@@ -14,6 +16,7 @@
     </div>
 </form>
 
+<!-- announcements/blogs are display on the website by the admin -->
 <h2>Posts</h2>
 <div class="container">
     <div class="card">
@@ -27,8 +30,12 @@
             <small class="text-muted"><?php echo isset($row['date_created']); ?></small>
         </div>
     </div>
+    <button type="button" class="btn btn-primary">edit</button>
+    <button type="button" class="btn btn-primary">delete</button>
+    <button type="button" class="btn btn-primary">ban a user</button>
 </div>
 
+<!-- User report form to report users -->
 <h2>Report a User</h2>
 <div class="container">
     <form class="Form" id="ReportForm" action="processReportForm.php" method="post">
@@ -48,4 +55,4 @@
     </form>
 </div>
 
-    <?php require 'footer.php' ?>
+<?php require 'footer.php' ?>

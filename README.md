@@ -3,15 +3,17 @@
 Assessment 3
 # Make a responsive design
 
-bootstrap 5 used for responsiveness
+<!-- bootstrap 5 used for responsiveness -->
 
 # Set up a database
 
-In progress
+<!-- In progress
 
 have users, admin and posts
 
-xampp used
+xampp used -->
+
+# fix dark mode for bootstrap 5
 
 # fixes
 

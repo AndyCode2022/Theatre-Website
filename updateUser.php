@@ -34,6 +34,21 @@
         <input type="text" class="form-control" name="email" id="email" value="<?php echo isset($row['email']) ?>">
     </div>
 
+    <div class="mb-3">
+        <label for="username" class="form-label">username</label>
+        <input type="text" name="username" class="form-control" id="username" required="true">
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="password" required="true">
+    </div>
+
+    <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required="true">
+    </div>
+
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
