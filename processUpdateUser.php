@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once('dbconnect.php');
 include_once("authenticate.php");
@@ -14,15 +15,6 @@ if ($result->num_rows == 1) {
 } else {
     echo "Unable to retrieve user info.";
 }
-
-$conn->close();
-
-?>
-
-<?php
-
-include_once("authenticate.php");
-include_once("dbconnect.php");
 
 $customerno = $_SESSION['userNo'];
 
@@ -50,5 +42,3 @@ if ($conn->query($sql) == true) {
 $conn->close();
 
 ?>
-
-<?php require 'footer.php'; ?>

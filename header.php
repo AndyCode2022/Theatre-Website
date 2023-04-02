@@ -6,6 +6,7 @@
 $cookie_name = "user";
 $cookie_value = "Theatre";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+// Cookie is set to expire after 30 days
 ?>
 
 <!-- Setting the cookie up on the website -->
@@ -43,7 +44,6 @@ if (count($_COOKIE) > 0) {
     <link rel="stylesheet" href="styles/style.css">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="JavaScript/app.js"></script>
 </head>
 
 <body>
@@ -74,9 +74,10 @@ if (count($_COOKIE) > 0) {
                     </li>
                 </ul>
             </div>
+            <div class="button1">
+                <button onclick="functionDark()">Dark Mode</button>
+            </div>
         </div>
     </nav>
 
-    <div class="button1">
-        <button onclick="functionDark()">Dark Mode</button>
-    </div>
+    <script src="JavaScript/app.js"></script>

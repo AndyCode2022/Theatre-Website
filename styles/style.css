@@ -17,6 +17,8 @@ body {
 
 /* Nav Bar */
 
+
+
 /* Homepage */
 
 h1 {
@@ -48,6 +50,8 @@ h2 {
     width: 450px;
 }
 
+
+
 /* Login Page */
 
 #loginForm {
@@ -64,6 +68,14 @@ h2 {
 
 /* footer */
 
+/* footer stays at bottom of the page*/
+.footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
 
 .theatre {
     color: aliceblue;

@@ -1,5 +1,3 @@
-<?php require 'header.php'; ?>
-
 <?php
 
 require "dbconnect.php";
@@ -58,5 +56,3 @@ VALUES (?,?,?,?,?,?,?,?)");
 $conn->close();
 
 ?>
-
-<?php require 'footer.php'; ?>

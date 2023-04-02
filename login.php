@@ -3,7 +3,7 @@
 <h2>Theatre User Login</h2>
 <h2>Please enter your email address and password</h2>
 
-<form id="loginForm" method="post" action="authenticate.php">
+<form id="loginForm" method="post" action="serverFiles/authenticate.php">
     <div class="mb-3">
         <label for="username" class="form-label">username</label>
         <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" size="40">

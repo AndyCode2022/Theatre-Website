@@ -11,10 +11,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
 }
 
 if (isset($_POST['submit'])) {
+    $postID = $_SESSION['postID'];
+    $userno = $_SESSION['userno'];
     $title = $_POST['title'];
     $body = $_POST['body'];
     $date_created = date('Y-m-d H:i:s');
-    $userno = $_SESSION['userno'];
 
     $sql = "INSERT INTO posts (title, body, date_created)
     VALUES ('$title', '$body', '$date_created')";

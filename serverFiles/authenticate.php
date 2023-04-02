@@ -1,5 +1,3 @@
-<?php require 'header.php'; ?>
-
 <?php
 
 // if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
