@@ -4,11 +4,11 @@ session_start();
 
 require 'dbconnect.php';
 
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-    // Redirect to the login page if the user is not logged in
-    header("Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
+//     // Redirect to the login page if the user is not logged in
+//     header("Location: ./login.php");
+//     exit;
+// }
 
 if (isset($_POST['submit'])) {
     $postID = $_SESSION['postID'];
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
-
+header('microblog.php');
 mysqli_close($conn);
 
 ?>

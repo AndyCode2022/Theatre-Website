@@ -17,7 +17,13 @@ body {
 
 /* Nav Bar */
 
+.container-fluid {
+    background-color: red;
+}
 
+.nav-link {
+    color: white;
+}
 
 /* Homepage */
 

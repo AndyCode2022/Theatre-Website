@@ -14,5 +14,7 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "No posts found";
 }
+header("Location: {$_SERVER['HTTP_REFERER']}");
+exit;
 
 ?>
