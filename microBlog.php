@@ -33,11 +33,13 @@
     <button type="button" class="btn btn-primary">edit</button>
     <button type="button" class="btn btn-primary">delete</button>
     <button type="button" class="btn btn-primary">ban a user</button>
-    <?php
-    // Display the comments on the page
-    require './serverFiles/processDisplayComment.php';
-    ?>
+
 </div>
+
+<?php
+// Display the comments on the page
+require './serverFiles/processDisplayComment.php';
+?>
 
 <div class="container">
     <h2 class="mt-4">Comments</h2>
@@ -64,5 +66,24 @@
 // Submit the comments to the database
 require './serverFiles/processNewComment.php';
 ?>
+
+<h2>Posts</h2>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <?php echo isset($row['title']); ?>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><?php echo isset($row['body']); ?></p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted"><?php echo isset($row['date_created']); ?></small>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary">edit</button>
+    <button type="button" class="btn btn-primary">delete</button>
+    <button type="button" class="btn btn-primary">ban a user</button>
+
+</div>
 
 <?php require 'footer.php' ?>

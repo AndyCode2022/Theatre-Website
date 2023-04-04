@@ -44,6 +44,7 @@ $userStatus = isset($_POST['userStatus']) ? $_POST['userStatus'] : null;
 <div class="container my-3">
     <div class="alert <?php echo $alertClass; ?> alert-dismissible fade show" role="alert">
         <?php echo $message; ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Close</button>
+        <?php echo '"href="index.php"'?>
     </div>
 </div>

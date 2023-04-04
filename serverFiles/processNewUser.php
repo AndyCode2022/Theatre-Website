@@ -52,6 +52,7 @@ VALUES (?,?,?,?,?,?,?,?)");
 } else {
     echo "<p>Problem validating the form. Please try again <a href='register.php'>click here</a></p>";
 }
+header('index.php');
 
 $conn->close();
 
