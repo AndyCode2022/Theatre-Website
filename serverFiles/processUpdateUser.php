@@ -20,16 +20,13 @@ $customerno = $_SESSION['userNo'];
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
-$address = $_POST['address'];
-$town = $_POST['town'];
-$postcode = $_POST['postcode'];
 $email = $_POST['email'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 
-$sql = "UPDATE users SET firstname = '$firstname' , lastname = '$lastname' , address = '$address' ,
-        town = '$town' , postcode = '$postcode' , email = '$email' , username = '$username' , 
+$sql = "UPDATE users SET firstname = '$firstname' , lastname = '$lastname' ,
+        email = '$email' , username = '$username' , 
         password = '$password' , confirmPassword = '$confirmPassword'
         WHERE userno = $userno ";
 

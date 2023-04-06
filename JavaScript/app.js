@@ -9,3 +9,7 @@ function functionDark() {
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
+
+// Navbar
+
+const navbar = document.querySelectorAll(".navbar");

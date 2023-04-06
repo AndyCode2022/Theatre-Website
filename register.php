@@ -16,21 +16,6 @@
     </div>
 
     <div class="mb-3">
-      <label for="address" class="form-label">Address</label>
-      <input type="text" name="address" class="form-control" id="address" required="true">
-    </div>
-
-    <div class="mb-3">
-      <label for="town" class="form-label">Town</label>
-      <input type="text" name="town" class="form-control" id="town" required="true">
-    </div>
-
-    <div class="mb-3">
-      <label for="postcode" class="form-label">Postcode</label>
-      <input type="text" name="postcode" class="form-control" id="postcode" required="true">
-    </div>
-
-    <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" name="email" class="form-control" id="email" required="true">
     </div>

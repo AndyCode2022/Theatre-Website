@@ -17,7 +17,7 @@
 </form>
 
 <!-- announcements/blogs are display on the website by the admin -->
-<h2>Posts</h2>
+<!-- <h2>Posts</h2>
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -34,11 +34,11 @@
     <button type="button" class="btn btn-primary">delete</button>
     <button type="button" class="btn btn-primary">ban a user</button>
 
-</div>
+</div> -->
 
 <?php
 // Display the comments on the page
-require './serverFiles/processDisplayComment.php';
+require 'serverFiles/processDisplayComment.php';
 ?>
 
 <div class="container">
@@ -67,14 +67,14 @@ require './serverFiles/processDisplayComment.php';
 require './serverFiles/processNewComment.php';
 ?>
 
-<h2>Posts</h2>
+<h2>Comments</h2>
 <div class="container">
     <div class="card">
-        <div class="card-header">
+        <!-- <div class="card-header">
             <?php echo isset($row['title']); ?>
-        </div>
+        </div> -->
         <div class="card-body">
-            <p class="card-text"><?php echo isset($row['body']); ?></p>
+            <p class="card-text"><?php echo isset($row['comment']); ?></p>
         </div>
         <div class="card-footer">
             <small class="text-muted"><?php echo isset($row['date_created']); ?></small>

@@ -2,15 +2,12 @@
 
 require "dbconnect.php";
 
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$address = $_POST['address'];
-$town = $_POST['town'];
-$postcode = $_POST['postcode'];
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-$confirmPassword = $_POST['confirmPassword'];
+$firstname = isset($_POST['firstname']);
+$lastname = isset($_POST['lastname']);
+$email = isset($_POST['email']);
+$username = isset($_POST['username']);
+$password = isset($_POST['password']);
+$confirmPassword = isset($_POST['confirmPassword']);
 
 $isValid = true;
 //form validation to be added
@@ -38,10 +35,10 @@ if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, address, town, postcode, email, username, password)
-VALUES (?,?,?,?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password)
+VALUES (?,?,?,?,?)");
 
-    $stmt->bind_param("ssssssss", $firstname, $lastname, $address, $town, $postcode, $email, $username, $hash);
+    $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hash);
 
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
@@ -50,9 +47,9 @@ VALUES (?,?,?,?,?,?,?,?)");
         echo "Something went wrong";
     }
 } else {
-    echo "<p>Problem validating the form. Please try again <a href='register.php'>click here</a></p>";
+    echo "<p>Problem validating the form. Please try again <a href='../register.php'>click here</a></p>";
 }
-header('index.php');
+// header('index.php');
 
 $conn->close();
 

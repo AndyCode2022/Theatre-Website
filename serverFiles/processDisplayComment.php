@@ -12,9 +12,11 @@ if (mysqli_num_rows($result) > 0) {
         echo '<p>Posted by user ' . $body['userno'] . ' on ' . $body['date'] . '</p>';
 
         echo '<form method="post" action="editComment.php">';
+        echo '<form method="post" action="deleteComment.php">';
         echo '<input type="hidden" name="comment_id" value="' . $body['userno'] . '">';
         echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
         echo '<input type="submit" value="Edit">';
+        echo '<input type="submit" value="delete">';
         echo '</form>';
 
         echo '</div>';
