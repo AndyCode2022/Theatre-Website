@@ -38,7 +38,7 @@
 
 <?php
 // Display the comments on the page
-require 'serverFiles/processDisplayComment.php';
+require './serverFiles/displayBlogs.php';
 ?>
 
 <div class="container">
