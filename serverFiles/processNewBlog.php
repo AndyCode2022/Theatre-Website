@@ -11,7 +11,7 @@ require 'dbconnect.php';
 // }
 
 if (isset($_POST['submit'])) {
-    $postID = $_SESSION['postID'];
+    $postID $_SESSION['postID'];
     $userno = $_SESSION['userno'];
     $title = $_POST['title'];
     $body = $_POST['body'];
@@ -20,8 +20,9 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO posts (title, body, date_created)
     VALUES ('$title', '$body', '$date_created')";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "New post created successfully";
+    if ($stmt->execute) {
+        $postId = $stmt->insert_id;
+        echo "New post created successfully. Post ID: $postId";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
