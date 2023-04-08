@@ -6,11 +6,18 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while ($body = mysqli_fetch_assoc($result)) {
-        // Displays the comments on the page
+        // Displays the posts on the page
         echo '<div class="container">';
-        echo '<div class="comment">';
+        echo '<div class="post">';
         echo '<p>' . isset($title['title']) . '</p>';
         echo '<p>Posted by user ' . isset($body['body']) . ' on ' . isset($date['date_created']) . '</p>';
+        // comments
+        echo '<div class="card-body">';
+        echo '<p class="card-text"> ' . isset($row['comment']) . '</p>';
+        echo '</div>';
+        echo '<div class="card-footer">';
+        echo '<small class="text-muted"> ' . isset($row['date_created']) . '</small>';
+        echo '</div>';
         echo '</div>';
 
         echo '<div class="container">';
@@ -32,9 +39,9 @@ if (mysqli_num_rows($result) > 0) {
 
 <!-- Checks for comment & date and posts it on the microblog page -->
 <?php
-if (isset($post['post']) && isset($post['date_created'])) {
+if (isset($post['post']) && isset($date_created['date_created'])) {
     echo '<p>' . $post['post'] . '</p>';
-    echo '<p>Posted on ' . $post['date_created'] . '</p>';
+    echo '<p>Posted on ' . $date_created['date_created'] . '</p>';
 } else {
     echo '<div class="container">';
     echo 'Error: post or date not found.';
