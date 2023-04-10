@@ -19,32 +19,9 @@
 <?php
 // Display the comments on the page
 require './serverFiles/displayBlogs.php';
+require './serverFiles/processNewComment.php'
 ?>
 
-<div class="container">
-    <h2 class="mt-4">Comments</h2>
-    <form method="post" action="serverFiles/processNewComment.php">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" id="name" required="true">
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email" required="true">
-        </div>
-        <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
-            <textarea name="comment" id="comment" class="form-control" rows="5" required="true">
-            </textarea>
-        </div>
-        <input type="hidden" name="post_id" value="{{ $post->id }}">
-        <button type="submit" class="btn btn-primary">Add Comment</button>
-    </form>
-</div>
 
-<?php
-// Submit the comments to the database
-require './serverFiles/processNewComment.php';
-?>
 
 <?php require 'footer.php' ?>

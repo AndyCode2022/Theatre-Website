@@ -7,6 +7,6 @@ $sql = "UPDATE comments SET body='$body' WHERE userno='$commentno'";
 mysqli_query($conn, $sql);
 
 // Redirect the user back to the comments page
-header('Location: comments.php');
+header('Location: ../microBlog.php');
 exit();
 ?>

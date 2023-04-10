@@ -8,8 +8,8 @@ if (mysqli_num_rows($result) > 0) {
     while ($body = mysqli_fetch_assoc($result)) {
         // Displays the comments on the page
         echo '<div class="comment">';
-        echo '<p>' . isset($title['title']) . '</p>';
-        echo '<p>Posted by user ' . isset($username['username']) . ' on ' . isset($date['date']) . '</p>';
+        echo '<p>' . isset($body['title']) . '</p>';
+        echo '<p>Posted by user ' . isset($body['username']) . ' on ' . isset($body['date']) . '</p>';
 
         echo '<form method="post" action="editComment.php">';
         echo '<form method="post" action="deleteComment.php">';

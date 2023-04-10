@@ -6,14 +6,14 @@ require 'dbconnect.php';
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
     // Redirect to the login page if the user is not logged in
-    header("Location: ./login.php");
+    header("Location: ../login.php");
     exit;
 }
 
 if (isset($_POST['submit'])) {
     // Checks that the variables postID & userno are set
     if (isset($_SESSION['postID']) && isset($_SESSION['userno'])) {
-    $postID = $_SESSION['postID'];
+    $postID = $_SESSION['postID']; 
     $userno = $_SESSION['userno'];
     $title = $_POST['title'];
     $body = $_POST['body'];
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO posts (title, body, date_created)
     VALUES ('$title', '$body', '$date_created')";
 
-    if ($stmt->execute) {
+    if ($stmt->execute()) {
         $postId = $stmt->insert_id;
         echo "New post created successfully. Post ID: $postId";
     } else {

@@ -143,29 +143,18 @@ class newBlog extends Dbh
 
 class processNewUser extends Dbh {
 
-    // public $firstname;
-    // public $lastname;
-    // public $address;
-    // public $town;
-    // public $postcode;
-    // public $email;
-    // public $username;
-    // public $password;
-    // public $confirmPassword;
-
 public $firstname = $_POST['firstname'];
 public $lastname = $_POST['lastname'];
-public $address = $_POST['address'];
-public $town = $_POST['town'];
-public $postcode = $_POST['postcode'];
 public $email = $_POST['email']; 
 public $username = $_POST['username'];
 public $password = $_POST['password'];
 public $confirmPassword = $_POST['confirmPassword'];
 
-public $isValid = true;
-//form validation to be added
-public function confirmPassword() { 
+public function confirmPassword() { $isValid = true;
+//form validation to be added 
+$password = $_POST['password'];
+$confirmPassword = $_POST['confirmPassword'];
+
 if ($password != $confirmPassword) {
     $isValid = false;
     echo "<p>passwords do not match</p>";
@@ -173,6 +162,8 @@ if ($password != $confirmPassword) {
 }
 
 public function passwordLength() {
+$password = $_POST['password'];
+
 if (strlen($password) < 8){
     $isValid = false;
     echo "<p>Password is too short.";
@@ -180,6 +171,8 @@ if (strlen($password) < 8){
 }
 
 public function usernameExtract() {
+$username = $_POST['username'];
+$conn = $_POST['conn'];
 $stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
 $stmt->bind_param("s", $this->$username);
 $stmt->execute();
@@ -187,24 +180,36 @@ $result = $stmt->get_result();
 }
 
 public function userNameTaken() { 
+$conn = $_POST['conn'];
+$stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
+$result = $stmt->get_result();
 if ($result->num_rows > 0) {
     echo "<p>Sorry that username is taken. Please try a different username.</p>";
     $isValid = false;
  }
 }
 
-public function passwordHash() { 
+public function passwordHash() {
+$conn = $_POST['conn'];
+$isValid = $_POST['isValid']; 
+$password = $_POST['password'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$email = $_POST['email'];
+$username = $_POST['username'];
+
 if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (firstname , lastname, address, town, postcode, email, username, password)
-VALUES (?,?,?,?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO users (firstname , lastname, email, username, password)
+VALUES (?,?,?,?,?)");
 }
-    $stmt->bind_param("ssssssss", $firstname, $lastname, $address, $town, $postcode, $email, $username, $hash);
+    $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hash);
 }
 
  public function verification() {
+    $stmt = $this->connect()->prepare("INSERT INTO users (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
         return "<p>New record has been created. Your user ID is: $lastId </p>";
