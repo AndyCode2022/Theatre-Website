@@ -59,16 +59,13 @@ if (count($_COOKIE) > 0) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link" href="indexUser.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="microBlog.php">MicroBlog</a>
+                        <a class="nav-link" href="microBlogUser.php">MicroBlog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register.php">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Login.php">Login</a>
+                        <a class="nav-link" href="registerUser.php">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="updateUser.php">Change Your Details</a>
@@ -77,6 +74,10 @@ if (count($_COOKIE) > 0) {
             </div>
             <div class="button1">
                 <button onclick="functionDark()">Dark Mode</button>
+             <?php require '../serverFiles/logout.php'; ?>
+                <form method="post" action="logout.php">
+                    <button type="submit" name="logout">Logout</button>
+                </form>
             </div>
         </div>
     </nav>

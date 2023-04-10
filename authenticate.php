@@ -32,10 +32,6 @@ if (!empty($username) && !empty($password)) {
         }
     }
 
-    // if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-    //     header("Location: login.php");
-    //     exit;
-    // }
     $stmt->close();
 }
 $conn->close();
@@ -47,6 +43,6 @@ $conn->close();
         <button href="index.php" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Close</button>
         <a href="login.php">back</a>
         <br>
-        <?php echo 'Click here to go to the home screen' . " " . "<a href=index.php>Home</a>"?>
+        <?php echo 'Click here to go to the home screen' . " " . "<a href=user/indexUser.php>Home</a>"?>
     </div>
 </div>

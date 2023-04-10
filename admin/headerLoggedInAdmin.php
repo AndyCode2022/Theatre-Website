@@ -64,19 +64,14 @@ if (count($_COOKIE) > 0) {
                     <li class="nav-item">
                         <a class="nav-link" href="microBlog.php">MicroBlog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.php">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Login.php">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="updateUser.php">Change Your Details</a>
-                    </li>
                 </ul>
             </div>
             <div class="button1">
                 <button onclick="functionDark()">Dark Mode</button>
+             
+                <form method="post" action="logout.php">
+                    <button type="submit" name="logout">Logout</button>
+                </form>
             </div>
         </div>
     </nav>

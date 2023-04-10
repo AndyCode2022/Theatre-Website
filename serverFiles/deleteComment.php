@@ -8,7 +8,7 @@ function deleteComments($conn)
 
         $sql = "DELETE FROM comments WHERE postID = '$postID'";
         $result = $conn->query($sql);
-        header("location: ../microblog.php");
+        header("location: microblog.php");
         exit();
     }
 }
