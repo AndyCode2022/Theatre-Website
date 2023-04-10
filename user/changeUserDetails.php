@@ -1,4 +1,4 @@
-<?php require 'header.php'; ?>
+<?php require 'headerUser.php'; ?>
 
 <form id="registerForm" action="processUpdateUser.php" method="post">
 
@@ -37,4 +37,4 @@
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
-<?php require 'footer.php'; ?>
+<?php require 'footerUser.php'; ?>
