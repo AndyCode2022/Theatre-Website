@@ -1,4 +1,4 @@
-<?php require 'header.php' ?>
+<?php require 'headerAdmin.php' ?>
 
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h2>Microblog</h2>
@@ -18,10 +18,10 @@
 
 <?php
 // Display the comments on the page
-require './serverFiles/displayBlogs.php';
-require './serverFiles/processNewComment.php'
+require 'displayBlogsAdmin.php';
+require '../serverFiles/processNewComment.php'
 ?>
 
 
 
-<?php require 'footer.php' ?>
+<?php require 'footerAdmin.php' ?>

@@ -1,6 +1,6 @@
 <?php
 
-require "dbconnect.php";
+require "../serverFiles/dbconnect.php";
 
 $firstname = isset($_POST['firstname']);
 $lastname = isset($_POST['lastname']);
@@ -47,7 +47,7 @@ VALUES (?,?,?,?,?)");
         echo "Something went wrong";
     }
 } else {
-    echo "<p>Problem validating the form. Please try again <a href='../register.php'>click here</a></p>";
+    echo "<p>Problem validating the form. Please try again <a href='../user/registerUser.php'>click here</a></p>";
 }
 // header('index.php');
 

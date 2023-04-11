@@ -1,4 +1,4 @@
-<?php require 'header.php' ?>
+<?php require 'headerAdmin.php' ?>
 
 <h1>Welcome To The Theatre Website</h1>
 
@@ -16,6 +16,6 @@
     </div>
 </div>
 
-<?php require 'footer.php' ?>
+<?php require 'footerAdmin.php' ?>
 
 
