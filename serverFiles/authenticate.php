@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "serverFiles/dbconnect.php";
+require "dbconnect.php";
 // add a user status for admin and users
 
 $username = $_POST['username'];
@@ -23,6 +23,7 @@ if (!empty($username) && !empty($password)) {
         }
         if (password_verify($password, $row['password'])) {
             $message = "Hi " . $row['firstname'] . " " . $row['lastname'] . ". You have successfully logged in.";
+            echo 'Click here to go to the home screen' . " " . "<a href=../user/indexUser.php>Home</a>";
             $_SESSION['loggedin'] = true;
             $_SESSION['userno'] = $row['userno'];
             $_SESSION['userStatus'] = $userStatus;
@@ -36,6 +37,7 @@ if (!empty($username) && !empty($password)) {
 }
 $conn->close();
 ?>
+
 <!-- echos out if the password is wrong or not -->
 <div class="container my-3">
     <div class="alert <?php echo $alertClass; ?> alert-dismissible fade show" role="alert">
@@ -43,6 +45,5 @@ $conn->close();
         <button href="index.php" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Close</button>
         <a href="login.php">back</a>
         <br>
-        <?php echo 'Click here to go to the home screen' . " " . "<a href=user/indexUser.php>Home</a>"?>
     </div>
 </div>

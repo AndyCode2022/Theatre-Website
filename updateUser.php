@@ -1,6 +1,6 @@
 <?php require 'header.php'; ?>
 
-<form id="registerForm" action="processUpdateUser.php" method="post">
+<form id="registerForm" action="serverFiles/processUpdateUser.php" method="post">
 
     <h2>Update User</h2>
 

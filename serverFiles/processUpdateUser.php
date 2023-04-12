@@ -3,9 +3,8 @@ session_start();
 
 include_once('dbconnect.php');
 include_once("authenticate.php");
-include_once('updateUser.php');
 
-$customerno = $_SESSION['userno'];
+$userno = $_SESSION['userno'];
 
 $sql = "SELECT * FROM theatre WHERE userno = $userno";
 $result = $conn->query($sql);
@@ -16,7 +15,7 @@ if ($result->num_rows == 1) {
     echo "Unable to retrieve user info.";
 }
 
-$customerno = $_SESSION['userNo'];
+$customerno = $_SESSION['userno'];
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];

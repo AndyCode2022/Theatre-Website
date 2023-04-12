@@ -13,3 +13,19 @@ function functionDark() {
 // Navbar
 
 const navbar = document.querySelectorAll(".navbar");
+
+// Hamburger Icon
+
+function toggleIcon() {
+  var icon = document.querySelector('.navbar-toggler-icon');
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-times');
+}
+
+var navbarToggler = document.querySelector('.navbar-toggler');
+var navbarCollapse = document.querySelector('.navbar-collapse');
+
+navbarToggler.addEventListener('click', function () {
+    toggleIcon();
+    navbarCollapse.classList.toggle('show');
+    });
