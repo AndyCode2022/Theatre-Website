@@ -43,7 +43,7 @@ $conn->close();
     <div class="alert <?php echo $alertClass; ?> alert-dismissible fade show" role="alert">
         <?php echo $message; ?>
         <button href="index.php" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        <a href="login.php">back</a>
+        <a href="../login.php">back</a>
         <br>
     </div>
 </div>

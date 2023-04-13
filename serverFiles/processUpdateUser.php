@@ -1,7 +1,7 @@
 <?php
-session_start();
+// session_start();
 
-include_once('dbconnect.php');
+// include_once('dbconnect.php');
 include_once("authenticate.php");
 
 $userno = $_SESSION['userno'];
