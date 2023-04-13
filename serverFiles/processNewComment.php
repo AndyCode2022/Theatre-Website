@@ -1,6 +1,6 @@
 <?php
 
-include 'dbconnect.php';
+require_once ('dbconnect.php');
 // Submit the comments to the database
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $userno = isset($_POST['userno']);

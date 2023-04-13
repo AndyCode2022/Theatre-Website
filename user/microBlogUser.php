@@ -18,10 +18,8 @@
 
 <?php
 // Display the comments on the page
-require 'displayBlogsUser.php';
+require 'userIncludes/displayBlogsUser.php';
 require '../serverFiles/processNewComment.php';
 ?>
-
-
 
 <?php require 'footerUser.php' ?>
