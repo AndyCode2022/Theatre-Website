@@ -1,6 +1,6 @@
 <?php
 
-require "../serverFiles/dbconnect.php";
+require "dbconnect.php";
 
 $firstname = isset($_POST['firstname']);
 $lastname = isset($_POST['lastname']);
@@ -35,10 +35,10 @@ if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password)
-VALUES (?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password, confirmPassword)
+VALUES (?,?,?,?,?,?)");
 
-    $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hash);
+    $stmt->bind_param("ssssss", $firstname, $lastname, $email, $username, $hash, $hash);
 
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
