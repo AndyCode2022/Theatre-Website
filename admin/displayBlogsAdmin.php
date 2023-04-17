@@ -19,12 +19,13 @@ if (mysqli_num_rows($result) > 0) {
         echo '<small class="text-muted"> ' . isset($row['date_created']) . '</small>';
         echo '</div>';
         echo '</div>';
+        echo '</div>';
         // Edit functionality
         echo '<div class="container">';
         echo '<form method="post" action="serverFiles/editComment.php">';
         echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
         echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
-        echo '<input type="submit" value="Edit">';
+        echo '<input type="submit" value="edit">';
         echo '</form>';
         echo '</div>';
         // Delete functionality
@@ -33,7 +34,6 @@ if (mysqli_num_rows($result) > 0) {
         echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
         echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
         echo '<input type="submit" value="delete">';
-        echo '</div>';
         echo '</div>';
     }
 } else {
