@@ -2,12 +2,12 @@
 
 require "dbconnect.php";
 
-$firstname = isset($_POST['firstname']);
-$lastname = isset($_POST['lastname']);
-$email = isset($_POST['email']);
-$username = isset($_POST['username']);
-$password = isset($_POST['password']);
-$confirmPassword = isset($_POST['confirmPassword']);
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$email = $_POST['email'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+$confirmPassword = $_POST['confirmPassword'];
 
 $isValid = true;
 //form validation to be added
@@ -35,14 +35,15 @@ if ($isValid == true) {
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password, confirmPassword)
-VALUES (?,?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password)
+VALUES (?,?,?,?,?)");
 
-    $stmt->bind_param("ssssss", $firstname, $lastname, $email, $username, $hash, $hash);
+    $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hash);
 
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
         echo "<p>New record has been created. Your user ID is: $lastId </p>";
+        echo "<p><a href='../user/indexUser.php'>Click here to go to the homepage!</a></p>";
     } else {
         echo "Something went wrong";
     }

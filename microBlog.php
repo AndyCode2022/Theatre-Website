@@ -19,8 +19,9 @@
 
 <?php
 // Display the comments on the page
-require './serverFiles/displayBlogs.php';
-require './serverFiles/processNewComment.php'
+// require_once('serverFiles/dbconnect.php');
+require_once('serverFiles/displayBlogs.php');
+require_once('serverFiles/processDisplayComment.php');
 ?>
 
 

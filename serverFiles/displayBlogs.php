@@ -1,6 +1,7 @@
 <?php
 // Finds the comments in the MySQL database
 include 'serverFiles/dbconnect.php';
+$userno = $_SESSION['userno'];
 $sql = "SELECT * FROM posts";
 $result = mysqli_query($conn, $sql);
 

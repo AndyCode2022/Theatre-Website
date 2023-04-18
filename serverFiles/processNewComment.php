@@ -19,5 +19,5 @@ if (isset($stmt)) {
 
 // Close the database connection
 mysqli_close($conn);
-header('Location: ../microblog.php');
+header('Location: microBlog.php');
 ?>

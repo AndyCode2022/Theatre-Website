@@ -19,7 +19,6 @@
 <?php
 // Display the comments on the page
 require 'displayBlogsAdmin.php';
-require '../serverFiles/processNewComment.php'
 ?>
 
 
