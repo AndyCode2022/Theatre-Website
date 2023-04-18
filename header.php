@@ -75,9 +75,6 @@ if (count($_COOKIE) > 0) {
                     </li>
                 </ul>
             </div>
-            <div class="button1">
-                <button onclick="functionDark()">Dark Mode</button>
-            </div>
         </div>
     </nav>
 

@@ -6,7 +6,7 @@
 
         $sql = "DELETE FROM comments WHERE postID = '$postID'";
         if ($conn->query($sql) === TRUE) {
-            header("Location: ../microBlog.php");
+            header("Location: ../microBlogUser.php");
             exit();
         } else {
             echo "Error deleting comment: " . $conn->error;

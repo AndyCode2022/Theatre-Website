@@ -8,6 +8,6 @@ mysqli_query($conn, $sql);
 
 // Redirect the user back to the comments page
 echo "Redirecting...";
-header('Location: ../microBlog.php');
+header('Location: ../microBlogUser.php');
 exit();
 ?>

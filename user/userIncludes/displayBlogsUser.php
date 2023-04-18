@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '</div>';
         // Edit functionality
         echo '<div class="container">';
-        echo '<form method="post" action="serverFiles/editComment.php">';
+        echo '<form method="post" action="userIncludes/editCommentUser.php">';
         echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
         echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
         echo '<input type="submit" value="Edit">';
@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '</div>';
         // Delete functionality
         echo '<div class="container">';
-        echo '<form method="post" action="serverFiles/deleteComment.php">';
+        echo '<form method="post" action="userIncludes/deleteCommentUser.php">';
         echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
         echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
         echo '<input type="submit" value="delete">';
