@@ -69,6 +69,11 @@ if (count($_COOKIE) > 0) {
                     </li>
                 </ul>
             </div>
+            <div class="button1">
+                <form method="post" action="../serverFiles/logout.php">
+                    <button type="submit" name="logout">Logout</button>
+                </form>
+            </div>
         </div>
     </nav>
 

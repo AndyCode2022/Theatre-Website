@@ -19,7 +19,7 @@
 <?php
 // Display the comments on the page
 require 'userIncludes/displayBlogsUser.php';
-require 'userIncludes/processDisplayCommentUser.php';
+
 ?>
 
 <?php require 'footerUser.php' ?>

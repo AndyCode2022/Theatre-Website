@@ -15,15 +15,29 @@ if (!empty($username) && !empty($password)) {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
-
+$_SESSION_suspended['suspended'];
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
+        // Suspension control structure 
+        if (!$row['suspended'] && password_verify($password, $row['password'])) {
+            // User is not suspended and the password is correct
+            // Set session variables and redirect to appropriate page
+        } else {
+            // User is suspended or the password is incorrect
+            // Show error message and do not set session variables
+        }
+    }
         if (isset($_POST['userStatus']) && ($_POST['userStatus'] == 0 || $_POST['userStatus'] == 1)) {
             $userStatus = $_POST['userStatus'];
         }
         if (password_verify($password, $row['password'])) {
-            $message = "Hi " . $row['firstname'] . " " . $row['lastname'] . ". You have successfully logged in.";
-            echo 'Click here to go to the home screen' . " " . "<a href=../user/indexUser.php>Home</a>";
+            if ($userStatus == 1) {
+                $message = "Hi " . $row['firstname'] . " " . $row['lastname'] . ". You have successfully logged in as an admin.";
+                echo 'Click here to go to the admin screen' . " " . "<a href=../admin/indexAdmin.php>Admin</a>";
+            } else {
+                $message = "Hi " . $row['firstname'] . " " . $row['lastname'] . ". You have successfully logged in.";
+                echo 'Click here to go to the home screen' . " " . "<a href=../user/indexUser.php>Home</a>";
+            }
             $_SESSION['loggedin'] = true;
             $_SESSION['userno'] = $row['userno'];
             $_SESSION['userStatus'] = $userStatus;
@@ -31,10 +45,9 @@ if (!empty($username) && !empty($password)) {
         } else {
             $message = "Password not recognised";
         }
-    }
 
     $stmt->close();
-}
+  }
 $conn->close();
 ?>
 

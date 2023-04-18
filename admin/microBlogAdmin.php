@@ -2,7 +2,7 @@
 
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h2>Microblog</h2>
-<form class="Form" id="microblogForm" action="serverFiles/processNewBlog.php" method="post">
+<form class="Form" id="microblogForm" action="adminIncludes/processNewBlog.php" method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Announcement</label>
         <input type="text" class="form-control" id="title" name="title" required="yes"><br>
