@@ -6,6 +6,7 @@ require "dbconnect.php";
 $username = $_POST['username'];
 $password = $_POST['password'];
 $userStatus = isset($_POST['userStatus']) ? $_POST['userStatus'] : null;
+$suspended = $_SESSION['suspended'];
 
 $alertClass = "alert-danger";
 $message = "Your username or password is incorrect";
@@ -15,7 +16,6 @@ if (!empty($username) && !empty($password)) {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
-$_SESSION_suspended['suspended'];
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         // Suspension control structure 
@@ -26,6 +26,9 @@ $_SESSION_suspended['suspended'];
             // User is suspended or the password is incorrect
             // Show error message and do not set session variables
         }
+    } else {
+         // handle case where query returns 0 or multiple rows
+    // show error message and do not set session variables
     }
         if (isset($_POST['userStatus']) && ($_POST['userStatus'] == 0 || $_POST['userStatus'] == 1)) {
             $userStatus = $_POST['userStatus'];

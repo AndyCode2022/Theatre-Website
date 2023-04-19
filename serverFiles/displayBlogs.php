@@ -1,55 +1,96 @@
 <?php
 // Finds the comments in the MySQL database
 include 'serverFiles/dbconnect.php';
-$userno = $_SESSION['userno'];
-$sql = "SELECT * FROM posts";
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    while ($body = mysqli_fetch_assoc($result)) {
+$sql = "SELECT * FROM posts";
+$postResult = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($postResult) > 0) {
+    while ($postText = mysqli_fetch_assoc($postResult)) {
         // Displays the posts on the page
         echo '<div class="container">';
-        echo '<div class="post">';
-        echo '<p>' . isset($body['title']) . '</p>';
-        echo '<p>Posted by user ' . isset($body['body']) . ' on ' . isset($body['date_created']) . '</p>';
-        // Displayed comments
+        echo '<div class="card mb-3">';
         echo '<div class="card-body">';
-        echo '<p class="card-text"> ' . isset($row['comment']) . '</p>';
+        echo '<h5 class="card-title">' . ($postText['title']) . '</h5>';
+        echo '<div class="card mb-3">';
+        echo '<input name="post_text" value="' . $postText['postText'] . '">';
         echo '</div>';
-        echo '<div class="card-footer">';
-        echo '<small class="text-muted"> ' . isset($row['date_created']) . '</small>';
-        echo '</div>';
-        echo '</div>';
-        // Edit functionality
-        echo '<div class="container">';
-        echo '<form method="post" action="serverFiles/editComment.php">';
-        echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
-        echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
-        echo '<input type="submit" value="Edit">';
+        echo '<p class="card-text">Posted by user ' . ($postText['postText']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        // Comment input for user
+        echo '<form method="post" action="processNewComment.php>';
+        echo '<input type="text" name="comment_id" value="comment_id"';
+        echo '<textarea class="form-control" id="comment" name="comment" rows="10" required="yes">Add your comment to the post</textarea><br><br>';
+        echo '<input class="form-control" type="submit" value="Submit">';
         echo '</form>';
         echo '</div>';
-        // Delete functionality
-        echo '<div class="container">';
-        echo '<form method="post" action="serverFiles/deleteComment.php">';
-        echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
-        echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
-        echo '<input type="submit" value="delete">';
         echo '</div>';
-        echo '</div>';
+
     }
 } else {
-    echo 'No comments yet';
+    echo 'No posts yet';
 }
+
+        echo '<div class="card mb-3">';
+        echo '<form method="post" action="processNewComment.php">';
+        echo '<input type="hidden" name="comment_id" value="' . ($comment['userno']) . '">';
+        echo '<input class="form-control" type="text" name="comment_text" value="' . $comment['comment'] . '">';
+        echo '<input class="form-control" type="submit" value="Submit">';
+        echo '</form>';
+        echo '</div>';
+
+        // Displayed comments
+        $sql = "SELECT * FROM comments";
+        $commentResult = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($commentResult) > 0) {
+            while ($commentText = mysqli_fetch_assoc($result)) {
+
+                echo '<div class="card-body">';
+                echo '<p class="card-text"> ' . ($comment['comment']) . '</p>';
+                echo '</div>';
+                echo '<div class="card-footer">';
+                echo '<small class="text-muted"> ' . ($comment['date_created']) . '</small>';
+                echo '</div>';
+                echo '</div>';
+
+                // Edit functionality
+                echo '<div class="container">';
+                echo '<div class="card mb-3">';
+                echo '<form method="post" action="serverFiles/editComment.php">';
+                echo '<input type="hidden" name="comment_id" value="' . isset($comment['userno']) . '">';
+                echo '<input class="form-control" type="text" name="comment_text" value="' . $comment['comment'] . '">';
+                echo '<input class="form-control" type="submit" value="Edit">';
+                echo '</form>';
+            }
+        } else {
+            echo 'No comments yet';
+        }
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';  
+
+
+// // Delete functionality
+// echo '<div class="container">';
+// echo '<form method="post" action="serverFiles/deleteComment.php">';
+// echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
+// echo '<h4>Comments</h4>';
+// echo '<input class="form-control" type="text" name="comment_text" value="' . $body['body'] . '">';
+// echo '<input class="form-control" type="submit" value="delete">';
+      
+
+
 ?>
 
 <!-- Checks for comment & date and posts it on the microblog page -->
 <?php
-if (isset($post['post']) && isset($date_created['date_created'])) {
-    echo '<p>' . $post['post'] . '</p>';
-    echo '<p>Posted on ' . $date_created['date_created'] . '</p>';
-} else {
-    echo '<div class="container">';
-    echo 'Error: post or date not found.';
-    echo '</div>';
-}
+// if (isset($post['post']) && isset($date_created['date_created'])) {
+//     echo '<p>' . $post['post'] . '</p>';
+//     echo '<p>Posted on ' . $date_created['date_created'] . '</p>';
+// } else {
+//     echo '<div class="container">';
+//     echo 'Error: post or date not found.';
+//     echo '</div>';
+// }
 ?>

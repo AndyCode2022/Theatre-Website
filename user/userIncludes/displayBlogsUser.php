@@ -9,20 +9,20 @@ if (mysqli_num_rows($result) > 0) {
         // Displays the posts on the page
         echo '<div class="container">';
         echo '<div class="post">';
-        echo '<p>' . isset($body['title']) . '</p>';
-        echo '<p>Posted by user ' . isset($body['body']) . ' on ' . isset($body['date_created']) . '</p>';
+        echo '<p>' . ($body['title']) . '</p>';
+        echo '<p>Posted by user ' . ($body['body']) . ' on ' . ($body['date_created']) . '</p>';
         // Displayed comments
         echo '<div class="card-body">';
-        echo '<p class="card-text"> ' . isset($row['comment']) . '</p>';
+        echo '<p class="card-text"> ' . ($row['comment']) . '</p>';
         echo '</div>';
         echo '<div class="card-footer">';
-        echo '<small class="text-muted"> ' . isset($row['date_created']) . '</small>';
+        echo '<small class="text-muted"> ' . ($row['date_created']) . '</small>';
         echo '</div>';
         echo '</div>';
         // Edit functionality
         echo '<div class="container">';
         echo '<form method="post" action="userIncludes/editCommentUser.php">';
-        echo '<input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
+        echo '<input type="hidden" name="comment_id" value="' . ($userno['userno']) . '">';
         echo '<input type="text" name="comment_text" value="' . $body['body'] . '">';
         echo '<input type="submit" value="Edit">';
         echo '</form>';

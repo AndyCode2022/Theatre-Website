@@ -9,14 +9,14 @@ if (mysqli_num_rows($result) > 0) {
         // Displays the posts on the page
         echo '<div class="container">';
         echo '<div class="post">';
-        echo '<p>' . isset($body['title']) . '</p>';
-        echo '<p>Posted by user ' . isset($body['body']) . ' on ' . isset($body['date_created']) . '</p>';
+        echo '<p>' . ($body['title']) . '</p>';
+        echo '<p>Posted by user ' . ($body['body']) . ' on ' . ($body['date_created']) . '</p>';
         // Displayed comments
         echo '<div class="card-body">';
-        echo '<p class="card-text"> ' . isset($row['comment']) . '</p>';
+        echo '<p class="card-text"> ' . ($row['comment']) . '</p>';
         echo '</div>';
         echo '<div class="card-footer">';
-        echo '<small class="text-muted"> ' . isset($row['date_created']) . '</small>';
+        echo '<small class="text-muted"> ' . ($row['date_created']) . '</small>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
