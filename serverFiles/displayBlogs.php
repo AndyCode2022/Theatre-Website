@@ -17,7 +17,9 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '</div>';
         echo '<p class="card-text">Posted by user ' . ($postText['postText']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
 
-        print_r($postText);
+        // print_r($postText);
+
+    $post_ID = $_POST['post_ID'];
 
     $sql = "SELECT * FROM comments WHERE post_ID = " . $post_ID['post_ID'];
     $commentResult = mysqli_query($conn, $sql);
