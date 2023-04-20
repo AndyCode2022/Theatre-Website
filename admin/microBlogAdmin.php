@@ -1,7 +1,7 @@
 <?php require 'headerAdmin.php' ?>
 
 <!-- Input form for admins to put announcements onto the microblog page -->
-<h2>Microblog</h2>
+<h1>Microblog</h1>
 <form class="Form" id="microblogForm" action="adminIncludes/processNewBlog.php" method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Announcement</label>
@@ -17,10 +17,15 @@
 </form>
 
 <?php
-// Display the comments on the page
+// Display the posts & comments on the page
 require 'displayBlogsAdmin.php';
 ?>
 
+<div class="container">
+    <h1>Admin Panel</h1>
+    <!-- Suspension & Promotion of a user form -->
+    <h2>Suspend & Promotion</h2>
+        <?php require 'adminIncludes/userList.php'; ?>
+</div>
 
-
-<?php require 'footerAdmin.php' ?>
+    <?php require 'footerAdmin.php' ?>

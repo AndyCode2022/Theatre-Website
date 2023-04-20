@@ -20,10 +20,11 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
     echo '<tbody>';
     echo '<tr>
-        <th scope="row">' . $row['userno'] . "</th>
-        <td>" . $row['firstname'] . "</td>
-        <td>" . $row['email'] . "</td>
-    </tr>";
+        <th scope="row">' . $row['userno'] . '</th>
+        <td>' . $row['firstname'] . '</td>
+        <td>' . $row['email'] . '</td>
+        <td scope="row"><button><a href="processPromoteUser.php"></a></button></td>
+    </tr>';
     }
     echo '<tbody>';
     echo '</table>';
@@ -33,3 +34,5 @@ echo "No users found.";
 
 // Close the database connection
 mysqli_close($conn);
+
+?>
