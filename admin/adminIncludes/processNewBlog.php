@@ -2,16 +2,17 @@
 require '../../serverFiles/dbconnect.php';
 // handle posting messages
 
-$_SESSION['userno'] = $userno;
-$_SESSION['postId'] = $postId;
-$_SESSION['date_created'] = $date_created;
+
+$userno = $_POST['userno'];
+$postId = $_POST['postId'];
+$post_created = $_POST['date_created'];
 
 if (isset($_POST['submit'])) {
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $body = mysqli_real_escape_string($conn, $_POST['body']);
-    $userno = mysqli_real_escape_string($conn, $_POST['userno']);
-    $postId = mysqli_real_escape_string($conn, $_POST['postId']);
-    $date_created = mysqli_real_escape_string($conn, $_POST['date_created']);
+    $title = $_POST['title'];
+    $body = $_POST['body'];
+    $userno = $_POST['userno'];
+    $postId = $_POST['postId'];
+    $date_created = $_POST['date_created'];
 
     // insert message data into the database
     $query = "INSERT INTO posts (title, body, userno, postId, date_created) 

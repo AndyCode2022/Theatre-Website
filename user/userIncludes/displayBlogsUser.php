@@ -12,6 +12,7 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '<div class="card mb-3">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . htmlspecialchars($postText['title']) . '</h5>';
+        echo '<a class="" href="">' . $row['date_created'] . "</a>";
         echo '<div class="card mb-3">';
         echo '<input name="post_text" value="' . $postText['postText'] . '">';
         echo '</div>';
