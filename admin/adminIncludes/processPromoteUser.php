@@ -1,35 +1,19 @@
 <?php
 
-// require_once '../serverFiles/dbconnect.php';
+// Connect to the database
+$conn = mysqli_connect("localhost", "username", "password", "database");
 
-// Retrieve user data
-$sql = "SELECT * FROM users";
-$result = mysqli_query($conn, $sql);
+// Get the user ID you want to promote
+$userno = $_POST['userno'];
 
-// Check if there are any users
-if (mysqli_num_rows($result) > 0) {
-    // Output user data as a table
-    echo '<table class="table">';
-    echo '<thead>';
-    echo '<tr>
-        <th scope="col">userno</th>
-        <th scope="col">firstname</th>
-        <th scope="col">email</th>
-         </tr>
-    </thead>';
-    while ($row = mysqli_fetch_assoc($result)) {
-    echo '<tbody>';
-    echo '<tr>
-        <th scope="row">' . $row['userno'] . "</th>
-        <td>" . $row['firstname'] . "</td>
-        <td>" . $row['email'] . "</td>
-    </tr>";
-    }
-    echo '<tbody>';
-    echo '</table>';
-} else {
-echo "No users found.";
-}
+// Set the new role you want to give the user
+$new_role = "admin";
+
+// Update the user's role in the database
+$sql = "UPDATE users SET role = '$new_role' WHERE id = $user_id";
+mysqli_query($conn, $sql);
 
 // Close the database connection
 mysqli_close($conn);
+
+?>

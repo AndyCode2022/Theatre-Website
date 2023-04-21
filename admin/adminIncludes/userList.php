@@ -23,7 +23,8 @@ if (mysqli_num_rows($result) > 0) {
         <th scope="row">' . $row['userno'] . '</th>
         <td>' . $row['firstname'] . '</td>
         <td>' . $row['email'] . '</td>
-        <td scope="row"><button><a href="processPromoteUser.php"></a></button></td>
+        <td scope="row"><a href="adminIncludes/processPromoteUser.php" class="button">Promote User</a></td>
+        <td scope="row"><a href="adminIncludes/processSuspensionUser.php" class="button">Suspend User</a></td>
     </tr>';
     }
     echo '<tbody>';

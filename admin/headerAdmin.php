@@ -65,7 +65,7 @@ if (count($_COOKIE) > 0) {
                         <a class="nav-link" href="microBlogAdmin.php">MicroBlog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adminChangeDetails.php">Change Your Details</a>
+                        <a class="nav-link" href="changeAdminDetails.php">Change Your Details</a>
                     </li>
                 </ul>
             </div>
