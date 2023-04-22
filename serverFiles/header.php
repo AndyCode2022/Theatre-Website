@@ -1,4 +1,4 @@
-<!--Checks if user is logged in or out for nav elements-->
+<!--Checks if user is logged in or out -->
 <?php 
 session_start(); 
 
