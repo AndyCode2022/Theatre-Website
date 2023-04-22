@@ -1,4 +1,4 @@
-<?php require 'header.php' ?>
+<?php require 'serverFiles/header.php' ?>
 
 <h1>Welcome To The Theatre Website</h1>
 

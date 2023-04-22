@@ -1,22 +1,22 @@
 <?php
 
 session_start();
-$user_id = $_SESSION['user_id'];
+ $userno = $_SESSION['userno'];
 
 // Get the ID of the post to be deleted
-$post_id = $_GET['post_id'];
+$postID = $_POST['postID'];
 
 // Query the database to get the user ID of the post owner
-$query = "SELECT user_id FROM posts WHERE post_id = $post_id";
-$result = mysqli_query($connection, $query);
+$query = "SELECT postID FROM posts WHERE postID = $postID";
+$result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
-$post_owner = $row['user_id'];
+$post_owner = $row['postID'];
 
 // Check if the logged in user matches the post owner
-if ($user_id == $post_owner) {
+if ( $userno == $postID) {
 // Delete the post from the database
-$query = "DELETE FROM posts WHERE post_id = $post_id";
-mysqli_query($connection, $query);
+$query = "DELETE FROM posts WHERE postID = $postID";
+mysqli_query($conn, $query);
 // Redirect the user to the posts page
 header("Location: ../microBlog.php");
 } else {

@@ -1,4 +1,4 @@
-<?php require 'header.php' ?>
+<?php require 'serverFiles/header.php' ?>
 
 <div class=".bodyRegisterPage">
 

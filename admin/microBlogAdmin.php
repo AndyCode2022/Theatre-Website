@@ -18,14 +18,14 @@
 
 <?php
 // Display the posts & comments on the page
-require 'displayBlogsAdmin.php';
+require '../displayBlogs.php';
 ?>
 
 <div class="container">
     <h1>Admin Panel</h1>
     <!-- Suspension & Promotion of a user form -->
     <h2>Suspend & Promotion</h2>
-        <?php require 'adminIncludes/userList.php'; ?>
+    <?php require 'adminIncludes/userList.php'; ?>
 </div>
 
     <?php require 'footerAdmin.php' ?>

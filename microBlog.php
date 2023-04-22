@@ -1,4 +1,4 @@
-<?php require 'header.php' ?>
+<?php require 'serverFiles/header.php' ?>
 
 <!-- FOR ADMINS ONLY -->
 <!-- Input form for admins to put announcements onto the microblog page -->

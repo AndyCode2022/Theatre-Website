@@ -58,6 +58,7 @@ if (mysqli_num_rows($postResult) > 0) {
 
     if (mysqli_num_rows($commentResult) > 0) {
         while ($comment = mysqli_fetch_assoc($commentResult)) {
+            // Edit functionality
             echo '<div class="container">';
             echo '<div class="card-body">';
             echo '<form method="post" action="serverFiles/editComment.php">';

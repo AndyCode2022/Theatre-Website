@@ -1,22 +1,22 @@
 <?php
 
 session_start();
-$user_id = $_SESSION['user_id'];
+$userno = $_SESSION['userno'];
 
-// Get the ID of the comment to be deleted
-$comment_id = $_GET['comment_id'];
+// Gets the ID of the comment to be deleted
+$commentno = $_POST['commentno'];
 
-// Query the database to get the user ID of the comment owner
-$query = "SELECT user_id FROM comments WHERE comment_id = $comment_id";
+// Query the database to get the userno of the comment owner
+$query = "SELECT userno FROM comments WHERE commentno = $commentno";
 $result = mysqli_query($connection, $query);
 $row = mysqli_fetch_assoc($result);
-$comment_owner = $row['user_id'];
+$comment_owner = $row['userno'];
 
 // Check if the logged in user matches the comment owner
-if ($user_id == $comment_owner) {
+if ($userno == $comment_owner) {
 // Delete the comment from the database
-$query = "DELETE FROM comments WHERE comment_id = $comment_id";
-mysqli_query($connection, $query);
+$query = "DELETE FROM comments WHERE commentno = $commentno";
+mysqli_query($conn, $query);
 // Redirect the user to the posts page
 header("Location: ../microBlog.php");
 } else {

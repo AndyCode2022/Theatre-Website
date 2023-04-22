@@ -1,4 +1,5 @@
-<?php require 'header.php'; ?>
+<?php require 'serverFiles/header.php'; ?>
+<?php require('serverFiles/dbconnect.php'); ?>
 
 <form id="registerForm" action="serverFiles/processUpdateUser.php" method="post">
 
