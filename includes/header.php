@@ -10,5 +10,14 @@ else
 {
     include './headerLoggedOut.php';
 }
+
+if(isset($_SESSION['adminlogged_in']))
+{
+    include './admin/adminIncludes/adminHeaderLoggedIn.php';
+} 
+else 
+{
+    include './admin/adminIncludes/adminHeaderLoggedOut.php';
+}
 ?>
 

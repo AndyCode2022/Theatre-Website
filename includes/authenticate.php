@@ -28,6 +28,10 @@ if ($result->num_rows == 1) {
 
             exit();
         }
+    } elseif
+    ($_SESSION['logged_in'] = true) {
+        header("Location: ../index.php");
+        exit();
     }
     //error handling for when password is incorrect
     else {

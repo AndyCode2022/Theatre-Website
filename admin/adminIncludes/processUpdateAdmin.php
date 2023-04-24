@@ -2,7 +2,7 @@
 // session_start();
 
 // include_once('dbconnect.php');
-include_once("../serverFiles/authenticate.php");
+include_once("../includes/authenticate.php");
 
 $userno = $_SESSION['userno'];
 

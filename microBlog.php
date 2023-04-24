@@ -1,8 +1,10 @@
 <?php require 'includes/header.php' ?>
 
+
+<?php require 'checklogin.php' ?> 
 <!-- FOR ADMINS ONLY -->
 <!-- Input form for admins to put announcements onto the microblog page -->
-<!-- <h2>Microblog</h2>
+ <h2>Microblog</h2>
 <form class="Form" id="microblogForm" action="serverFiles/processNewBlog.php" method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Announcement</label>
@@ -15,7 +17,7 @@
     <div class="mb-3">
         <input class="form-control" type="submit" name="submit" value="Submit">
     </div>
-</form> -->
+</form> 
 
 <?php
 // Display the comments on the page
