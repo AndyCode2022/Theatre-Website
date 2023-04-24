@@ -26,6 +26,7 @@ $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 
+// Check if username is already taken
 if ($result->num_rows > 0) {
     echo "<p>Sorry that username is taken. Please try a different username.</p>";
     $isValid = false;

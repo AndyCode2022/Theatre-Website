@@ -1,4 +1,4 @@
-<?php require 'serverFiles/header.php' ?>
+<?php require 'includes/header.php' ?>
 
 <div class=".bodyRegisterPage">
 
@@ -44,4 +44,4 @@
   </div>
 </div>
 
-<?php require 'footer.php' ?>
+<?php require 'includes/footer.php' ?>

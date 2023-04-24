@@ -82,16 +82,26 @@ select.addEventListener('change', function(event) {
 
 <!-- Responsiveness - achieveable with bootstrap 5 and certain media queries -->
 
+
+
 <!-- delete cascading -->
+
+
 
 <!-- modularity - trying to achieve this with PDOs.. still learning. -->
 
 
 <!-- client side  -->
 
+
+
 <!-- suspend users from posting -->
 
+
+
 <!-- administrator promotion -->
+
+
 
 <!-- admin post deletion and editing -->
 
@@ -104,4 +114,7 @@ https://speedysense.com/create-registration-login-system-php-mysql/
 
 admin
 https://www.youtube.com/watch?v=wODW8RLBPt0&ab_channel=WebTechKnowledge
+
+cookies
+https://brightspace.uhi.ac.uk/d2l/le/content/310944/viewContent/2360097/View
 

@@ -1,10 +1,30 @@
-<?php require 'serverFiles/header.php'; ?>
-<?php require 'serverFiles/dbconnect.php'; ?>
+<?php require 'includes/header.php'; ?>
+<?php require 'includes/dbconnect.php'; ?>
 
 <form id="registerForm" action="serverFiles/processUpdateUser.php" method="post">
 
     <h2>Update User</h2>
 
+    <?php
+    $username = $_SESSION['username'];
+    $sql = "SELECT * FROM users WHERE username = $username";
+
+    $gotResults = mysqli_query($conn, $sql);
+
+    if ($gotResults) {
+        if(mysqli_num_rows($gotResults)>0){
+            while($row = mysqli_fetch_assoc($gotResults)){
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+  }
+}
+
+    ?>
+
+    <!-- Input fields for user to update their details.
+    When you user has entered their information then the new details
+    will be updated in the MySQL database -->
+<form method="post" action="includes/processUpdateUser.php">
     <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" name="firstname" value="<?php echo isset($row['firstname']) ?>">
@@ -38,4 +58,4 @@
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
-<?php require 'footer.php'; ?>
+<?php require 'includes/.php'; ?>

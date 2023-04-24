@@ -11,15 +11,15 @@ if (isset($_POST['submit'])) {
     $postID = $_SESSION['postID']; 
     $userno = $_SESSION['userno'];
     $title = $_POST['title'];
-    $body = $_POST['body'];
+    $postText = $_POST['postText'];
     $date_created = date('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO posts (title, body, date_created)
-    VALUES ('$title', '$body', '$date_created')";
+    $sql = "INSERT INTO posts (title, postText, date_created)
+    VALUES ('$title', '$postText', '$date_created')";
 
     if ($stmt->execute()) {
-        $postId = $stmt->insert_id;
-        echo "New post created successfully. Post ID: $postId";
+        $postID = $stmt->postID;
+        echo "New post created successfully. Post ID: $postID";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

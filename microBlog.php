@@ -1,4 +1,4 @@
-<?php require 'serverFiles/header.php' ?>
+<?php require 'includes/header.php' ?>
 
 <!-- FOR ADMINS ONLY -->
 <!-- Input form for admins to put announcements onto the microblog page -->
@@ -20,8 +20,8 @@
 <?php
 // Display the comments on the page
 // require_once('serverFiles/dbconnect.php');
-require_once('serverFiles/displayBlogs.php');
+require_once('includes/displayBlogs.php');
 // require_once('serverFiles/processDisplayComment.php');
 ?>
 
-<?php require 'footer.php' ?>
+<?php require 'includes/footer.php' ?>

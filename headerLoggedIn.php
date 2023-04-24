@@ -36,7 +36,7 @@
                 </ul>
             </div>
             <div class="button1">
-                <form method="post" action="serverFiles/logout.php">
+                <form method="post" action="includes/logout.php">
                     <button type="submit" name="logout">Logout</button>
                 </form>
             </div>
