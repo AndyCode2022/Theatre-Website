@@ -97,4 +97,11 @@ select.addEventListener('change', function(event) {
 
 
 
+<!-- references -->
+
+registration and login
+https://speedysense.com/create-registration-login-system-php-mysql/
+
+admin
+https://www.youtube.com/watch?v=wODW8RLBPt0&ab_channel=WebTechKnowledge
 

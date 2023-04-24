@@ -23,3 +23,7 @@ navbarToggler.addEventListener('click', function () {
     toggleIcon();
     navbarCollapse.classList.toggle('show');
     });
+
+// https://brightspace.uhi.ac.uk/d2l/le/content/310944/viewContent/2360097/View
+// cookies
+

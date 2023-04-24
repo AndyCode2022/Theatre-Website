@@ -6,9 +6,11 @@ include_once("authenticate.php");
 
 $userno = $_SESSION['userno'];
 
+// grabs data from theatre for logged in user
 $sql = "SELECT * FROM theatre WHERE userno = $userno";
 $result = $conn->query($sql);
 
+// if the user is found then updates user information
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
 } else {
