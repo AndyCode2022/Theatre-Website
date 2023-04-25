@@ -28,7 +28,7 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="includes/adminAuthenticate.php">MicroBlog</a>
+                        <a class="nav-link" href="microBlog.php">MicroBlog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="updateUser.php">Change Your Details</a>

@@ -4,11 +4,11 @@ session_start();
 
 if(isset($_SESSION['logged_in']))
 {
-    include '../headerLoggedIn.php';
+    include './headerLoggedIn.php';
 } 
 else 
 {
-    include '../headerLoggedOut.php';
+    include './headerLoggedOut.php';
 }
 
 

@@ -14,14 +14,15 @@ if (mysqli_num_rows($postResult) > 0) {
               <h5 class="card-title">' . htmlspecialchars($postText["title"]) . '</h5>
               <div class="card mb-3">
               <input name="post_text" value="' . $postText['postText'] . '">
+              </div>
               </div>';
         echo '<p class="card-text">Posted by user ' . ($postText['userno']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
 
         // print_r($postText);
-        if (!empty($row) && isset($row['post_ID']))
-            $post_ID = $_POST['post_ID'];
-        if (!empty($row) && isset($row['post_ID']))
-            $sql = "SELECT * FROM comments WHERE post_ID = " . $post_ID['post_ID'];
+        if (!empty($row) && isset($row['postID']))
+            $postID = $_POST['postID'];
+        if (!empty($row) && isset($row['postID']))
+            $sql = "SELECT * FROM comments WHERE postID = " . $postID['postID'];
         $commentResult = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($commentResult) > 0) {
@@ -33,7 +34,6 @@ if (mysqli_num_rows($postResult) > 0) {
                       </div>
                       <div class="card-footer">
                       <small class="text-muted"> ' . ($comment["date_created"]) . '</small>
-                      </div>
                       </div>';
             }
         } else {
@@ -44,16 +44,17 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '<div class="container">
               <div class="card-body">
               <form method="post" action="processNewComment.php>
-              <input type="hidden" name="post_id" value="' . isset($postText['post_ID']) . '">
+              <input type="hidden" name="post_id" value="' . isset($postText['postID']) . '">
               <textarea class="form-control" id="comment" name="comment" rows="10" required="yes">Add your comment to the post</textarea><br><br>
               <input class="form-control" type="submit" value="Submit">
             </form>
           </div>
         </div>';
     }
+    
     // Displayed comments with edit functionality
-    if (!empty($row) && isset($row['post_ID']))
-    $sql = "SELECT * FROM comments WHERE post_ID = " . $postText['post_ID'];
+    if (!empty($row) && isset($row['postID']))
+    $sql = "SELECT * FROM comments WHERE postID = " . $postText['postID'];
     $commentResult = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($commentResult) > 0) {
@@ -61,8 +62,8 @@ if (mysqli_num_rows($postResult) > 0) {
             // Edit functionality
             echo '<div class="container">
                   <div class="card-body">
-                  <form method="post" action="serverFiles/editComment.php">
-                  <input type="hidden" name="comment_id" value="' . ($comment['userno']) . '">';
+                  <form method="post" action="includes/editComment.php">
+                  <input type="hidden" name="commentno" value="' . ($comment['userno']) . '">';
             if (!empty($row) && isset($row['comment']))
             echo '<input class="form-control" type="text" name="comment_text" value="' . htmlspecialchars($comment['comment']) . '">
                   <input class="form-control" type="submit" value="Edit">
@@ -71,7 +72,7 @@ if (mysqli_num_rows($postResult) > 0) {
             // Delete functionality
             echo '<div class="container">
             <form method="post" action="includes/deleteComment.php">
-            <input type="hidden" name="comment_id" value="' . isset($userno['userno']) . '">';
+            <input type="hidden" name="commentno" value="' . isset($userno['userno']) . '">';
             if (!empty($row) && isset($row['body']))
             echo '<input class="form-control" type="text" name="comment_text" value="' . $body['body'] . '">
                   <input class="form-control" type="submit" value="delete">
@@ -79,7 +80,6 @@ if (mysqli_num_rows($postResult) > 0) {
         }
     }
     echo '</div>
-          </div>
           </div>';
 } else {
     echo 'No posts yet';

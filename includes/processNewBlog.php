@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
  }
 }
 
-header('Location: microBlog.php');
+header('Location: ../microBlog.php');
 mysqli_close($conn);
 
 ?>
