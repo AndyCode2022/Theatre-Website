@@ -44,12 +44,12 @@ VALUES (?,?,?,?,?)");
     if ($stmt->execute() == true) {
         $lastId = $stmt->insert_id;
         echo "<p>New record has been created. Your user ID is: $lastId </p>";
-        echo "<p><a href='../user/indexUser.php'>Click here to go to the homepage!</a></p>";
+        echo "<p><a href='../index.php'>Click here to go to the homepage!</a></p>";
     } else {
         echo "Something went wrong";
     }
 } else {
-    echo "<p>Problem validating the form. Please try again <a href='../user/registerUser.php'>click here</a></p>";
+    echo "<p>Problem validating the form. Please try again <a href='../registerUser.php'>click here</a></p>";
 }
 
 $conn->close();

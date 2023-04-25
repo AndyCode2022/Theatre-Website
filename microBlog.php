@@ -1,7 +1,6 @@
 <?php require 'includes/header.php' ?>
 
-
-<?php require 'checklogin.php' ?> 
+<?php require 'includes/checklogin.php' ?> 
 <!-- FOR ADMINS ONLY -->
 <!-- Input form for admins to put announcements onto the microblog page -->
  <h2>Microblog</h2>
@@ -19,6 +18,6 @@
     </div>
 </form> 
 
-<?php require_once 'includes/displayBlogs.php'; ?>
+<?php require 'includes/displayBlogs.php'; ?>
 
 <?php require 'includes/footer.php'; ?>

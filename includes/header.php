@@ -4,20 +4,13 @@ session_start();
 
 if(isset($_SESSION['logged_in']))
 {
-    include './headerLoggedIn.php';
+    include '../headerLoggedIn.php';
 } 
 else 
 {
-    include './headerLoggedOut.php';
+    include '../headerLoggedOut.php';
 }
 
-// if(isset($_SESSION['adminlogged_in']))
-// {
-//     include './admin/adminIncludes/adminHeaderLoggedIn.php';
-// } 
-// else 
-// {
-//     include './admin/adminIncludes/adminHeaderLoggedOut.php';
-// }
+
 ?>
 

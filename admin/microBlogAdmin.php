@@ -1,8 +1,8 @@
-<?php require 'headerAdmin.php' ?>
+<?php require ('../includes/header.php') ?>
 
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h1>Microblog</h1>
-<form class="Form" id="microblogForm" action="adminIncludes/processNewBlog.php" method="post">
+<form class="Form" id="microblogForm" action="../adminIncludes/processNewBlog.php" method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Announcement</label>
         <input type="text" class="form-control" id="title" name="title" required="yes"><br>
@@ -18,14 +18,14 @@
 
 <?php
 // Display the posts & comments on the page
-require '../displayBlogs.php';
+require '../includes/displayBlogs.php';
 ?>
 
 <div class="container">
     <h1>Admin Panel</h1>
     <!-- Suspension & Promotion of a user form -->
     <h2>Suspend & Promotion</h2>
-    <?php require 'adminIncludes/userList.php'; ?>
+    <?php require '../adminIncludes/userList.php'; ?>
 </div>
 
-    <?php require 'footerAdmin.php' ?>
+    <?php require '../includes/footer.php' ?>
