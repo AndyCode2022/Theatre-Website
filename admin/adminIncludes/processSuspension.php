@@ -7,7 +7,7 @@ $userno = $_POST['userno'];
 $suspended = true;
 
 // Update the user's record with the new suspended status
-$sql = "UPDATE users SET suspended = '$suspended' WHERE id = '$userno'";
+$sql = "UPDATE users SET suspended = '$suspended' WHERE userno = '$userno'";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {

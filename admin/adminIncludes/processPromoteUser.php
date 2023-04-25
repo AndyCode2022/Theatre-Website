@@ -1,16 +1,17 @@
 <?php
 
+require 'dbconnect.php';
 // Connect to the database
 $conn = mysqli_connect("localhost", "username", "password", "database");
 
-// Get the user ID you want to promote
+// Retrieves userno for account promotion
 $userno = $_POST['userno'];
 
-// Set the new role you want to give the user
+// Updates user account to admin role
 $new_role = "admin";
 
 // Update the user's role in the database
-$sql = "UPDATE users SET role = '$new_role' WHERE id = $user_id";
+$sql = "UPDATE users SET role = '$new_role' WHERE userno = $userno";
 mysqli_query($conn, $sql);
 
 // Close the database connection

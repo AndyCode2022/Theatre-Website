@@ -19,11 +19,6 @@
     </div>
 </form> 
 
-<?php
-// Display the comments on the page
-// require_once('serverFiles/dbconnect.php');
-require_once('includes/displayBlogs.php');
-// require_once('serverFiles/processDisplayComment.php');
-?>
+<?php require_once 'includes/displayBlogs.php'; ?>
 
-<?php require 'includes/footer.php' ?>
+<?php require 'includes/footer.php'; ?>

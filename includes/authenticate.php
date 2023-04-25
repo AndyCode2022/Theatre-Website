@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -20,6 +20,7 @@ if ($result->num_rows == 1) {
     //verify password
     if (password_verify($password, $row['password'])) {
         $_SESSION['logged_in'] = true;
+        $_SESSION['adminLogged_In'] = $row['adminLogged_Out'];
         $_SESSION['userno'] = $row['userno'];
 
         if ($_SESSION['logged_in'] = true) {
@@ -28,8 +29,11 @@ if ($result->num_rows == 1) {
 
             exit();
         }
-    } elseif
-    ($_SESSION['logged_in'] = true) {
+        elseif ($_SESSION['adminLogged_In'] = true) {
+            header("Location: ../index.php");
+            exit();
+        }
+    } elseif ($_SESSION['logged_in'] = true) {
         header("Location: ../index.php");
         exit();
     }
@@ -42,6 +46,6 @@ if ($result->num_rows == 1) {
     echo "Your username or password is incorrect";
 }
 
-$conn->close(); 
+$conn->close();
 
 ?>
