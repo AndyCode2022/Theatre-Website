@@ -10,7 +10,7 @@ if (mysqli_num_rows($postResult) > 0) {
         // Displays the posts on the page
         echo '<div class="container">
               <div class="card mb-3">
-              <div class="card-body">
+              <div class="card-commentText">
               <h5 class="card-title">' . htmlspecialchars($postText["title"]) . '</h5>
               <div class="card mb-3">
               <input name="post_text" value="' . $postText['postText'] . '">
@@ -28,7 +28,7 @@ if (mysqli_num_rows($postResult) > 0) {
         if (mysqli_num_rows($commentResult) > 0) {
             while ($comment = mysqli_fetch_assoc($commentResult)) {
                 // Displayed comments
-                echo '<div class="card-body">';
+                echo '<div class="card-commentText">';
                 if (!empty($row) && isset($row['comment']))
                 echo '<p class="card-text"> ' . htmlspecialchars($comment['comment']) . '</p>
                       </div>
@@ -42,8 +42,8 @@ if (mysqli_num_rows($postResult) > 0) {
 
         // Comment input for user
         echo '<div class="container">
-              <div class="card-body">
-              <form method="post" action="processNewComment.php>
+              <div class="card-commentText">
+              <form method="post" action="includes/processNewComment.php">
               <input type="hidden" name="post_id" value="' . isset($postText['postID']) . '">
               <textarea class="form-control" id="comment" name="comment" rows="10" required="yes">Add your comment to the post</textarea><br><br>
               <input class="form-control" type="submit" value="Submit">
@@ -61,7 +61,7 @@ if (mysqli_num_rows($postResult) > 0) {
         while ($comment = mysqli_fetch_assoc($commentResult)) {
             // Edit functionality
             echo '<div class="container">
-                  <div class="card-body">
+                  <div class="card-commentText">
                   <form method="post" action="includes/editComment.php">
                   <input type="hidden" name="commentno" value="' . ($comment['userno']) . '">';
             if (!empty($row) && isset($row['comment']))
@@ -72,9 +72,9 @@ if (mysqli_num_rows($postResult) > 0) {
             // Delete functionality
             echo '<div class="container">
             <form method="post" action="includes/deleteComment.php">
-            <input type="hidden" name="commentno" value="' . isset($userno['userno']) . '">';
-            if (!empty($row) && isset($row['body']))
-            echo '<input class="form-control" type="text" name="comment_text" value="' . $body['body'] . '">
+            <input type="hidden" name="commentno" value="' . isset($comment['userno']) . '">';
+            if (!empty($row) && isset($row['commentText']))
+            echo '<input class="form-control" type="text" name="comment_text" value="' . $commentText['commentText'] . '">
                   <input class="form-control" type="submit" value="delete">
                   </div>';
         }
