@@ -16,9 +16,10 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO posts (title, postText, date_created)
     VALUES ('$title', '$postText', '$date_created')";
+    $stmt = $conn->prepare($sql);
 
     if ($stmt->execute()) {
-        $postID = $stmt->postID;
+        $postID = mysqli_insert_id($conn);
         echo "New post created successfully. Post ID: $postID";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
