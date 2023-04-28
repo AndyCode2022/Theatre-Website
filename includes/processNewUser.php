@@ -49,7 +49,7 @@ VALUES (?,?,?,?,?)");
         echo "Something went wrong";
     }
 } else {
-    echo "<p>Problem validating the form. Please try again <a href='../registerUser.php'>click here</a></p>";
+    echo "<p>Problem validating the form. Please try again <a href='../register.php'>click here</a></p>";
 }
 
 $conn->close();

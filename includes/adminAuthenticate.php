@@ -16,7 +16,7 @@ if ($result->num_rows == 1) {
     if ($row['isAdmin'] == 1) {
         header('location: ../admin/microBlogAdmin.php');
     } else {
-        header('location: microBlog.php');
+        header('location: ../microBlog.php');
     }
 }
 

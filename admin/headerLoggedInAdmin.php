@@ -56,7 +56,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
                     </ul>
                 </div>
                 <div class="button1">
-                    <form method="post" action="includes/logout.php">
+                    <form method="post" action="adminIncludes/logout.php">
                         <button type="submit" name="logout">Logout</button>
                     </form>
                 </div>

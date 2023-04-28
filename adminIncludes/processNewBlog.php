@@ -1,21 +1,15 @@
 <?php
-require '../../serverFiles/dbconnect.php';
+require '../includes/dbconnect.php';
 // handle posting messages
 
 if (isset($_POST['submit'])) {
-    var_dump($_POST); // add this line to check the contents of $_POST
     $title = $_POST['title'];
-    $body = $_POST['postText'];
-    // $userno = $_POST['userno'];
-    // $postID = $_POST['postID'];
-    // $date_created = $_POST['date_created'];
+    $postText = $_POST['postText'];
 
     // insert message data into the database
     $query = "INSERT INTO posts (title, postText) 
     VALUES ('$title', '$postText')";
     mysqli_query($conn, $query);
-
-    echo 'Message posted';
 }
 // display messages
 $query = "SELECT * FROM posts ORDER BY date_created DESC";
@@ -29,6 +23,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '</div>';
 }
 
-header('Location: ../microBlogAdmin.php');
+header('Location: ../admin/microBlogAdmin.php');
 mysqli_close($conn);
 ?>

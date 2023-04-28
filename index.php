@@ -1,10 +1,14 @@
 <?php require 'includes/header.php' ?>
 
-<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) : ?>
-    <script>
-        alert("<?php echo $_SESSION['message']; ?>");
-    </script>
-<?php endif; ?>
+<!-- Script to show the user has successfully logged in -->
+<?php
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION['messageShown'])) {
+    echo '<script>';
+    echo 'alert("' . $_SESSION['message'] . '");';
+    echo '</script>';
+    $_SESSION['messageShown'] = true;
+}
+?>
 
 <h1>Welcome To The Theatre Website</h1>
 
