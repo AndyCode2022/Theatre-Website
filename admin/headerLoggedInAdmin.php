@@ -13,8 +13,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
     if (!isset($_COOKIE[$cookie_name])) {
         echo "Cookie named '" . $cookie_name . "' is not set!";
     } else {
-        echo "Cookie '" . $cookie_name . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookie_name];
+        // echo "Cookie '" . $cookie_name . "' is set!<br>";
+        // echo "Value is: " . $_COOKIE[$cookie_name];
     }
     ?>
 
@@ -48,7 +48,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
                             <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="adminAuthenticate.php">MicroBlog</a>
+                            <a class="nav-link" href="microBlogAdmin.php">MicroBlog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="updateUser.php">Change Your Details</a>

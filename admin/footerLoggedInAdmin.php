@@ -17,7 +17,7 @@
                         <a href="index.php" class="text-dark">Homepage</a>
                     </li>
                     <li>
-                        <a href="microBlog.php" class="text-dark">Microblog</a>
+                        <a href="microBlogAdmin.php" class="text-dark">Microblog</a>
                     </li>
                 </ul>
             </div>

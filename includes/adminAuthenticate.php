@@ -4,7 +4,6 @@ session_start();
 // require ('checklogin.php');
 require ('dbconnect.php');
 
-
 // Checks if user is an admin and redirects to admin microblog page if true
 $isAdmin = (isset($_SESSION['isAdmin']));
 $stmt = $conn->prepare("SELECT * FROM users where userno = ?");

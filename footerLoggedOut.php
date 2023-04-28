@@ -22,9 +22,6 @@
                     <li>
                         <a href="register.php" class="text-dark">Register</a>
                     </li>
-                    <li>
-                        <a href="login.php" class="text-dark">Login</a>
-                    </li>
                 </ul>
             </div>
 
@@ -33,7 +30,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="updateUser.php" class="text-dark">Change Your Details</a>
+                        <a href="login.php" class="text-dark">Login</a>
                     </li>
                 </ul>
             </div>

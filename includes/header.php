@@ -2,12 +2,9 @@
 <?php 
 session_start(); 
 
-if(isset($_SESSION['logged_in']))
-{
+if(isset($_SESSION['logged_in'])) { 
     include './headerLoggedIn.php';
-} 
-else 
-{
+} else {
     include './headerLoggedOut.php';
 }
 
