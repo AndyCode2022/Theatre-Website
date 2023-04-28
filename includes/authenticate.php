@@ -24,6 +24,8 @@ if ($result->num_rows == 1) {
 
         if ($_SESSION['logged_in'] = true) {
 
+            $_SESSION['message'] = "You have successfully logged in, " . $username . "!";
+
             header("Location: ../index.php");
 
             exit();
