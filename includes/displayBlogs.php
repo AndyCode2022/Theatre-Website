@@ -8,16 +8,15 @@ $postResult = mysqli_query($conn, $sql);
 if (mysqli_num_rows($postResult) > 0) {
     while ($postText = mysqli_fetch_assoc($postResult)) {
         // Displays the posts on the page
-        echo '<h2>Posts</h2>';
-        echo '<div class="container">
+        echo '<h2>Posts</h2>
               <div class="card mb-3">
               <div class="card-commentText">
-              <h5 class="card-title">' . htmlspecialchars($postText["title"]) . '</h5>
+              <h5 class="card-title">' . ($postText["title"]) . '</h5>
               <div class="card mb-3">
               <input name="post_text" value="' . $postText['postText'] . '">
               </div>
               </div>';
-        echo '<p class="card-text">Posted by user ' . ($postText['userno']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        echo '<p class="card-text">Posted by user ' . $postText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
 
         // print_r($postText);
         // if (!empty($row) && isset($row['postID']))
@@ -43,6 +42,42 @@ if (mysqli_num_rows($postResult) > 0) {
 
         echo '<h2>Comments</h2>';
 
+        // Displayed comments with edit functionality
+        if (!empty($row) && isset($row['commentID']))
+            $sql = "SELECT * FROM comments WHERE commentID = userno";
+        $commentResult = mysqli_query($conn, $sql);
+
+        echo '<div class="container">
+              <div class="card mb-3">
+              <div class="card-commentText">
+              <input name="commentText" value="' . $commentText['commentText'] . '">
+              </div>
+              </div>';
+        echo '<p class="card-text">Posted by user ' . $commentText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+
+        if (mysqli_num_rows($commentResult) > 0) {
+            while ($comment = mysqli_fetch_assoc($commentResult)) {
+                // Edit functionality
+                echo '<div class="container">
+                  <div class="card-commentText">
+                  <form method="post" action="includes/editComment.php">
+                  <input type="hidden" name="comments" value="' . ($comment['userno']) . '">';
+                if (!empty($row) && isset($row['commentID']))
+                echo '<input class="form-control" type="text" name="comment_text" value="' . ($comment['comment']) . '">
+                  <input class="form-control" type="submit" value="Edit">
+                  </div>
+                  </div>';
+                // Delete functionality
+                echo '<div class="container">
+            <form method="post" action="includes/deleteComment.php">
+            <input type="hidden" name="commentno" value="' . isset($comment['userno']) . '">';
+                if (!empty($row) && isset($row['commentText']))
+                echo '<input class="form-control" type="text" name="comment_text" value="' . $commentText['commentText'] . '">
+                  <input class="form-control" type="submit" value="delete">
+                  </div>';
+            }
+        }
+
         // Comment input for user
         echo '<div class="container">
               <div class="card-commentText">
@@ -55,35 +90,9 @@ if (mysqli_num_rows($postResult) > 0) {
         </div>';
     }
     
-    // Displayed comments with edit functionality
-    if (!empty($row) && isset($row['commentID']))
-    $sql = "SELECT * FROM comments WHERE commentID = " . $commentText['commentID'];
-    $commentResult = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($commentResult) > 0) {
-        while ($comment = mysqli_fetch_assoc($commentResult)) {
-            // Edit functionality
-            echo '<div class="container">
-                  <div class="card-commentText">
-                  <form method="post" action="includes/editComment.php">
-                  <input type="hidden" name="comments" value="' . ($comment['userno']) . '">';
-            if (!empty($row) && isset($row['commentID']))
-            echo '<input class="form-control" type="text" name="comment_text" value="' . htmlspecialchars($comment['comment']) . '">
-                  <input class="form-control" type="submit" value="Edit">
-                  </div>
-                  </div>';
-            // Delete functionality
-            echo '<div class="container">
-            <form method="post" action="includes/deleteComment.php">
-            <input type="hidden" name="commentno" value="' . isset($comment['userno']) . '">';
-            if (!empty($row) && isset($row['commentText']))
-            echo '<input class="form-control" type="text" name="comment_text" value="' . $commentText['commentText'] . '">
-                  <input class="form-control" type="submit" value="delete">
-                  </div>';
-        }
-    }
-    echo '</div>
-          </div>';
+    
+    // echo '</div>
+    //       </div>';
 } else {
     echo 'No posts yet';
 }
