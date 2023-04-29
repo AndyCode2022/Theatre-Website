@@ -24,7 +24,7 @@ $conn->close();
 <!-- Input fields for user to update their details.
                 When you user has entered their information then the new details
                 will be updated in the MySQL database -->
-<form method="post" action="includes/processUpdateUser.php">
+<form id="registerForm" method="post" action="includes/processUpdateUser.php">
     <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" name="firstname" required="true" value="<?php echo $row['firstname'] ?>">

@@ -1,6 +1,11 @@
 <?php
+session_start();
 // Finds the comments in the MySQL database
 include 'dbconnect.php';
+
+$title = isset($_POST['title']);
+$postText = isset($_POST['postText']);
+$userno = isset($_SESSION['userno']);
 
 $sql = "SELECT * FROM posts";
 $postResult = mysqli_query($conn, $sql);
@@ -49,11 +54,11 @@ if (mysqli_num_rows($postResult) > 0) {
 
         echo '<div class="container">
               <div class="card mb-3">
-              <div class="card-commentText">
-              <input name="commentText" value="' . $commentText['commentText'] . '">
+              <div class="card">
+              <input name="comment" value="' . $comment['commentText'] . '">
               </div>
               </div>';
-        echo '<p class="card-text">Posted by user ' . $commentText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        echo '<p class="card-text">Posted by user ' . $comment['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
 
         if (mysqli_num_rows($commentResult) > 0) {
             while ($comment = mysqli_fetch_assoc($commentResult)) {
