@@ -3,9 +3,9 @@
 session_start(); 
 
 if(isset($_SESSION['logged_in'])) { 
-    include './headerLoggedInAdmin.php';
+    include 'headerLoggedInAdmin.php';
 } else {
-    include './headerLoggedOutAdmin.php';
+    include 'headerLoggedOutAdmin.php';
 }
 
 
