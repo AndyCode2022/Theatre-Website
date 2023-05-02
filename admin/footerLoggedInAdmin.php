@@ -14,7 +14,7 @@
 
                 <ul class="list-unstyled mb-0">
                     <li>
-                        <a href="index.php" class="text-dark">Homepage</a>
+                        <a href="indexAdmin.php" class="text-dark">Homepage</a>
                     </li>
                     <li>
                         <a href="microBlogAdmin.php" class="text-dark">Microblog</a>

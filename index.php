@@ -12,16 +12,18 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 
 <h1>Welcome To The Theatre Website</h1>
 
+<h2>Whats on!</h2>
+
 <div class="container text-center">
     <div class="row align-items-start">
         <div class="col">
-            What's on?!
+            <img src="images/jokerImage.jpg" class="rounded" alt="Joker" height="400px">
         </div>
         <div class="col">
-            One of three columns
+            <img src="images/theatre.jpg" class="rounded" alt="Joker" height="400px">
         </div>
         <div class="col">
-            One of three columns
+            <img src="images/jokerImage.jpg" class="rounded" alt="Joker" height="400px">
         </div>
     </div>
 </div>

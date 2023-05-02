@@ -1,10 +1,10 @@
 <?php
-// session_start();
+session_start();
 
-// include_once('dbconnect.php');
-include_once("../includes/authenticate.php");
+include_once('../includes/dbconnect.php');
+// include_once("../includes/authenticate.php");
 
-$userno = $_SESSION['userno'];
+$userno = $_POST['userno'];
 
 $sql = "SELECT * FROM theatre WHERE userno = $userno";
 $result = $conn->query($sql);
@@ -22,11 +22,10 @@ $lastname = $_POST['lastname'];
 $email = $_POST['email'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$confirmPassword = $_POST['confirmPassword'];
 
 $sql = "UPDATE users SET firstname = '$firstname' , lastname = '$lastname' ,
         email = '$email' , username = '$username' , 
-        password = '$password' , confirmPassword = '$confirmPassword'
+        password = '$password'
         WHERE userno = $userno ";
 
 if ($conn->query($sql) == true) {

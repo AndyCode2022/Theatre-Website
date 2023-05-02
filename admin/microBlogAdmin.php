@@ -1,6 +1,5 @@
-<?php require '../includes/header.php' ?>
+<?php require 'headerAdmin.php' ?>
 
-<?php require '../includes/checklogin.php' ?>
 <!-- FOR ADMINS ONLY -->
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h2>Microblog</h2>
@@ -29,4 +28,4 @@ require '../includes/displayBlogs.php';
     <?php require '../adminIncludes/userList.php'; ?>
 </div>
 
-<?php require '../includes/footer.php' ?>
+<?php require 'footerAdmin.php' ?>

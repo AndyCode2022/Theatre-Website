@@ -1,8 +1,8 @@
-<?php require 'includes/header.php'; ?>
+<?php require 'headerAdmin.php'; ?>
 
 <?php
-require 'includes/checkLogin.php';
-require 'includes/dbconnect.php';
+// require 'includes/checkLogin.php';
+require '../includes/dbconnect.php';
 
 $userno = $_SESSION['userno'];
 
@@ -24,7 +24,7 @@ $conn->close();
 <!-- Input fields for user to update their details.
                 When you user has entered their information then the new details
                 will be updated in the MySQL database -->
-<form method="post" action="includes/processUpdateUser.php">
+<form method="post" action="../adminIncludes/processUpdateUserAdmin.php">
     <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" name="firstname" required="true" value="<?php echo $row['firstname'] ?>">
@@ -53,4 +53,4 @@ $conn->close();
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
-<?php require 'includes/footer.php'; ?>
+<?php require 'footerAdmin.php'; ?>

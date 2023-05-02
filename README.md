@@ -118,3 +118,6 @@ https://www.youtube.com/watch?v=wODW8RLBPt0&ab_channel=WebTechKnowledge
 cookies
 https://brightspace.uhi.ac.uk/d2l/le/content/310944/viewContent/2360097/View
 https://www.w3schools.com/php/php_cookies.asp
+
+Joker image
+https://www.pxfuel.com/en/free-photo-oxovt
