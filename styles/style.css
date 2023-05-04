@@ -101,14 +101,13 @@ h2 {
 
 /* footer */
 
-/* footer stays at bottom of the page*/
-/* .footer {
+/* footer stays at bottom of the page*/ */
+.footerCSS {
     position: fixed;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-} */
+}
 
 .theatre {
     color: aliceblue;

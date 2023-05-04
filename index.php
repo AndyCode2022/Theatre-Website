@@ -3,9 +3,9 @@
 <!-- Script to show the user has successfully logged in -->
 <?php
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION['messageShown'])) {
-    echo '<script>';
+    // echo '<script>';
     echo 'alert("' . $_SESSION['message'] . '");';
-    echo '</script>';
+    // echo '</script>';
     $_SESSION['messageShown'] = true;
 }
 ?>

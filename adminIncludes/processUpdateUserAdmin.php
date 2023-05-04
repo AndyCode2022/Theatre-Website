@@ -15,7 +15,7 @@ if ($result->num_rows == 1) {
     echo "Unable to retrieve user info.";
 }
 
-$customerno = $_SESSION['userno'];
+$userno = $_SESSION['userno'];
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
