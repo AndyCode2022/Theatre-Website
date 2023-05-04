@@ -29,3 +29,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 </div>
 
 <?php require 'includes/footer.php' ?>
+
+<!-- references -->
+<!-- https://www.pxfuel.com/en/search?q=Movie+Poster -->

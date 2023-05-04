@@ -23,8 +23,8 @@ if (mysqli_num_rows($postResult) > 0) {
     echo '<p class="card-text">Posted by user ' . $postText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
     echo '</div>
               </div>
-              </div>
               </div>';
+              
 
     echo '<h2>Comments</h2>';
 
@@ -43,6 +43,7 @@ if (mysqli_num_rows($postResult) > 0) {
               <input name="comment" value="' . $comment['commentText'] . '">';
         echo '<p class="card-text">Posted by user ' . $comment['userno'] . ' on ' . date('d-m-Y', strtotime($comment['date_created'])) . '</p>';
         echo '</div>
+              </div>
               </div>
               </div>';
 
