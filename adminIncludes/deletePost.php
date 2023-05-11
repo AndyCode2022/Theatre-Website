@@ -1,7 +1,7 @@
 <?php
 
 session_start();
- $userno = $_SESSION['userno'];
+$userno = $_SESSION['userno'];
 
 // Get the ID of the post to be deleted
 $postID = $_POST['postID'];
@@ -13,15 +13,18 @@ $row = mysqli_fetch_assoc($result);
 $post_owner = $row['postID'];
 
 // Check if the logged in user matches the post owner
-if ( $userno == $postID) {
-// Delete the post from the database
-$query = "DELETE FROM posts WHERE postID = $postID";
-mysqli_query($conn, $query);
-// Redirect the user to the posts page
-header("Location: ../microBlog.php");
+if ($userno == $postID) {
+    // Delete the post from the database
+    $query = "DELETE FROM posts WHERE postID = $postID";
+    mysqli_query($conn, $query);
+    // Redirect the user to the posts page
+    header("Location: ../microBlog.php");
 } else {
-// Display an error message
-echo "You do not have permission to delete this post.";
+    // Display an error message
+    echo "You do not have permission to delete this post.";
 }
 
 ?>
+
+<!-- references -->
+<!-- https://www.youtube.com/watch?v=yACaLMc0VL0&ab_channel=HowtoMakeTut%27s -->

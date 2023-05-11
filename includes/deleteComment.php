@@ -26,3 +26,6 @@ if ($userno == $comment_owner) {
     // Display an error message
     echo "You do not have permission to delete this comment.";
 }
+
+// references
+// https://www.youtube.com/watch?v=kWOuUkLtQZw&ab_channel=DaniKrossing

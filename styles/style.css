@@ -99,6 +99,11 @@ h2 {
     overflow: hidden;
 }
 
+.h2 {
+    padding: 250px;
+}
+
+
 /* footer */
 
 /* footer stays at bottom of the page*/ */

@@ -33,7 +33,7 @@ if (mysqli_num_rows($postResult) > 0) {
 
     // Displayed comments with edit functionality
     if (!empty($row) && isset($row['commentID']))
-      $sql = "SELECT * FROM comments WHERE commentID = commentID";
+      $sql = "SELECT * FROM comments WHERE userno = '$userno'";
     $commentResult = mysqli_query($conn, $sql);
     if (mysqli_num_rows($commentResult) > 0) {
       while ($comment = mysqli_fetch_assoc($commentResult)) {
@@ -82,3 +82,5 @@ if (mysqli_num_rows($postResult) > 0) {
 } else {
   echo 'No posts yet';
 }
+
+?>

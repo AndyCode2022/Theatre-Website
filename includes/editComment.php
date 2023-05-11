@@ -10,3 +10,6 @@ mysqli_query($conn, $sql);
 header('Location: ../microBlog.php');
 exit();
 ?>
+
+<!-- references -->
+<!-- https://www.youtube.com/watch?v=kWOuUkLtQZw&ab_channel=DaniKrossing -->
