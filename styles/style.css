@@ -70,6 +70,21 @@ h2 {
     padding: 100px;
 }
 
+.contactHeading {
+    color: aliceblue;
+}
+
+address {
+    text-align: center;
+    font-size: large;
+    padding: 50px;
+    color: aliceblue;
+}
+
+.contactInfo {
+    background-color: red;
+}
+
 /* User page */
 
 

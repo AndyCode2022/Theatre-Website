@@ -18,8 +18,8 @@ if (mysqli_num_rows($result) > 0) {
             </tr>
         </thead>';
     while ($row = mysqli_fetch_assoc($result)) {
-    echo '<tbody>';
-    echo '<tr>
+        echo '<tbody>';
+        echo '<tr>
         <th scope="row">' . $row['userno'] . '</th>
         <td>' . $row['firstname'] . '</td>
         <td>' . $row['email'] . '</td>
@@ -32,10 +32,13 @@ if (mysqli_num_rows($result) > 0) {
     echo '<tbody>';
     echo '</table>';
 } else {
-echo "No users found.";
+    echo "No users found.";
 }
 
 // Close the database connection
 mysqli_close($conn);
 
 ?>
+
+<!-- References -->
+<!-- https://getbootstrap.com/docs/5.3/content/tables/ -->
