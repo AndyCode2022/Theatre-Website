@@ -64,3 +64,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
         </nav>
 
         <script src="JavaScript/app.js"></script>
+
+        <!-- references -->
+        <!-- https://chat.openai.com/ -->

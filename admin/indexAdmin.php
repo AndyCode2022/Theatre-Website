@@ -3,9 +3,9 @@
 <!-- Script to show the user has successfully logged in -->
 <?php
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION['messageShown'])) {
-    echo '<div class="alert alert-primary" role="alert">' . 
-            $_SESSION['message'] = "You have successfully logged in, " . $username . "!" . '</div>';
-                $_SESSION['messageShown'] = true;
+    echo '<div class="alert alert-primary" role="alert">' .
+        $_SESSION['message'] = "You have successfully logged in, " . $username . "!" . '</div>';
+    $_SESSION['messageShown'] = true;
 }
 ?>
 
@@ -28,3 +28,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 </div>
 
 <?php require 'footerAdmin.php' ?>
+
+<!-- references -->
+<!-- https://chat.openai.com/ -->

@@ -12,7 +12,7 @@
 
     <div class="mb-3">
         <label for="body" class="form-label">What are your thoughts today?</label>
-        <textarea class="form-control" id="body" name="body" rows="10" required="yes"></textarea><br><br>
+        <textarea class="form-control" id="postText" name="postText" rows="10" required="yes"></textarea><br><br>
     </div>
 
     <div class="mb-3">

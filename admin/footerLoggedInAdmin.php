@@ -42,3 +42,6 @@
 </body>
 
 </html>
+
+<!-- references -->
+<!-- https://chat.openai.com/ -->
