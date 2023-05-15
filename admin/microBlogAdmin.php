@@ -22,7 +22,7 @@
 
 <?php
 // Display the posts & comments on the page
-require '../includes/displayBlogs.php';
+require '../adminIncludes/displayBlogsAdmin.php';
 ?>
 
 <div class="container">

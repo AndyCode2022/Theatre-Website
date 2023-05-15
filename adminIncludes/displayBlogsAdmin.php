@@ -30,7 +30,7 @@ if (mysqli_num_rows($postResult) > 0) {
                 // Displayed comments
                 echo '<div class="card-commentText">';
                 if (!empty($row) && isset($row['comment']))
-                echo '<p class="card-text"> ' . htmlspecialchars($comment['comment']) . '</p>
+                    echo '<p class="card-text"> ' . htmlspecialchars($comment['comment']) . '</p>
                       </div>
                       <div class="card-footer">
                       <small class="text-muted"> ' . ($comment["date_created"]) . '</small>
@@ -51,10 +51,10 @@ if (mysqli_num_rows($postResult) > 0) {
           </div>
         </div>';
     }
-    
+
     // Displayed comments with edit functionality
     if (!empty($row) && isset($row['postID']))
-    $sql = "SELECT * FROM comments WHERE postID = " . $postText['postID'];
+        $sql = "SELECT * FROM comments WHERE postID = " . $postText['postID'];
     $commentResult = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($commentResult) > 0) {
@@ -63,9 +63,9 @@ if (mysqli_num_rows($postResult) > 0) {
             echo '<div class="container">
                   <div class="card-commentText">
                   <form method="post" action="includes/editComment.php">
-                  <input type="hidden" name="commentno" value="' . ($comment['userno']) . '">';
+                  <input type="hidden" name="commentno" value="' . ($commentText['userno']) . '">';
             if (!empty($row) && isset($row['comment']))
-            echo '<input class="form-control" type="text" name="comment_text" value="' . htmlspecialchars($comment['comment']) . '">
+                echo '<input class="form-control" type="text" name="comment_text" value="' . htmlspecialchars($commentText['comment']) . '">
                   <input class="form-control" type="submit" value="Edit">
                   </div>
                   </div>';
@@ -74,7 +74,7 @@ if (mysqli_num_rows($postResult) > 0) {
             <form method="post" action="includes/deleteComment.php">
             <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">';
             if (!empty($row) && isset($row['commentText']))
-            echo '<input class="form-control" type="text" name="comment_text" value="' . $commentText['commentText'] . '">
+                echo '<input class="form-control" type="text" name="comment_text" value="' . $commentText['commentText'] . '">
                   <input class="form-control" type="submit" value="delete">
                   </div>';
         }
@@ -88,3 +88,9 @@ if (mysqli_num_rows($postResult) > 0) {
 
 
 ?>
+
+// delete comments
+echo '<form method="post" action="includes/deleteComment.php">
+    <button>delete</button>
+    <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
+</form>';

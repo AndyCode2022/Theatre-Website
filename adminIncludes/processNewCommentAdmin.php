@@ -1,22 +1,21 @@
 <?php
 
-require_once ('dbconnect.php');
+require_once('dbconnect.php');
 
 // Submit the comments to the database
+$userno = isset($_POST['userno']);
 $commentText = isset($_POST['commentText']);
 
-$query = "INSERT INTO comments (title, commentText) 
-    VALUES ('$commentText')";
-mysqli_query($conn, $query);
 
-// $stmt = $conn->prepare("SELECT userno FROM users WHERE userno = ?");
-// $stmt->bind_param("s", $commentID);
-// $stmt->execute();
-// $result = $stmt->get_result();
+$stmt = $conn->prepare("SELECT userno FROM users WHERE userno = ?");
+$stmt->bind_param("s", $commentID);
+$stmt->execute();
+$result = $stmt->get_result();
 
-// $sql = "INSERT INTO comments (commentText) VALUES (?)";
-
-
+$stmt = $conn->prepare("INSERT INTO comments (userno, commentText) 
+VALUES (?, ?)");
+$stmt->bind_param("ss", $userno, $commentText);
+$stmt->execute();
 
 // Close the prepared statement
 if (isset($stmt)) {

@@ -4,11 +4,13 @@ function getValue() {
       document.write("You have entered : " + retVal);
     }
 
+// references
 // https://brightspace.uhi.ac.uk/d2l/le/content/310944/viewContent/2360097/View
+
 // cookies
 
-// Navbar
 
+// Navbar
 const navbar = document.querySelectorAll(".navbar");
 
 // Hamburger Icon
@@ -86,3 +88,38 @@ form.addEventListener("submit", logSubmit);
 
 // references
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+
+// Says to the user that the page is loaded when window is opened in browser
+window.addEventListener("load", (event) => {
+  console.log("page is fully loaded");
+});
+
+// references
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+
+// Change event
+element.addEventListener('change', function () {
+  // handle change
+});
+
+// references
+// https://www.javascripttutorial.net/javascript-dom/javascript-change-event/
+
+// Key event handler
+
+document.addEventListener(
+  "keyup",
+  (event) => {
+    const keyName = event.key;
+
+    // As the user releases the Ctrl key, the key is no longer active,
+    // so event.ctrlKey is false.
+    if (keyName === "Control") {
+      alert("Control key was released");
+    }
+  },
+  false
+);
+
+// references
+// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
