@@ -20,7 +20,7 @@ if ($userno == $comment_owner) {
     mysqli_query($conn, $query);
 
     // Redirect the user to the posts page
-    header("Location: ../microBlog.php");
+    header("Location: ../admin/microBlogAdmin.php");
 } else {
 
     // Display an error message

@@ -1,6 +1,6 @@
 <?php
 
-require_once('dbconnect.php');
+require_once '../includes/dbconnect.php';
 
 // Submit the comments to the database
 $userno = isset($_POST['userno']);

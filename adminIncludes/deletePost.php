@@ -18,7 +18,7 @@ if ($userno == $postID) {
     $query = "DELETE FROM posts WHERE postID = $postID";
     mysqli_query($conn, $query);
     // Redirect the user to the posts page
-    header("Location: ../microBlog.php");
+    header("Location: ../admin/microBlogAdmin.php");
 } else {
     // Display an error message
     echo "You do not have permission to delete this post.";
