@@ -69,6 +69,7 @@ if (!empty($commentResult) && isset($commentResult['postID'])) {
                   <form method="post" action="../adminIncludes/editComment.php">
                   <input type="hidden" name="commentno" value="' . ($commentText['userno']) . '">
                   <input class="form-control" type="submit" value="Edit">
+                  </form>
                   </div>
                   </div>';
 
@@ -77,6 +78,7 @@ if (!empty($commentResult) && isset($commentResult['postID'])) {
             <form method="post" action="../adminIncludes/deleteComment.php">
             <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
             <input class="form-control" type="submit" value="delete">
+            </form>
             </div>';
         }
     }
@@ -90,9 +92,3 @@ if (!empty($commentResult) && isset($commentResult['postID'])) {
 
 
 ?>
-
-<!-- delete comments -->
-<form method="post" action="includes/deleteComment.php">
-    <button>delete</button>
-    <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
-</form>';

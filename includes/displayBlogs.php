@@ -32,30 +32,35 @@ if (mysqli_num_rows($postResult) > 0) {
 
     // if (!empty($row) && isset($row['commentID']))
 
-    $sql = "SELECT * FROM comments";
-    $commentResult = mysqli_query($conn, $sql);
+    // Displayed comments with edit functionality
+    // if (!empty($row) && isset($row['postID'])
+    // )
+    // $sql = "SELECT * FROM comments WHERE postID = " . $postText['postID'];
+    // $commentResult = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($commentResult) > 0) {
-      while ($commentText = mysqli_fetch_assoc($commentResult)) {
+    // if (mysqli_num_rows($commentResult) > 0) {
+    //   while ($commentText = mysqli_fetch_assoc($commentResult)) {
+    //     // Edit functionality
+    //     echo '<div class="container">
+    //               <div class="card-commentText">
+    //               <form method="post" action="../adminIncludes/editComment.php">
+    //               <input type="hidden" name="commentno" value="' . ($commentText['userno']) . '">
+    //               <input class="form-control" type="submit" value="Edit">
+    //               </form>
+    //               </div>
+    //               </div>';
 
-        echo ' <div class="card mb-3">
-              <input name="comment" value="' . $commentText['commentText'] . '">';
-        echo '<p class="card-text">Posted by user ' . $commentText['userno'] . ' on ' . date('d-m-Y', strtotime($commentText['date_created'])) . '</p>';
-        echo '</div>';
-      }
-    }
-
-    // Comment input for user
-
-    // if (isset($_POST['submitComment'])) 
-
-    // echo '<div class="card-commentText">
-    echo '<form class="Form" id="microblogForm" method="post" action="includes/processNewComment.php">
-              <input name="commentID" value="' . isset($commentText['commentID']) . '">
-              <textarea class="form-control" id="commentText" name="commentText" rows="10" required="yes">Add your comment to the post</textarea><br>
-              <input class="form-control" type="submit" name="submit" value="SubmitComment">
-            </form>
-          </div>';
+    //     // Delete functionality
+    //     echo '<div class="container">
+    //         <form method="post" action="../adminIncludes/deleteComment.php">
+    //         <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
+    //         <input class="form-control" type="submit" value="delete">
+    //         </form>
+    //         </div>';
+  //     }
+  //   }
+  //   echo '</div>
+  //         </div>';
   }
 } else {
   echo 'No posts yet';

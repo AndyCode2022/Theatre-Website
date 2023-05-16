@@ -1,15 +1,17 @@
 <?php
 session_start();
-function commentDelete() {
+require '../includes/dbconnect.php';
 
 $userno = $_SESSION['userno'];
 
 // Gets the ID of the comment to be deleted
-$commentno = $_POST['commentno'];
+$commentID = isset($_POST['commentID']);
 
 // Query the database to get the userno of the comment owner
-$query = "SELECT commentno FROM comments WHERE commentno = $commentno";
+$query = "SELECT commentID FROM comments WHERE commentID = $commentID";
 $result = mysqli_query($conn, $query);
+
+if ($result) {
 $row = mysqli_fetch_assoc($result);
 $comment_owner = $row['userno'];
 
@@ -17,19 +19,19 @@ $comment_owner = $row['userno'];
 if ($userno == $comment_owner) {
 
     // Delete the comment from the database
-    $query = "DELETE FROM comments WHERE commentno = $commentno";
+    $query = "DELETE FROM comments WHERE commentID = $commentID";
     mysqli_query($conn, $query);
 
     // Redirect the user to the posts page
     header("Location: ../admin/microBlogAdmin.php");
 } else {
 
+echo "You do not have admin privileges to be able to delete this comment";
+}
+  print_r($userno);
     // Display an error message
     echo "You do not have permission to delete this comment.";
  }
-}
-
-commentDelete();
 
 ?>
 
