@@ -11,7 +11,7 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '<div class="container">
               <div class="card mb-3">
               <div class="card-commentText">
-              <h5 class="card-title">' . htmlspecialchars($postText["title"]) . '</h5>
+              <h5 class="card-title">' . ($postText["title"]) . '</h5>
               <div class="card mb-3">
               <input name="post_text" value="' . $postText['postText'] . '">
               </div>
@@ -19,11 +19,12 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '<p class="card-text">Posted by user ' . ($postText['userno']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
 
         
-        // print_r($postText);
-            $postID = isset($_POST['postID']);
-        if (!empty($commentResult) && isset($commentResult['postID']))
-            $sql = "SELECT * FROM comments WHERE postID = " . $postID['postID'];
-        $commentResult = mysqli_query($conn, $sql);
+//   print_r($postText);
+$postID = isset($_POST['postID']) ? $_POST['postID'] : 0;
+
+if (!empty($commentResult) && isset($commentResult['postID'])) {
+    $sql = "SELECT * FROM comments WHERE postID = " . $postID;
+    $commentResult = mysqli_query($conn, $sql);
 
         // Displays comments
         if (mysqli_num_rows($commentResult) > 0) {
@@ -31,7 +32,7 @@ if (mysqli_num_rows($postResult) > 0) {
                 // Displayed comments
                 echo '<div class="card-commentText">';
                 if (!empty($row) && isset($row['comment']))
-                    echo '<p class="card-text"> ' . htmlspecialchars($comment['comment']) . '</p>
+                    echo '<p class="card-text"> ' . ($comment['comment']) . '</p>
                       </div>
                       <div class="card-footer">
                       <div class="text-muted"> ' . ($comment["date_created"]) . '</small>
@@ -46,8 +47,10 @@ if (mysqli_num_rows($postResult) > 0) {
               <div class="card-commentText">
               <form method="post" action="../adminIncludes/processNewCommentAdmin.php">
               <input type="hidden" name="post_id" value="' . isset($postText['postID']) . '">
-              <textarea class="form-control" id="comment" name="comment" rows="10" required="yes">Add your comment to the post</textarea><br><br>
+              <div class="form-group">
+              <textarea class="form-control" id="commentText" name="commentText" rows="10" required="yes">Add your comment to the post</textarea><br><br>
               <input class="form-control" type="submit" value="Submit">
+              </div>
             </form>
           </div>
         </div>';
@@ -79,6 +82,7 @@ if (mysqli_num_rows($postResult) > 0) {
     }
     echo '</div>
           </div>';
+}
 } else {
     echo 'No posts yet';
 }
@@ -87,8 +91,8 @@ if (mysqli_num_rows($postResult) > 0) {
 
 ?>
 
-// delete comments
-echo '<form method="post" action="includes/deleteComment.php">
+<!-- delete comments -->
+<form method="post" action="includes/deleteComment.php">
     <button>delete</button>
     <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
 </form>';

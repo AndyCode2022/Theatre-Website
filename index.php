@@ -1,11 +1,13 @@
 <?php require 'includes/header.php' ?>
 
 <!-- Script to show the user has successfully logged in -->
-$_
 <?php
+
+
+
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION['messageShown'])) {
     echo '<div class="alert alert-primary" role="alert">' .
-        $_SESSION['message'] = "You have successfully logged in, " . $username . "!" . '</div>';
+        $_SESSION['message'] = "You have successfully logged in, " . $_SESSION_['$username'] . "!" . '</div>';
     $_SESSION['messageShown'] = true;
 }
 ?>
