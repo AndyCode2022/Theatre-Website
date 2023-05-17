@@ -27,7 +27,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="updateUser.php" class="text-dark">Change Your Details</a>
+                        <a href="updateUserAdmin.php" class="text-dark">Change Your Details</a>
                     </li>
                 </ul>
             </div>

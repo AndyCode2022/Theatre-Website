@@ -1,4 +1,5 @@
 <?php
+
 // Finds the comments in the MySQL database
 include '../includes/dbconnect.php';
 
@@ -20,10 +21,9 @@ if (mysqli_num_rows($postResult) > 0) {
 
         
 //   print_r($postText);
-$postID = isset($_POST['postID']) ? $_POST['postID'] : 0;
+    $userno = $_SESSION['userno'];
 
-if (!empty($commentResult) && isset($commentResult['postID'])) {
-    $sql = "SELECT * FROM comments WHERE postID = " . $postID;
+    $sql = "SELECT * FROM comments WHERE userno = $userno";
     $commentResult = mysqli_query($conn, $sql);
 
         // Displays comments
@@ -58,7 +58,7 @@ if (!empty($commentResult) && isset($commentResult['postID'])) {
 
     // Displayed comments with edit functionality
     if (!empty($row) && isset($row['postID']))
-        $sql = "SELECT * FROM comments WHERE postID = " . $postText['postID'];
+        $sql = "SELECT * FROM comments WHERE userno = " . $userno['postID'];
     $commentResult = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($commentResult) > 0) {
@@ -84,7 +84,6 @@ if (!empty($commentResult) && isset($commentResult['postID'])) {
     }
     echo '</div>
           </div>';
-}
 } else {
     echo 'No posts yet';
 }
