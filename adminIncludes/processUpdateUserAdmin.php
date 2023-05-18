@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-include_once('../includes/dbconnect.php');
+require '../includes/dbconnect.php';
 // include_once("../includes/authenticate.php");
 
 $userno = $_POST['userno'];
 
-$sql = "SELECT * FROM theatre WHERE userno = $userno";
+$sql = "SELECT * FROM users WHERE userno = $userno";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
@@ -29,7 +29,7 @@ $sql = "UPDATE users SET firstname = '$firstname' , lastname = '$lastname' ,
         WHERE userno = $userno ";
 
 if ($conn->query($sql) == true) {
-    echo "<p>Thanks your info has been updated.</p>";
+    echo "<p>Thanks your info has been updated.</p> <a href='../admin/indexAdmin.php'";
 } else {
     echo "Sorry something went wrong.";
 }

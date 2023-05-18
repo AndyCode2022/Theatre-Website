@@ -1,6 +1,7 @@
 <?php
-
 session_start();
+require '../includes/dbconnect.php';
+
 $userno = $_SESSION['userno'];
 
 // Get the ID of the post to be deleted
@@ -20,7 +21,6 @@ if ($userno == $postID) {
     // Redirect the user to the posts page
     header("Location: ../admin/microBlogAdmin.php");
 } else {
-    // Display an error message
     echo "You do not have permission to delete this post.";
 }
 

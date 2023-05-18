@@ -3,6 +3,8 @@
 // Finds the comments in the MySQL database
 include '../includes/dbconnect.php';
 
+$userno = $_SESSION['userno'];
+
 $sql = "SELECT * FROM posts";
 $postResult = mysqli_query($conn, $sql);
 
@@ -18,12 +20,25 @@ if (mysqli_num_rows($postResult) > 0) {
               </div>
               </div>';
         echo '<p class="card-text">Posted by user ' . ($postText['userno']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        // Edit post functionality
+        echo '<div class="container">
+                    <div class="card-postText">
+                    <form method="hidden" name="editPost" action="../adminIncludes/editComment.php">
+                    <input type="button" name="postID" value="' . isset($postText['userno']) . '">
+                    <input class="form-control" type="submit" value="Edit">
+                    </form>
+                    </div>
+                    </div>';
 
-        
-//   print_r($postText);
-    $userno = $_SESSION['userno'];
+        // Delete post functionality
+        echo '<div class="container">
+                    <form method="post" name="deletePost" action="../adminIncludes/deleteComment.php">
+                    <input type="hidden" name="postID" value="' . isset($postText['userno']) . '">
+                    <input class="form-control" type="submit" value="delete">
+                    </form>
+                    </div>';
 
-    $sql = "SELECT * FROM comments WHERE userno = $userno";
+    $sql = "SELECT * FROM comments";
     $commentResult = mysqli_query($conn, $sql);
 
         // Displays comments
@@ -32,62 +47,49 @@ if (mysqli_num_rows($postResult) > 0) {
                 // Displayed comments
                 echo '<div class="card-commentText">';
                 if (!empty($row) && isset($row['comment']))
-                    echo '<p class="card-text"> ' . ($comment['comment']) . '</p>
-                      </div>
-                      <div class="card-footer">
-                      <div class="text-muted"> ' . ($comment["date_created"]) . '</small>
-                      </div>';
+                    echo '<p class="card-text"> ' . ($comment['commentText']) . '</p>
+                    </div>
+                    <div class="card-footer">
+                    <div class="text-muted"> ' . ($comment["date_created"]) . '</div>
+                    </div>';
+                    
+                    // Edit comment functionality
+                    echo '<div class="container">
+                    <div class="card-commentText">
+                    <form method="hidden" name="editComment" action="../adminIncludes/editComment.php">
+                    <input type="button" name="commentID" value="' . isset($comment['userno']) . '">
+                    <input class="form-control" type="submit" value="Edit">
+                    </form>
+                    </div>
+                    </div>';
+
+                    // Delete comment functionality
+                    echo '<div class="container">
+                    <form method="post" name="deleteComment" action="../adminIncludes/deleteComment.php">
+                    <input type="hidden" name="commentID" value="' . isset($comment['userno']) . '">
+                    <input class="form-control" type="submit" value="delete">
+                    </form>
+                    </div>';
             }
         } else {
             echo 'No comments yet';
         }
 
-        // Comment input for user
-        echo '<div class="container">
-              <div class="card-commentText">
-              <form method="post" action="../adminIncludes/processNewCommentAdmin.php">
-              <input type="hidden" name="post_id" value="' . isset($postText['postID']) . '">
-              <div class="form-group">
-              <textarea class="form-control" id="commentText" name="commentText" rows="10" required="yes">Add your comment to the post</textarea><br><br>
-              <input class="form-control" type="submit" value="Submit">
-              </div>
-            </form>
-          </div>
-        </div>';
-    }
-
-    // Displayed comments with edit functionality
-    if (!empty($row) && isset($row['postID']))
-        $sql = "SELECT * FROM comments WHERE userno = " . $userno['postID'];
-    $commentResult = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($commentResult) > 0) {
-        while ($commentText = mysqli_fetch_assoc($commentResult)) {
-            // Edit functionality
-            echo '<div class="container">
-                  <div class="card-commentText">
-                  <form method="post" action="../adminIncludes/editComment.php">
-                  <input type="hidden" name="commentno" value="' . ($commentText['userno']) . '">
-                  <input class="form-control" type="submit" value="Edit">
-                  </form>
-                  </div>
-                  </div>';
-
-            // Delete functionality
-            echo '<div class="container">
-            <form method="post" action="../adminIncludes/deleteComment.php">
-            <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
-            <input class="form-control" type="submit" value="delete">
-            </form>
-            </div>';
+                // Comment input for user
+                echo '<div class="container">
+                    <div class="card-commentText">
+                    <form method="post" action="../adminIncludes/processNewCommentAdmin.php">
+                    <input type="hidden" name="post_id" value="' . isset($postText['postID']) . '">
+                    <div class="form-group">
+                    <textarea class="form-control" id="commentText" name="commentText" rows="10" required="yes">Add your comment to the post</textarea><br><br>
+                    <input class="form-control" type="submit" value="Submit">
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>';
         }
-    }
-    echo '</div>
-          </div>';
-} else {
-    echo 'No posts yet';
-}
 
-
-
-?>
+        } else {
+            echo 'No posts yet';
+        }

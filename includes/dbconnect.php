@@ -1,4 +1,5 @@
 <?php
+
 define ('db_user', 'root');               // username
 define ('db_password','');                // password
 define ('db_host', 'localhost');          // mysql server host address 
@@ -8,4 +9,5 @@ if (mysqli_connect_errno())
   {
   echo 'Cannot connect to the database: ' . mysqli_connect_error();
   }
+
 ?>
