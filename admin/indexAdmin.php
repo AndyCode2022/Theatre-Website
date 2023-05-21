@@ -27,6 +27,24 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
     </div>
 </div>
 
+<div class="contactInfo">
+    <h2 class="contactHeading">Contact information</h2>
+    <address>
+        Moray St<br>
+        Elgin<br>
+        IV30 1JJ<br>
+    </address>
+</div>
+
+<input type="text" onchange="changeHandler()">
+
+<!-- Button event -->
+
+<button onclick="myFunction()">Click me</button>
+
+<!-- references -->
+<!-- https://www.w3schools.com/jsref/event_onclick.asp -->
+
 <?php require 'footerAdmin.php' ?>
 
 <!-- references -->

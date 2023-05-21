@@ -20,6 +20,7 @@ if (mysqli_num_rows($postResult) > 0) {
               </div>
               </div>';
         echo '<p class="card-text">Posted by user ' . ($postText['userno']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        echo '</div>';
         // Edit post functionality
         echo '<div class="container">
                     <div class="card-postText">
@@ -79,7 +80,7 @@ if (mysqli_num_rows($postResult) > 0) {
                 echo '<div class="container">
                     <div class="card-commentText">
                     <form method="post" action="../adminIncludes/processNewCommentAdmin.php">
-                    <input type="hidden" name="post_id" value="' . isset($postText['postID']) . '">
+                    <input type="hidden" name="commentID" value="' . isset($comment['commentID']) . '">
                     <div class="form-group">
                     <textarea class="form-control" id="commentText" name="commentText" rows="10" required="yes">Add your comment to the post</textarea><br><br>
                     <input class="form-control" type="submit" value="Submit">

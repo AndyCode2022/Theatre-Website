@@ -3,6 +3,8 @@
 // Finds the comments in the MySQL database
 include 'dbconnect.php';
 
+
+
 $title = isset($_POST['title']);
 $postText = isset($_POST['postText']);
 $userno = isset($_SESSION['userno']);
@@ -13,9 +15,11 @@ $sql = "SELECT * FROM posts";
 $postResult = mysqli_query($conn, $sql);
 
 // Displayed posts
+
 if (mysqli_num_rows($postResult) > 0) {
   while ($postText = mysqli_fetch_assoc($postResult)) {
     // Displays the posts on the page
+
     echo '<div class="container">
               <div class="card mb-3">
               <div class="card-commentText">
@@ -27,46 +31,28 @@ if (mysqli_num_rows($postResult) > 0) {
               </div>
               </div>';
 
+    // <!-- references -->
+    // <!-- https://chat.openai.com/ -->
 
-    echo '<h2>Comments</h2>';
+    $sql = "SELECT * FROM comments";
+    $commentResult = mysqli_query($conn, $sql);
 
-    // if (!empty($row) && isset($row['commentID']))
-
-    // Displayed comments with edit functionality
-    // if (!empty($row) && isset($row['postID'])
-    // )
-    // $sql = "SELECT * FROM comments WHERE postID = " . $postText['postID'];
-    // $commentResult = mysqli_query($conn, $sql);
-
-    // if (mysqli_num_rows($commentResult) > 0) {
-    //   while ($commentText = mysqli_fetch_assoc($commentResult)) {
-    //     // Edit functionality
-    //     echo '<div class="container">
-    //               <div class="card-commentText">
-    //               <form method="post" action="../adminIncludes/editComment.php">
-    //               <input type="hidden" name="commentno" value="' . ($commentText['userno']) . '">
-    //               <input class="form-control" type="submit" value="Edit">
-    //               </form>
-    //               </div>
-    //               </div>';
-
-    //     // Delete functionality
-    //     echo '<div class="container">
-    //         <form method="post" action="../adminIncludes/deleteComment.php">
-    //         <input type="hidden" name="commentno" value="' . isset($commentText['userno']) . '">
-    //         <input class="form-control" type="submit" value="delete">
-    //         </form>
-    //         </div>';
-  //     }
-  //   }
-  //   echo '</div>
-  //         </div>';
+    // Display comments
+    if (mysqli_num_rows($commentResult) > 0) {
+      while ($comment = mysqli_fetch_assoc($commentResult)) {
+        echo '<div class="card-commentText">';
+        if (!empty($comment) && isset($comment['commentText'])) {
+          echo '<p class="card-text">' . $comment['commentText'] . '</p>';
+        }
+        echo '</div>
+        <div class="card-footer">
+        <div class="text-muted">' . $comment["date_created"] . '</div>
+        </div>';
+      }
+    } else {
+  echo 'No comments yet';
   }
-} else {
-  echo 'No posts yet';
+ }
+} else {  
+ echo 'No posts yet';
 }
-
-?>
-
-<!-- references -->
-<!-- https://chat.openai.com/ -->

@@ -20,6 +20,8 @@
     </div>
 </form>
 
+<h1>Posts & Comments</h1>
+
 <?php
 // Display the posts & comments on the page
 require '../adminIncludes/displayBlogsAdmin.php';
@@ -32,5 +34,7 @@ require '../adminIncludes/displayBlogsAdmin.php';
     </div>
     <?php require '../adminIncludes/userList.php'; ?>
 </div>
+
+
 
 <?php require 'footerAdmin.php' ?>
