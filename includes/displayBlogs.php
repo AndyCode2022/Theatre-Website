@@ -29,6 +29,7 @@ if (mysqli_num_rows($postResult) > 0) {
     echo '<p class="card-text">Posted by user ' . $postText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
     echo '</div>
               </div>
+              </div>
               </div>';
 
     // <!-- references -->
@@ -46,7 +47,7 @@ if (mysqli_num_rows($postResult) > 0) {
         }
         echo '</div>
         <div class="card-footer">
-        <div class="text-muted">' . $comment["date_created"] . '</div>
+        <div>' . $comment["date_created"] . '</div>
         </div>';
       }
     } else {

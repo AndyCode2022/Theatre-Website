@@ -14,18 +14,17 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '<div class="container">
               <div class="card mb-3">
               <div class="card-commentText">
-              <h5 class="card-title">' . ($postText["title"]) . '</h5>
+              <h5 class="card-title">' . $postText["title"] . '</h5>
               <div class="card mb-3">
               <input name="post_text" value="' . $postText['postText'] . '">
-              </div>
+              
               </div>';
-        echo '<p class="card-text">Posted by user ' . ($postText['userno']) . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        echo '<p class="card-text">Posted by user ' . $postText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
         echo '</div>';
         // Edit post functionality
         echo '<div class="container">
                     <div class="card-postText">
                     <form method="hidden" name="editPost" action="../adminIncludes/editComment.php">
-                    <input type="button" name="postID" value="' . isset($postText['userno']) . '">
                     <input class="form-control" type="submit" value="Edit">
                     </form>
                     </div>
@@ -34,9 +33,9 @@ if (mysqli_num_rows($postResult) > 0) {
         // Delete post functionality
         echo '<div class="container">
                     <form method="post" name="deletePost" action="../adminIncludes/deleteComment.php">
-                    <input type="hidden" name="postID" value="' . isset($postText['userno']) . '">
                     <input class="form-control" type="submit" value="delete">
                     </form>
+                    </div>
                     </div>';
 
     $sql = "SELECT * FROM comments";
@@ -46,9 +45,9 @@ if (mysqli_num_rows($postResult) > 0) {
         if (mysqli_num_rows($commentResult) > 0) {
             while ($comment = mysqli_fetch_assoc($commentResult)) {
                 // Displayed comments
+                echo 'div class="container"';
                 echo '<div class="card-commentText">';
-                if (!empty($row) && isset($row['comment']))
-                    echo '<p class="card-text"> ' . ($comment['commentText']) . '</p>
+                    echo '<p> ' . ($comment['commentText']) . '</p>
                     </div>
                     <div class="card-footer">
                     <div class="text-muted"> ' . ($comment["date_created"]) . '</div>
@@ -58,7 +57,7 @@ if (mysqli_num_rows($postResult) > 0) {
                     echo '<div class="container">
                     <div class="card-commentText">
                     <form method="hidden" name="editComment" action="../adminIncludes/editComment.php">
-                    <input type="button" name="commentID" value="' . isset($comment['userno']) . '">
+                    
                     <input class="form-control" type="submit" value="Edit">
                     </form>
                     </div>
@@ -67,9 +66,10 @@ if (mysqli_num_rows($postResult) > 0) {
                     // Delete comment functionality
                     echo '<div class="container">
                     <form method="post" name="deleteComment" action="../adminIncludes/deleteComment.php">
-                    <input type="hidden" name="commentID" value="' . isset($comment['userno']) . '">
+                    
                     <input class="form-control" type="submit" value="delete">
                     </form>
+                    </div>
                     </div>';
             }
         } else {
@@ -80,7 +80,6 @@ if (mysqli_num_rows($postResult) > 0) {
                 echo '<div class="container">
                     <div class="card-commentText">
                     <form method="post" action="../adminIncludes/processNewCommentAdmin.php">
-                    <input type="hidden" name="commentID" value="' . isset($comment['commentID']) . '">
                     <div class="form-group">
                     <textarea class="form-control" id="commentText" name="commentText" rows="10" required="yes">Add your comment to the post</textarea><br><br>
                     <input class="form-control" type="submit" value="Submit">

@@ -4,7 +4,7 @@ require_once '../includes/dbconnect.php';
 
 // Submit the comments to the database
 $userno = isset($_POST['userno']);
-$commentText = isset($_POST['commentText']);
+$commentText = $_POST['commentText'];
 
 
 $stmt = $conn->prepare("SELECT userno FROM users WHERE userno = ?");

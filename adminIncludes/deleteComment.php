@@ -10,10 +10,7 @@ $commentID = isset($_POST['commentID']);
 // Query the database to get the userno of the comment owner
 $query = "SELECT commentID FROM comments WHERE commentID = $commentID";
 $result = mysqli_query($conn, $query);
-$row = mysqli_fetch_assoc($result);
-$comment_owner = $row['commentID'];
-
-if ($userno = $commentID) {
+$result = mysqli_fetch_assoc($result);
 
 // Check if the logged in user matches the comment owner
 
@@ -22,9 +19,8 @@ if ($userno = $commentID) {
     mysqli_query($conn, $query);
     // Redirect the user to the posts page
     header("Location: ../admin/microBlogAdmin.php");
-} else {
-    echo "You do not have permission to delete this comment.";
- }
+
+    // echo "You do not have permission to delete this comment.";
 
 ?>
 
