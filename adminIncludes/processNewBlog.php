@@ -4,26 +4,21 @@ require '../includes/dbconnect.php';
 
 if (isset($_POST['submit'])) {
 
+
+    $postID = $_POST['postID'];
+    $userno = $_POST['userno'];
     $title = $_POST['title'];
     $postText = $_POST['postText'];
+    $date_created = $_POST['date_created'];
 
     // insert message data into the database
-    $query = "INSERT INTO posts (title, postText) 
-    VALUES ('$title', '$postText')";
+    $query = "INSERT INTO posts (postID, userno, title, postText, date_created) 
+    VALUES ('$postID', '$userno', '$title', '$postText', '$date_created')";
     mysqli_query($conn, $query);
 }
-// display messages
-// $query = "SELECT * FROM posts ORDER BY date_created DESC";
-// $result = mysqli_query($conn, $query);
 
-// while ($row = mysqli_fetch_assoc($result)) {
-//     echo '<div class="message">';
-//     echo '<h2>' . $row['title'] . '</h2>';
-//     echo '<p>' . $row['body'] . '</p>';
-//     echo '<p>Posted by ' . $row['username'] . ' on ' . $row['date_created'] . '</p>';
-//     echo '</div>';
-// }
+mysqli_close($conn);
 
 header('Location: ../admin/microBlogAdmin.php');
-mysqli_close($conn);
+
 ?>

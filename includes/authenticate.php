@@ -13,6 +13,10 @@ $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 
+// $inputUsername = "";
+// $inputPassword = "";
+// function checkuser($conn, $result, $password) {
+
 if ($result->num_rows == 1) {
 
     $row = $result->fetch_assoc();
@@ -23,10 +27,6 @@ if ($result->num_rows == 1) {
         $_SESSION['userno'] = $row['userno'];
 
         if ($_SESSION['logged_in'] = true) {
-
-            
-
-          
             
             header("Location: ../index.php");
         
@@ -43,5 +43,6 @@ if ($result->num_rows == 1) {
 }
 
 $conn->close();
+// }
 
 ?>

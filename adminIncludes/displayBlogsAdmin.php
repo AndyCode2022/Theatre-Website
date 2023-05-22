@@ -3,7 +3,7 @@
 // Finds the comments in the MySQL database
 include '../includes/dbconnect.php';
 
-$userno = $_SESSION['userno'];
+$_SESSION['userno'];
 
 $sql = "SELECT * FROM posts";
 $postResult = mysqli_query($conn, $sql);
@@ -16,11 +16,11 @@ if (mysqli_num_rows($postResult) > 0) {
               <div class="card-commentText">
               <h5 class="card-title">' . $postText["title"] . '</h5>
               <div class="card mb-3">
-              <input name="post_text" value="' . $postText['postText'] . '">
-              
+              <input name="post_text" value="' . $postText['postText'] . '">      
               </div>';
-        echo '<p class="card-text">Posted by user ' . $postText['userno'] . ' on ' . date('d-m-Y', strtotime($postText['date_created'])) . '</p>';
+        echo '<p class="card-text">Posted by user ' . $postText['userno'] . ' on ' . $postText['date_created'] . '</p>';
         echo '</div>';
+
         // Edit post functionality
         echo '<div class="container">
                     <div class="card-postText">
