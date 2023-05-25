@@ -30,55 +30,19 @@ navbarToggler.addEventListener('click', function () {
 
     // end of hamburger icon
 
-// Submit event custom event handler
-function logSubmit(event) {
-  log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
-  event.preventDefault();
-}
 
-const form = document.getElementById("form");
-const log = document.getElementById("log");
-form.addEventListener("submit", logSubmit);
-
-// references
-// https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
 
 // Says to the user that the page is loaded when window is opened in browser
-window.addEventListener("load", (event) => {
-  alert("page is fully loaded");
-});
+// window.addEventListener("load", (event) => {
+//   alert("page is fully loaded");
+// });
 
 // references
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
 
-// Change event
-element.addEventListener('change', function () {
-  // handle change
-});
 
-// references
-// https://www.javascripttutorial.net/javascript-dom/javascript-change-event/
-
-// Key event handler
-
-document.addEventListener(
-  "keyup",
-  (event) => {
-    const keyName = event.key;
-
-    // As the user releases the Ctrl key, the key is no longer active,
-    // so event.ctrlKey is false.
-    if (keyName === "Control") {
-      alert("Control key was released");
-    }
-  },
-  false
-);
-
-// references
-// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
-
-
+// Date event
 function displayDate() {
   document.getElementById("demo").innerHTML = Date();
 }
+

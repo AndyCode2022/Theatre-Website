@@ -4,7 +4,6 @@ require '../includes/dbconnect.php';
 
 if (isset($_POST['submit'])) {
 
-
     $postID = $_POST['postID'];
     $userno = $_POST['userno'];
     $title = $_POST['title'];
@@ -15,6 +14,8 @@ if (isset($_POST['submit'])) {
     $query = "INSERT INTO posts (postID, userno, title, postText, date_created) 
     VALUES ('$postID', '$userno', '$title', '$postText', '$date_created')";
     mysqli_query($conn, $query);
+
+    echo 'Message posted';
 }
 
 mysqli_close($conn);

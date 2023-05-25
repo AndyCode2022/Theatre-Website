@@ -36,11 +36,15 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
     </address>
 </div>
 
-<input type="text" onchange="changeHandler()">
+<!-- <input type="text" onchange="changeHandler()"> -->
+
+<script src="../JavaScript/buttonEvent.js"></script>
 
 <!-- Button event -->
 
 <button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
 
 <!-- references -->
 <!-- https://www.w3schools.com/jsref/event_onclick.asp -->
