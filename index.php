@@ -74,7 +74,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 <!-- references -->
 <!-- http://www.javascriptkit.com/javatutors/touchevents.shtml -->
 
-<!-- demo not appearing -->
 <!-- Change event -->
 
 <script src="JavaScript/changeEvent.js"></script>
@@ -91,11 +90,15 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
     </select>
 </label>
 
-
-
 <!-- references -->
 <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event -->
 
+<!-- keyBoard event -->
+
+<script src="JavaScript/keyBoardEvent.js"></script>
+
+<!-- references -->
+<!-- https://www.youtube.com/watch?v=lNJMDTSkNXo -->
 
 <?php require 'includes/footer.php' ?>
 
