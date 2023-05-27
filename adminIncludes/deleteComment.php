@@ -10,7 +10,7 @@ function deleteComments($conn) {
     $userno = $_SESSION['userno'];
 if (isset($_POST['commentDelete'])) {
     $sql = "DELETE FROM comments WHERE userno = '$userno'";
-    $result = $conn->query($sql);
+    $conn->query($sql);
     header('location: ../admin/microBlogAdmin.php');
  }
 }

@@ -4,14 +4,13 @@
 
 // Redirect the user back to the comments page
 function editComments($conn) {
-    $commentText = $_POST['commentText'];
-    $commentID = $_POST['commentID'];
+    $commentText = isset($_POST['commentText']);
+    $commentID = isset($_POST['commentID']);
 
     if (isset($_POST['editPost'])) {
         $sql = "UPDATE comments SET commentText='$commentText' WHERE commentID='$commentID'";
         $result = $conn->query($sql);
-            header("Location: ../admin/microBlogAdmin.php");
-            exit();
+            // header("Location: ../admin/microBlogAdmin.php");
     }
 }
 

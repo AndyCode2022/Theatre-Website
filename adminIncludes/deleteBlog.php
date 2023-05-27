@@ -1,20 +1,26 @@
 <?php
-
 // session_start();
-// require '../includes/dbconnect.php';
+require_once '../includes/dbconnect.php';
 
 
 
 // Gets the ID of the blog to be deleted
-function deleteBlogs($conn) {
-$userno = $_SESSION['userno'];
-if (isset($_POST['blogDelete'])) {
+    if (isset($_POST['blogDelete'])) {
+        $postID = $_POST['postID'];
 
-    $sql = "DELETE FROM posts WHERE userno = '$userno'";
-    $result = $conn->query($sql);
-    header('location: ../admin/microBlogAdmin.php');
+        $sql = "DELETE FROM posts WHERE postID = '$postID'";
+    if (mysqli_query($conn, $sql)) {
+        echo "Record was deleted successfully.";
+    } else {
+        echo "ERROR: Could not able to execute $sql. "
+        . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+
+        // $result = $conn->query($sql);
+        // header('location: ../admin/microBlogAdmin.php');
  }
-}
+
 ?>
 
 <!-- references -->
