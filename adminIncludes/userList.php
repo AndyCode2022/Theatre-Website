@@ -1,6 +1,6 @@
 <?php
 
-// require_once '../serverFiles/dbconnect.php';
+require_once '../includes/dbconnect.php';
 
 // Retrieve user data
 $sql = "SELECT * FROM users";

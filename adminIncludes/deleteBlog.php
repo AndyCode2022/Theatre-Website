@@ -1,30 +1,21 @@
 <?php
-session_start();
-require '../includes/dbconnect.php';
 
+// session_start();
+// require '../includes/dbconnect.php';
+
+
+
+// Gets the ID of the blog to be deleted
+function deleteBlogs($conn) {
 $userno = $_SESSION['userno'];
+if (isset($_POST['blogDelete'])) {
 
-// Get the ID of the post to be deleted
-$postID = $_POST['postID'];
-
-// Query the database to get the user ID of the post owner
-$query = "SELECT * FROM posts";
-$result = mysqli_query($conn, $query);
-$row = mysqli_fetch_assoc($result);
-$post_owner = $row['postID'];
-
-// Check if the logged in user matches the post owner
-// if ($userno == $postID) {
-    // Delete the post from the database
-    $query = "DELETE FROM posts WHERE postID = $postID";
-    mysqli_query($conn, $query);
-    // Redirect the user to the posts page
-    header("Location: ../admin/microBlogAdmin.php");
-// } else {
-//     echo "You do not have permission to delete this post.";
-// }
-
+    $sql = "DELETE FROM posts WHERE userno = '$userno'";
+    $result = $conn->query($sql);
+    header('location: ../admin/microBlogAdmin.php');
+ }
+}
 ?>
 
 <!-- references -->
-<!-- https://www.youtube.com/watch?v=yACaLMc0VL0&ab_channel=HowtoMakeTut%27s -->
+<!-- https://www.youtube.com/watch?v=kWOuUkLtQZw&ab_channel=DaniKrossing -->

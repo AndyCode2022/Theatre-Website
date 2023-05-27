@@ -6,7 +6,7 @@
 
 <div class="container">
 
-    <form class="Form" id="postForm" action="../adminIncludes/processNewBlog.php" method="post">
+    <form class="Form" id="postBlog" action="../adminIncludes/processNewBlog.php" method="post">
         <div class="mb-3">
             <label for="title" class="form-label">Enter the title for your post</label>
             <input type="title" class="form-control" name="title" id="title" placeholder="title" required="true">

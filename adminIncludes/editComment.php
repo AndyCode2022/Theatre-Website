@@ -1,14 +1,20 @@
 <?php
 // Update the comment in the database
-require '../includes/dbconnect.php';
-$commentID = $_POST['commentID'];
-$commentText = $_POST['commentText'];
-$sql = "UPDATE comments SET commentText='$commentText' WHERE commentID='$commentID'";
-mysqli_query($conn, $sql);
+// require '../includes/dbconnect.php';
 
 // Redirect the user back to the comments page
-header("Location: ../admin/microBlogAdmin.php");
-exit();
+function editComments($conn) {
+    $commentText = $_POST['commentText'];
+    $commentID = $_POST['commentID'];
+
+    if (isset($_POST['editPost'])) {
+        $sql = "UPDATE comments SET commentText='$commentText' WHERE commentID='$commentID'";
+        $result = $conn->query($sql);
+            header("Location: ../admin/microBlogAdmin.php");
+            exit();
+    }
+}
+
 ?>
 
 <!-- references -->

@@ -24,6 +24,6 @@ if (isset($_POST['submit'])) {
 
 mysqli_close($conn);
 
-// header('Location: ../admin/microBlogAdmin.php');
+header('Location: ../admin/microBlogAdmin.php');
 
 ?>
