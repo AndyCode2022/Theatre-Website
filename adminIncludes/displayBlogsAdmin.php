@@ -1,11 +1,6 @@
 <?php
 require '../includes/dbconnect.php';
 
-// include 'editBlog.php';
-// include 'editComment.php';
-// include 'deleteBlog.php';
-// include 'deleteComment.php';
-
 $sql = "SELECT * FROM posts";
 $result = $conn->query($sql);
 $postText=$result->fetch_assoc(); {
@@ -33,10 +28,11 @@ echo '<form class="delete-form" method="post" action="../adminIncludes/deleteBlo
 }
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
-    while ($commentText = $result->fetch_assoc()) {
-                // Displayed comments
-                echo '<p>' . ($commentText['commentText']) . '</p>
-                    <div> ' . ($commentText["date_created"]) . '</div>';
+    $commentText=$result->fetch_assoc(); {
+        // Displayed comments
+        if (!empty($commentText)) {
+        echo '<p>' . ($commentText['commentText']) . '</p>
+            <div> ' . ($commentText["date_created"]) . '</div>';
 
         // Edit comment functionality
         echo '<form class="edit-form" method="post" action="../adminIncludes/editBlog.php">
@@ -51,13 +47,13 @@ echo '<form class="delete-form" method="post" action="../adminIncludes/deleteBlo
                     <input type="hidden" name="commentText" class="form-control" type="submit" value="' . $commentText['commentText'] . '">
                     <button type="submit" name="deletePost">Delete</button>
                     </form>';
-            }
+                }
     //  Comment form for adding comments to posts 
     echo '<form method="post" action="../adminIncludes/processNewCommentAdmin.php">
                     <textarea class="form-control" id="commentText" name="commentText" rows="10">Add your comment to the post</textarea><br><br>
-                    <input class="form-control" type="submit" value="submitComment">
+                    <input class="form-control" type="submit" value="submit">
                  </form>';
-  
+                }
 
         // references
         // https://www.youtube.com/watch?v=W-FkqWUz0eE
