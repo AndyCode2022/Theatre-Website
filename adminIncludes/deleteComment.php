@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 require '../includes/dbconnect.php';
 
@@ -10,17 +13,30 @@ $commentID = isset($_POST['commentID']);
 // Query the database to get the userno of the comment owner
 $query = "SELECT commentID FROM comments WHERE commentID = $commentID";
 $result = mysqli_query($conn, $query);
-$result = mysqli_fetch_assoc($result);
 
-// Check if the logged in user matches the comment owner
+$row = null;
 
-    // Delete the comment from the database
-    $query = "DELETE FROM comments WHERE commentID = $commentID";
-    mysqli_query($conn, $query);
-    // Redirect the user to the posts page
-    header("Location: ../admin/microBlogAdmin.php");
+if ($result) {
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        // Do something with the fetched data
+    } else {
+        // No rows returned
+        // Handle the case when the comment doesn't exist
+    }
+}
 
-    // echo "You do not have permission to delete this comment.";
+    if ($row) {
+        // Delete the comment from the database
+        $query = "DELETE FROM comments WHERE commentID = $commentID";
+        mysqli_query($conn, $query);
+        // Redirect the user to the posts page
+        if ($isAdmin === 1) {
+        header("Location: ../admin/microBlogAdmin.php");
+    } else {
+    echo "You do not have permission to delete this comment.";
+    }
+}
 
 ?>
 

@@ -4,25 +4,24 @@
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h2>Microblog</h2>
 
-<div class="mb-3">
-    <form action="../adminIncludes/processNewBlog.php" method="post">
-        <label for="title" required="true" class="form-label">Announcement</label>
-        <input type="title" class="form-control" name="title" id="title" placeholder="enter your title" required="yes">
+<div class="container">
+
+    <form class="Form" id="postForm" action="../adminIncludes/processNewBlog.php" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Enter the title for your post</label>
+            <input type="title" class="form-control" name="title" id="title" placeholder="title" required="true">
+        </div>
+
+        <div class="mb-3">
+            <label for="postText" class="form-label">What would you like to post?</label>
+            <textarea class="form-control" placeholder="insert your post information" name="postText" id="postText" rows="3"></textarea>
+        </div>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
 </div>
 
-<div class="mb-3">
-    <label for="postText" class="form-label">What are your thoughts today?</label>
-    <textarea class="form-control" placeholder="enter what's on your mind" name="postText" id="postText" rows="10" required="yes"></textarea>
-</div>
-
-<!-- Event listener for keyboard event press -->
-<!-- <script src="../JavaScript/keyBoardEvent.js"></script> -->
-
-<input type="submit" name="submit" id="submit" class="btn btn-primary">
-
-
-
-</form>
+<!-- class="btn btn-primary" -->
 
 <h1>Posts & Comments</h1>
 
