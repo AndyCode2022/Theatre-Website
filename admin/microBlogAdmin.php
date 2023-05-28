@@ -4,6 +4,8 @@
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h2>Microblog</h2>
 
+<script src="../JavaScript/submitEvent.js"></script>
+
 <div class="container">
 
     <form class="Form" id="postBlog" action="../adminIncludes/processNewBlog.php" method="post">
@@ -18,7 +20,8 @@
         </div>
         <input type="submit" name="submit" value="Submit">
     </form>
-
+    <!-- shows submit event -->
+<p id="log"></p>
 </div>
 
 <!-- class="btn btn-primary" -->

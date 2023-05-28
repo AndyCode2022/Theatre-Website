@@ -60,16 +60,9 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 <!-- references -->
 <!-- https://www.w3schools.com/jsref/event_onclick.asp -->
 
-<!-- not showing object to click on -->
 <!-- Touch event -->
 
-<script src="JavaScript/touchScreen.js"></script>
-
-<div class="box" id="box1">
-    <h3> Touch Me! </h3>
-</div>
-
-<h3 id="statusdiv">Status</h3>
+<script src="JavaScript/touchEvent.js"></script>
 
 <!-- references -->
 <!-- http://www.javascriptkit.com/javatutors/touchevents.shtml -->

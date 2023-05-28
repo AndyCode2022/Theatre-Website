@@ -26,7 +26,7 @@ $date_created = $_POST['date_created'];
 
 mysqli_close($conn);
 
-header('Location: ../admin/microBlogAdmin.php');
+// header('Location: ../admin/microBlogAdmin.php');
 
 // $stmt = $conn->prepare("SELECT userno FROM users WHERE userno = ?");
 // $stmt->bind_param("s", $userno);
@@ -48,7 +48,7 @@ header('Location: ../admin/microBlogAdmin.php');
 //  }
 // }
 // }
-// header('Location: ../admin/microBlogAdmin.php');
+header('Location: ../admin/microBlogAdmin.php');
 
 // Close the database connection
 $conn->close();

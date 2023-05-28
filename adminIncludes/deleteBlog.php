@@ -2,8 +2,6 @@
 // session_start();
 require_once '../includes/dbconnect.php';
 
-
-
 // Gets the ID of the blog to be deleted
     if (isset($_POST['blogDelete'])) {
         $postID = $_POST['postID'];
@@ -18,7 +16,7 @@ require_once '../includes/dbconnect.php';
     mysqli_close($conn);
 
         // $result = $conn->query($sql);
-        // header('location: ../admin/microBlogAdmin.php');
+        header('location: ../admin/microBlogAdmin.php');
  }
 
 ?>
