@@ -1,7 +1,9 @@
 <?php require 'includes/header.php'; ?>
 
 <?php
-require 'includes/checkLogin.php';
+// require 'includes/checkLogin.php';
+
+checkLogin();
 require 'includes/dbconnect.php';
 
 $userno = $_SESSION['userno'];
