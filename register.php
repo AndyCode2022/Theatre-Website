@@ -4,8 +4,8 @@
 
   <div class="container">
     <h2>Enter your details</h2>
-
-    <form id="registerForm" method="POST" action="./includes/processNewUser.php">
+<!-- add validation in form of javascript -->
+    <form id="registerForm" method="POST" onclick action="./includes/processNewUser.php">
 
       <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>

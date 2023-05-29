@@ -4,11 +4,11 @@
 <!-- Input form for admins to put announcements onto the microblog page -->
 <h2>Microblog</h2>
 
-<script src="../JavaScript/submitEvent.js"></script>
+
 
 <div class="container">
 
-    <form class="Form" id="postBlog" action="../adminIncludes/processNewBlog.php" method="post">
+    <form class="form" id="postBlog" action="../adminIncludes/processNewBlog.php" method="post">
         <div class="mb-3">
             <label for="title" class="form-label">Enter the title for your post</label>
             <input type="title" class="form-control" name="title" id="title" placeholder="title" required="true">
@@ -20,9 +20,9 @@
         </div>
         <input type="submit" name="submit" value="Submit">
     </form>
-    <!-- shows submit event -->
-<p id="log"></p>
 </div>
+<script src="../JavaScript/submitEvent.js"></script>
+
 
 <!-- class="btn btn-primary" -->
 

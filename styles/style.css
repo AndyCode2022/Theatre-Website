@@ -112,6 +112,43 @@ address {
     width: 500px;
 }
 
+/* login validation */
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+/* references */
+/* https://www.youtube.com/watch?v=CYlNJpltjMM&ab_channel=JavaScriptAcademy */
+
 /* Register Page */
 
 #registerForm {

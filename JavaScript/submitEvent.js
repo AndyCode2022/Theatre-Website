@@ -1,8 +1,9 @@
-function logSubmit(event) {
-    log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
-    event.preventDefault();
-}
+const postBlog = document.getElementById("postBlog");
 
-const form = document.getElementById("postBlog");
-const log = document.getElementById("log");
-form.addEventListener("submit", logSubmit);
+postBlog.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Form has been submitted")
+});
+
+// references
+// https://www.youtube.com/watch?v=I_fVO_NzT2g

@@ -1,6 +1,6 @@
 <?php require 'includes/header.php' ?>
 
-
+<script src="JavaScript/windowEvent.js"></script>
 
 <!-- Script to show the user has successfully logged in -->
 <?php
@@ -51,15 +51,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
     </address>
 </div>
 
-<input type="text" onchange="changeHandler()">
-
-<!-- Button event -->
-
-<button onclick="myFunction()">Click me</button>
-
-<!-- references -->
-<!-- https://www.w3schools.com/jsref/event_onclick.asp -->
-
 <!-- Touch event -->
 
 <script src="JavaScript/touchEvent.js"></script>
@@ -69,19 +60,19 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 
 <!-- Change event -->
 
-<script src="JavaScript/changeEvent.js"></script>
-
-<div class="result"></div>
-
 <label>
     What movie are you going to see?!
     <select class="joker" name="joker">
         <option value="">Select One ..</option>
-        <option value="chocolate">Joker</option>
-        <option value="sardine">Joker...</option>
-        <option value="vanilla">....Joker</option>
+        <option value="Joker!">Joker</option>
+        <option value="Joker!!">Joker...</option>
+        <option value="Joker!!..">....Joker</option>
     </select>
 </label>
+
+<div class="result"></div>
+
+<script src="JavaScript/changeEvent.js"></script>
 
 <!-- references -->
 <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event -->
