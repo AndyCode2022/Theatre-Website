@@ -32,18 +32,21 @@ echo '<form class="delete-form" method="post" action="../adminIncludes/deleteBlo
             </form>';
         echo '</div>';
  }
-       
+        //  Comment form for adding comments to posts 
+        echo '<div class="container">';
+        echo '<form method="post" action="../adminIncludes/processNewCommentAdmin.php">
+                    <textarea class="form-control" id="commentText" name="commentText" rows="10">Add your comment to the post</textarea><br><br>
+                    <input class="form-control" type="submit" value="submit">
+                 </form>';
+        echo '</div>';
 
-}
+
 
 $sql = "SELECT * FROM comments";
 $result = $conn->query($sql);
 
 while ($commentText = $result->fetch_assoc()) {
-        // Displayed comments
-        if (!empty($commentText)) {
-
-
+                showComments($conn);
                 // Edit comment functionality
                 echo '<form class="edit-form" method="post" action="../adminIncludes/editBlog.php">
                     <input type="hidden" name="userno" value="' . $commentText['userno'] . '">
@@ -57,11 +60,12 @@ while ($commentText = $result->fetch_assoc()) {
                     <input type="hidden" name="commentText" class="form-control" type="submit" value="' . $commentText['commentText'] . '">
                     <button type="submit" name="deletePost">Delete</button>
                     </form>';
-        }
+        
+ }
 }
   
 
-showComments($conn);
+
 
 // references
 // https://www.youtube.com/watch?v=W-FkqWUz0eE

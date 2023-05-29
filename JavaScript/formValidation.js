@@ -1,10 +1,10 @@
-const form = document.getElementById('form');
+const form = document.getElementById('registerForm');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
 
+form.addEventListener('submit', e => {
+// e.preventDefault();
     validateInputs();
 });
 
@@ -50,23 +50,6 @@ const validateInputs = () => {
     } else {
         setSuccess(password);
     }
-
-    // if (emailValue === '') {
-    //     setError(email, 'Email is required');
-    // } else if (!isValidEmail(emailValue)) {
-    //     setError(email, 'Provide a valid email address');
-    // } else {
-    //     setSuccess(email);
-    // }
-
-    // if (password2Value === '') {
-    //     setError(password2, 'Please confirm your password');
-    // } else if (password2Value !== passwordValue) {
-    //     setError(password2, "Passwords doesn't match");
-    // } else {
-    //     setSuccess(password2);
-    // }
-
 };
 
 // references

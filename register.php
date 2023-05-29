@@ -4,7 +4,7 @@
 
   <div class="container">
     <h2>Enter your details</h2>
-<!-- add validation in form of javascript -->
+    <!-- add validation in form of javascript -->
     <form id="registerForm" method="POST" onclick action="./includes/processNewUser.php">
 
       <div class="mb-3">
@@ -23,13 +23,19 @@
       </div>
 
       <div class="mb-3">
-        <label for="username" class="form-label">username</label>
-        <input type="text" name="username" class="form-control" id="username" required="true">
+        <div class="input-control">
+          <label for="username" class="form-label">username</label>
+          <input type="text" name="username" class="form-control" id="username">
+          <div class="error"></div>
+        </div>
       </div>
 
       <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" name="password" class="form-control" id="password" required="true">
+        <div class="input-control">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password">
+          <div class="error"></div>
+        </div>
       </div>
 
       <div class="mb-3">
@@ -43,5 +49,7 @@
     </form>
   </div>
 </div>
+
+<script src="JavaScript/formValidation.js"></script>
 
 <?php require 'includes/footer.php' ?>
