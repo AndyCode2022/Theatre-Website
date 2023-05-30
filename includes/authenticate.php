@@ -2,15 +2,13 @@
 
 session_start();
 
-// require 'dbconnect.php';
-
 // authenticate user information on login
 $username = $_POST['username'];
 $password = $_POST['password'];
 // Function that runs the authentication for user logins
 authenticateUser($username, $password);
 function authenticateUser($username, $password){
-    require 'dbconnect.php';
+require 'dbconnect.php';
 $stmt = $conn->prepare("SELECT userno, username, password FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();

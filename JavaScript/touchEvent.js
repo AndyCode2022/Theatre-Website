@@ -10,7 +10,6 @@ document.addEventListener("touchstart", f => {
 })
 
 document.addEventListener("touchstart", h => {
-    
     alert("touchend");
 })
 

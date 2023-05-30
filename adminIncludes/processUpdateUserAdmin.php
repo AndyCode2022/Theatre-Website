@@ -26,13 +26,8 @@ if ($result->num_rows == 1) {
     echo "Unable to retrieve user info.";
 }
 
-$stmt = $conn->prepare("UPDATE users SET firstname = ? , lastname = '$lastname' ,
-        email = '$email' , username = '$username' , 
-        password = '$password'
-        WHERE userno = $userno ");
-
-$stmt->bind_param("", $firstname, "", $lastname, "", $email, "", $username, "",
-$password, "");
+$stmt = $conn->prepare("UPDATE users SET firstname = ? , lastname = ? , email = ? , username = ? , password = ? WHERE userno = ?");
+$stmt->bind_param("sssssi", $firstname, $lastname, $email, $username, $password, $userno);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -44,7 +39,7 @@ VALUES (?,?,?,?,?)");
 $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hash);
 
 if ($stmt->execute() == true) {
-    echo "<p>Thanks your info has been updated.</p> <a href='../admin/indexAdmin.php'";
+    echo "<p>Thanks your info has been updated.</p> <a href='../admin/indexAdmin.php'</a>";
 } else {
     echo "Sorry something went wrong.";
 }

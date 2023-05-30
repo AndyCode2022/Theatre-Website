@@ -8,11 +8,12 @@ if (isset($_POST['submit'])) {
     $userno = isset($_POST['userno']);
     $title = $_POST['title'];
     $postText = $_POST['postText'];
-    $date_created = isset($_POST['date_created']);
+    // $date_created = isset($_POST['date_created']);
 
     // insert message data into the database
-    $query = "INSERT INTO posts (postID, userno, title, postText, date_created) 
-    VALUES ('$postID', '$userno', '$title', '$postText', '$date_created')";
+    $query = "INSERT INTO posts (postID, userno, title, postText) 
+    VALUES ('$postID', '$userno', '$title', '$postText')";
+
     if (mysqli_query($conn, $query)) {
         echo 'Message posted';
     } else {

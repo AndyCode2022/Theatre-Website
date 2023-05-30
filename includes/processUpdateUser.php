@@ -29,13 +29,8 @@ if ($result->num_rows == 1) {
 
 
 
-$stmt = $conn->prepare("UPDATE users SET firstname = '$firstname' , lastname = '$lastname' ,
-        email = '$email' , username = '$username' , 
-        password = '$password'
-        WHERE userno = $userno ");
-
-$stmt->bind_param("", $firstname, "", $lastname, "", $email, "", $username,
-"", $password, "");
+$stmt = $conn->prepare("UPDATE users SET firstname = ? , lastname = ? , email = ? , username = ? , password = ? WHERE userno = ?");
+$stmt->bind_param("sssssi", $firstname, $lastname, $email, $username, $password, $userno);
 $stmt->execute();
 $result = $stmt->get_result();
 
