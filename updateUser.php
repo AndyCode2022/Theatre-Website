@@ -7,7 +7,7 @@ checkLogin();
 require 'includes/dbconnect.php';
 
 $userno = $_SESSION['userno'];
-
+// Checks for users information in the database
 $sql = "SELECT * FROM users WHERE userno = $userno";
 $result = $conn->query($sql);
 

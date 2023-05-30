@@ -17,7 +17,7 @@
 <body>
     <!-- Navbar for navigating through the website -->
     <!-- Make a bootstrap 5 navbar to allow dark mode to be compatible -->
-
+    <!-- header only displays if user is logged out -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">Theatre</a>
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="register.php">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Login.php">Login</a>
+                        <a class="nav-link" href="login.php">Login</a>
                     </li>
                 </ul>
             </div>

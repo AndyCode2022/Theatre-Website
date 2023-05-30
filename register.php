@@ -1,7 +1,8 @@
 <?php require 'includes/header.php' ?>
 
 <div class=".bodyRegisterPage">
-
+<!-- registration page to register a new user to the website -->
+<!-- Has input fields for firstname, lastname, email, username, password, and confirmPassword -->
   <div class="container">
     <h2>Enter your details</h2>
     <!-- add validation in form of javascript -->
@@ -42,8 +43,9 @@
         <label for="confirmPassword" class="form-label">Confirm Password</label>
         <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required="true">
       </div>
-
+<!-- Submit form to send form for validation checks -->
       <button type="submit" class="btn btn-primary" value="submit">Add User</button>
+      <!-- Reset button to clear data in input fields -->
       <button type="reset" class="btn btn-secondary" value="clear">Clear</button>
 
     </form>

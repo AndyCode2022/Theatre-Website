@@ -14,12 +14,9 @@ $date_created = isset($_SESSION['date_created']);
 $sql = "SELECT * FROM posts";
 $postResult = mysqli_query($conn, $sql);
 
-// Displayed posts
-
 if (mysqli_num_rows($postResult) > 0) {
   while ($postText = mysqli_fetch_assoc($postResult)) {
     // Displays the posts on the page
-
     echo '<div class="container">
               <div class="card mb-3">
               <div class="card-commentText">
@@ -38,7 +35,7 @@ if (mysqli_num_rows($postResult) > 0) {
     $sql = "SELECT * FROM comments";
     $commentResult = mysqli_query($conn, $sql);
 
-    // Display comments
+    // Displays comments
     if (mysqli_num_rows($commentResult) > 0) {
       while ($comment = mysqli_fetch_assoc($commentResult)) {
         echo '<div class="card-commentText">';

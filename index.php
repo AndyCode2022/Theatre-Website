@@ -1,8 +1,11 @@
 <?php require 'includes/header.php' ?>
 
+<script src="JavaScript/touchEvent.js"></script>
+
 <script src="JavaScript/windowEvent.js"></script>
 
 <!-- Script to show the user has successfully logged in -->
+<!-- Echos the message alert if user is logged in -->
 <?php
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION['messageShown'])) {
     echo '<div class="alert alert-primary" role="alert">' .
@@ -17,6 +20,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 
 <script src="JavaScript/dialogueBox.js"></script>
 
+<!-- image responsiveness for the images on the homepage of Theatre -->
 <div class="container text-center">
     <div class="row align-items-start">
         <div class="col">
@@ -35,13 +39,18 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 </div>
 
 
-
+<!-- Displays date if the button is clicked -->
 <button onclick="displayDate()">The time is?</button>
 <p id="demo"></p>
+
+<script src="JavaScript/buttonEvent.js"></script>
+
+<p id="buttonEvent"></p>
 
 <!-- references -->
 <!-- https://www.w3schools.com/js/js_events.asp -->
 
+<!-- Displays contact information -->
 <div class="contactInfo">
     <h2 class="contactHeading">Contact information</h2>
     <address>
@@ -53,7 +62,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 
 <!-- Touch event -->
 
-<script src="JavaScript/touchEvent.js"></script>
+
 
 <!-- references -->
 <!-- http://www.javascriptkit.com/javatutors/touchevents.shtml -->

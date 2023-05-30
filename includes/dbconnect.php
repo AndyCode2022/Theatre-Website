@@ -1,5 +1,5 @@
 <?php
-
+// Connection for the website to the database
 define ('db_user', 'root');               // username
 define ('db_password','');                // password
 define ('db_host', 'localhost');          // mysql server host address 

@@ -30,11 +30,6 @@ navbarToggler.addEventListener('click', function () {
 
     // end of hamburger icon
 
-
-
-
-
-
 // Date event
 function displayDate() {
   document.getElementById("demo").innerHTML = Date();

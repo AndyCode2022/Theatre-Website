@@ -1,13 +1,17 @@
-document.addEventListener("touchstart", e => {
-    console.log("Start")
-})
+// Touch controls that appear when a user touches the screen with their finger
+// Touch controls for touch start, move, and end
 
 document.addEventListener("touchstart", e => {
-    console.log("Move")
+    alert("touchstart");
 })
 
-document.addEventListener("touchstart", e => {
-    console.log("End")
+document.addEventListener("touchstart", f => {
+    alert("Move");
+})
+
+document.addEventListener("touchstart", h => {
+    
+    alert("touchend");
 })
 
 // references

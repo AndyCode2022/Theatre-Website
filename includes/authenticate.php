@@ -2,12 +2,15 @@
 
 session_start();
 
-require 'dbconnect.php';
+// require 'dbconnect.php';
 
 // authenticate user information on login
 $username = $_POST['username'];
 $password = $_POST['password'];
-
+// Function that runs the authentication for user logins
+authenticateUser($username, $password);
+function authenticateUser($username, $password){
+    require 'dbconnect.php';
 $stmt = $conn->prepare("SELECT userno, username, password FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
@@ -17,7 +20,7 @@ if ($result->num_rows == 1) {
 
     $row = $result->fetch_assoc();
 
-    //verify password
+    //verifies password
     if (password_verify($password, $row['password'])) {
         $_SESSION['logged_in'] = true;
         $_SESSION['userno'] = $row['userno'];
@@ -39,9 +42,6 @@ if ($result->num_rows == 1) {
 }
 
 $conn->close();
-
-// function checkuser($conn, $result, $password) {
-
-// };
+}
 
 ?>

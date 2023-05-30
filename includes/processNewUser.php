@@ -34,6 +34,7 @@ if ($result->num_rows > 0) {
 
 if ($isValid == true) {
 
+    // Creates hashed password for a new user with 128bit character encryption
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password)

@@ -7,11 +7,6 @@ $userno = isset($_POST['userno']);
 $commentText = isset($_POST['commentText']);
 echo $commentText;
 
-// $stmt = $conn->prepare("SELECT userno FROM users WHERE userno = ?");
-// $stmt->bind_param("s", $commentID);
-// $stmt->execute();
-// $result = $stmt->get_result();
-
 $stmt = $conn->prepare("INSERT INTO comments (userno, commentText) 
 VALUES (?, ?)");
 $stmt->bind_param("is", $userno, $commentText);
