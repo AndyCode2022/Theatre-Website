@@ -28,7 +28,7 @@ if ($result->num_rows == 1) {
     $hash = password_hash($password, PASSWORD_DEFAULT);
 // prepare statement to secure user information when passed to the database
 $stmt = $conn->prepare("UPDATE users SET firstname = ? , lastname = ? , email = ? , username = ? , password = ? WHERE userno = ?");
-$stmt->bind_param("sssssi", $firstname, $lastname, $email, $username, $password, $userno);
+$stmt->bind_param("sssssi", $firstname, $lastname, $email, $username, $hash, $userno);
 $stmt->execute();
 
     echo "<p>Thanks your info has been updated.</p> <a href='../admin/indexAdmin.php'>Click here to go to admin homepage!</a>";
