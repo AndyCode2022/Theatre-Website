@@ -58,8 +58,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 
 <!-- Touch event -->
 
-
-
 <!-- references -->
 <!-- http://www.javascriptkit.com/javatutors/touchevents.shtml -->
 

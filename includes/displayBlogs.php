@@ -44,7 +44,7 @@ if (mysqli_num_rows($postResult) > 0) {
         }
         echo '</div>
         <div class="card-footer">
-        <div>' . $comment["date_created"] . '</div>
+        <div>' . $comment["date_created_c"] . '</div>
         </div>';
       }
     } else {
