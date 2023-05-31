@@ -3,7 +3,6 @@
 <?php
 // require 'includes/checkLogin.php';
 
-checkLogin();
 require 'includes/dbconnect.php';
 
 $userno = $_SESSION['userno'];

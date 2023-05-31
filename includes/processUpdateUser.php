@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('checkLogin.php');
-include('dbconnect.php');
+include_once('dbconnect.php');
 
 $userno = $_SESSION['userno'];
 
@@ -11,6 +11,7 @@ $email = $_POST['email'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+// Checks if password is less than 8 characters and outputs an error if it is
 if (strlen($password) < 8) {
     $isValid = false;
     echo "<p>Password is too short.";
@@ -23,26 +24,14 @@ $result = $conn->query($sql);
 // if the user is found then moves onto sql query
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
-} else {
-    echo "Unable to retrieve user info.";
-}
-
-
-
+// Hashes the password
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+// prepare statement to secure user information when passed to the database
 $stmt = $conn->prepare("UPDATE users SET firstname = ? , lastname = ? , email = ? , username = ? , password = ? WHERE userno = ?");
 $stmt->bind_param("sssssi", $firstname, $lastname, $email, $username, $password, $userno);
 $stmt->execute();
-$result = $stmt->get_result();
 
-$hash = password_hash($password, PASSWORD_DEFAULT);
-
-$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, username, password)
-VALUES (?,?,?,?,?)");
-
-$stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hash);
-
-if ($stmt->execute() == true) {
-    echo "<p>Thanks your info has been updated.</p> <a href='../admin/indexAdmin.php'";
+    echo "<p>Thanks your info has been updated.</p> <a href='../admin/indexAdmin.php'>Click here to go to admin homepage!</a>";
 } else {
     echo "Sorry something went wrong.";
 }

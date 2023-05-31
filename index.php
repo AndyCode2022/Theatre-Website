@@ -38,13 +38,9 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
     </div>
 </div>
 
-
-<!-- Displays date if the button is clicked -->
-<button onclick="displayDate()">The time is?</button>
-<p id="demo"></p>
-
 <script src="JavaScript/buttonEvent.js"></script>
-
+<!-- Displays "Welcome to Theatre Website!" if clicked -->
+<button onclick="myFunction()">click me</button>
 <p id="buttonEvent"></p>
 
 <!-- references -->
