@@ -2,7 +2,8 @@ const postBlog = document.getElementById("postBlog");
 
 postBlog.addEventListener("submit", (e) => {
     // e.preventDefault();
-    submitted = console.log("Form has been submitted")
+    submitted = alert("Form has been submitted")
+
 });
 
 // references

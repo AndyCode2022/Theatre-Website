@@ -20,7 +20,6 @@
     </form>
 </div>
 
-<div class="submitted"></div>
 <script src="../JavaScript/submitEvent.js"></script>
 
 
