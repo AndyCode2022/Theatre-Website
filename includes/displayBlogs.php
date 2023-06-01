@@ -47,6 +47,17 @@ if (mysqli_num_rows($postResult) > 0) {
         <div>' . $comment["date_created_c"] . '</div>
         </div>';
       }
+      //  Comment form for adding comments to posts 
+      echo '<div class="container">';
+      echo '<form method="post" action="includes/processNewComment.php">
+        
+        <input type="hidden" name="userno" value="' . $postText['userno'] . '">
+        <input type="hidden" name="date_created" value="' . $postText['date_created'] . '">
+        <input type="hidden" name="postID" value="' . $postText['postID'] . '">
+                <textarea class="form-control" id="commentText" name="commentText" rows="10">Add your comment to the post</textarea><br><br>
+                <input class="form-control" type="submit" value="submit">
+                </form>';
+      echo '</div>';
     } else {
   echo 'No comments yet';
   }
@@ -54,3 +65,6 @@ if (mysqli_num_rows($postResult) > 0) {
 } else {  
  echo 'No posts yet';
 }
+
+// references
+// https://www.youtube.com/watch?v=W-FkqWUz0eE

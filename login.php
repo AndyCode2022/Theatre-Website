@@ -7,12 +7,12 @@
 <div class="container"></div>
 <form id="loginForm" method="post" action="includes/authenticate.php">
     <div class="mb-3">
-            <label for="username" class="form-label">username</label>
-            <input type="text" class="form-control" id="username" name="username" size="40" >
+            <label for="username" name="username" class="form-label">username</label>
+            <input type="text" class="form-control" id="username" name="username" size="40" required>
     </div>
     <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" size="40" >
+            <input type="password" class="form-control" id="password" name="password" size="40" required>
     </div>
     <!-- Login button to submit the form -->
     <button type="submit" class="btn btn-primary">Login</button>

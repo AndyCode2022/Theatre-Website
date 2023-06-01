@@ -9,7 +9,7 @@
 <?php
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION['messageShown'])) {
     echo '<div class="alert alert-primary" role="alert">' .
-        $_SESSION['message'] = "You have successfully logged in, " . $_SESSION['username'] . "!" . '</div>';
+    $_SESSION['message'] = "You have successfully logged in, " . $_SESSION['username'] . "!" . '</div>';
     $_SESSION['messageShown'] = true;
 }
 ?>

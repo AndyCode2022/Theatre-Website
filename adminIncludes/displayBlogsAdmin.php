@@ -5,14 +5,10 @@ include 'commentsFunction.php';
 // Joins the comments and posts table
 $sql = ("SELECT * FROM posts p LEFT JOIN comments c ON p.postID = c.postID_c GROUP BY p.postID ORDER BY p.postID DESC");
 $result = $conn->query($sql);
-// $sql->execute();
-// $result=$sql->get_result();
-// if ($result->num_rows>0)
 
 // references
 // https://brightspace.uhi.ac.uk/d2l/le/content/311805/viewContent/2396586/View
 
-// $sql = "SELECT * FROM posts";
 $result = $conn->query($sql);
 
 // While there are posts, display them

@@ -3,18 +3,19 @@
 require_once ('dbconnect.php');
 
 // Submit the comments to the database
-$userno = isset($_POST['userno']);
-$commentText = isset($_POST['commentText']);
-echo $commentText;
+$postID = $_POST['postID'];
+$userno = $_POST['userno'];
+$commentText = $_POST['commentText'];
 
-$stmt = $conn->prepare("INSERT INTO comments (userno, commentText) 
-VALUES (?, ?)");
-$stmt->bind_param("is", $userno, $commentText);
-$stmt->execute();
+// insert message data into the database
+$query = "INSERT INTO comments (postID_c, userno_c, commentText) 
+    VALUES ('$postID', '$userno', '$commentText')";
 
 // Close the prepared statement
-if (isset($stmt)) {
-    mysqli_stmt_close($stmt);
+if (mysqli_query($conn, $query)) {
+    echo 'Message posted';
+} else {
+    echo 'Error: ' . mysqli_error($conn);
 }
 
 header('Location: ../microBlog.php');
