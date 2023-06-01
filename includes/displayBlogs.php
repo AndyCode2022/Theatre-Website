@@ -38,6 +38,7 @@ if (mysqli_num_rows($postResult) > 0) {
     // Displays comments
     if (mysqli_num_rows($commentResult) > 0) {
       while ($comment = mysqli_fetch_assoc($commentResult)) {
+        echo '<div class="container">';
         echo '<div class="card-commentText">';
         if (!empty($comment) && isset($comment['commentText'])) {
           echo '<p class="card-text">' . $comment['commentText'] . '</p>';
@@ -45,6 +46,7 @@ if (mysqli_num_rows($postResult) > 0) {
         echo '</div>
         <div class="card-footer">
         <div>' . $comment["date_created_c"] . '</div>
+        </div>
         </div>';
       }
       //  Comment form for adding comments to posts 
