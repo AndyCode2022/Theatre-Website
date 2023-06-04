@@ -1,19 +1,32 @@
 <?php
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+?>
 
-session_start();
+<?php
+
+// session_start();
 require '../includes/dbconnect.php';
 
 
 
 // Gets the ID of the comment to be deleted
-function deleteComments($conn) {
-    $userno = $_SESSION['userno'];
+
+    
 if (isset($_POST['commentDelete'])) {
-    $sql = "DELETE FROM comments WHERE userno = '$userno'";
-    $conn->query($sql);
+    $commentID = $_POST['commentID'];
+    // Delete comment if comment with comment ID is found
+    $sql = "DELETE FROM comments WHERE commentID = '$commentID'";
+    if (mysqli_query($conn, $sql)) {
+        echo "Record was deleted successfully.";
+    } else {
+        echo "ERROR: Could not execute $sql. "
+        . mysqli_error($conn);
+    }
+    mysqli_close($conn);
     header('location: ../admin/microBlogAdmin.php');
  }
-}
+
 
 ?>
 

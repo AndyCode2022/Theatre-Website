@@ -1,7 +1,6 @@
 <?php require 'includes/header.php' ?>
 
 <script src="JavaScript/touchEvent.js"></script>
-
 <script src="JavaScript/windowEvent.js"></script>
 
 <!-- Script to show the user has successfully logged in -->
@@ -66,7 +65,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
 <!-- http://www.javascriptkit.com/javatutors/touchevents.shtml -->
 
 <!-- Change event -->
-
+<!-- Updates value in result div on website if you user selects a value from the dropdown -->
 <label>
     What movie are you going to see?!
     <select class="joker" name="joker">

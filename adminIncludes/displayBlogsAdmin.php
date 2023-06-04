@@ -58,7 +58,7 @@ while ($postText = $result->fetch_assoc()) {
         while ($commentText = $result->fetch_assoc()) {
                 if (!empty($commentText)) {
                         echo '<div class="container">';
-                        echo '<p>' . $commentText['commentText'] . '</p>
+                        echo '<input name="comment_text" value="' . ($commentText['commentText']) . '">
             <div> ' . $commentText["date_created_c"] . '</div>';
 
                         // Edit comment functionality
@@ -71,8 +71,8 @@ while ($postText = $result->fetch_assoc()) {
 
                         // Delete comment functionality
                         echo '<form class="delete-form" method="post" action="../adminIncludes/deleteComment.php">
-                    <input type="hidden" name="commentText" class="form-control" type="submit" value="' . $commentText['commentText'] . '">
-                    <button type="submit" name="deletePost">Delete</button>
+                    <input type="hidden" name="commentID" class="form-control" value="' . $commentText['commentID'] . '">
+                    <button type="submit" name="commentDelete">Delete</button>
                     </form>';
                         echo '</div>';
                 }

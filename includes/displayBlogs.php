@@ -14,6 +14,8 @@ $userno = isset($_SESSION['userno']);
 $commentText = isset($_SESSION['commentText']);
 $date_created = isset($_SESSION['date_created']);
 
+
+
 $sql = "SELECT * FROM posts";
 $postResult = mysqli_query($conn, $sql);
 
@@ -52,15 +54,15 @@ if (mysqli_num_rows($postResult) > 0) {
         </div>
         </div>';
       }
-      echo $_POST['$userno'];
+      
       //  Comment form for adding comments to posts 
       if (isset($_POST['submit'])) {
         // if (!isset($_SESSION['userno'])) {
-        
+
         echo 'Access denied. Please login to post comments.';
-        }
-        echo '<div class="container">';
-        echo '<form method="post" action="includes/processNewComment.php">
+      }
+      echo '<div class="container">';
+      echo '<form method="post" action="includes/processNewComment.php">
         
         <input type="hidden" name="userno" value="' . $postText['userno'] . '">
         <input type="hidden" name="date_created" value="' . $postText['date_created'] . '">
@@ -68,7 +70,7 @@ if (mysqli_num_rows($postResult) > 0) {
                 <textarea class="form-control" id="commentText" name="commentText" rows="10">Add your comment to the post</textarea><br><br>
                 <input class="form-control" name="submit" type="submit" value="submit">
                 </form>';
-        echo '</div>';
+      echo '</div>';
       // }
     } else {
       echo 'No comments yet';
