@@ -4,15 +4,16 @@ include 'commentsFunction.php';
 
 // Joins the comments and posts table
 $sql = ("SELECT * FROM posts p LEFT JOIN comments c ON p.postID = c.postID_c GROUP BY p.postID ORDER BY p.postID DESC");
-$result = $conn->query($sql);
+$postResult = mysqli_query($conn, $sql);
 
 // references
 // https://brightspace.uhi.ac.uk/d2l/le/content/311805/viewContent/2396586/View
 
-$result = $conn->query($sql);
+// $result = $conn->query($sql);
 
 // While there are posts, display them
-while ($postText = $result->fetch_assoc()) {
+if (mysqli_num_rows($postResult) > 0) {
+ while ($postText = mysqli_fetch_assoc($postResult)) {
         // if statement makes sure only to display if there is content
         if (!empty($postText)) {
                 echo '<div class="container">';
@@ -77,6 +78,7 @@ while ($postText = $result->fetch_assoc()) {
                         echo '</div>';
                 }
         }
+}
 }
 
 
