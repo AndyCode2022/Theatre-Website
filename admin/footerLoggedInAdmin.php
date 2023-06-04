@@ -1,3 +1,4 @@
+<!-- Footer that appears for admin users -->
 <footer class="bg-light text-center text-lg-start m-auto">
     <div class="container p-4">
         <div class="row">

@@ -1,3 +1,4 @@
+<!-- Displays pages for MicroBlog -->
 <?php require 'includes/header.php' ?>
 
 <h1>Posts & Comments</h1>

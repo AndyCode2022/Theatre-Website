@@ -27,6 +27,9 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && !isset($_SESSION[
     </div>
 </div>
 
+<!-- references -->
+<!-- https://www.pxfuel.com/en/free-photo-oxovt -->
+
 <div class="contactInfo">
     <h2 class="contactHeading">Contact information</h2>
     <address>

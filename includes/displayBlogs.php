@@ -1,9 +1,12 @@
 <?php
-// session_start();
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+//code goes here
+?>
+
+<?php
 // Finds the comments in the MySQL database
-include 'dbconnect.php';
-
-
+include_once 'dbconnect.php';
 
 $title = isset($_POST['title']);
 $postText = isset($_POST['postText']);
@@ -49,23 +52,30 @@ if (mysqli_num_rows($postResult) > 0) {
         </div>
         </div>';
       }
+      echo $_POST['$userno'];
       //  Comment form for adding comments to posts 
-      echo '<div class="container">';
-      echo '<form method="post" action="includes/processNewComment.php">
+      if (isset($_POST['submit'])) {
+        // if (!isset($_SESSION['userno'])) {
+        
+        echo 'Access denied. Please login to post comments.';
+        }
+        echo '<div class="container">';
+        echo '<form method="post" action="includes/processNewComment.php">
         
         <input type="hidden" name="userno" value="' . $postText['userno'] . '">
         <input type="hidden" name="date_created" value="' . $postText['date_created'] . '">
         <input type="hidden" name="postID" value="' . $postText['postID'] . '">
                 <textarea class="form-control" id="commentText" name="commentText" rows="10">Add your comment to the post</textarea><br><br>
-                <input class="form-control" type="submit" value="submit">
+                <input class="form-control" name="submit" type="submit" value="submit">
                 </form>';
-      echo '</div>';
+        echo '</div>';
+      // }
     } else {
-  echo 'No comments yet';
+      echo 'No comments yet';
+    }
   }
- }
-} else {  
- echo 'No posts yet';
+} else {
+  echo 'No posts yet';
 }
 
 // references

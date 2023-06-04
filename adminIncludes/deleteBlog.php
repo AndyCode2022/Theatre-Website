@@ -5,7 +5,7 @@ require_once '../includes/dbconnect.php';
 // Gets the ID of the blog to be deleted
     if (isset($_POST['blogDelete'])) {
         $postID = $_POST['postID'];
-
+// Delete blog if blog with post ID is found
         $sql = "DELETE FROM posts WHERE postID = '$postID'";
     if (mysqli_query($conn, $sql)) {
         echo "Record was deleted successfully.";

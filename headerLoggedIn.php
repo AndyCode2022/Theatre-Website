@@ -19,7 +19,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
     }
     ?>
 
-    <!-- HTML DOCUMENT WITH DATA -->
+    <!-- Header that displays for users of the website that do have accounts -->
     <!DOCTYPE html>
     <html lang="en">
 

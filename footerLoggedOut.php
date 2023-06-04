@@ -1,3 +1,4 @@
+<!-- Footer that appears for non logged in users -->
 <div class="footerCSS">
 <footer class="bg-light text-center text-lg-start m-auto">
     <div class="container p-4">
