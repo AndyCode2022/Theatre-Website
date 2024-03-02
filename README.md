@@ -4,8 +4,7 @@ ShooterXGames
 
 To run website you need to have Xampp installed
 
-Link to xampp: [text](![image](https://github.com/AndyCode2022/Theatre-Website/assets/112827142/01727bd4-fff2-48ab-ae5b-0b389ea06af8)
-)
+Link to xampp: https://www.apachefriends.org/download.html
 
 When xampp control panel is installed you need to click start on Apache and mySQL
 
