@@ -1,111 +1,114 @@
 # Theatre-Website
 
-Assessment 3
-# Make a responsive design
+ShooterXGames
 
-<!-- bootstrap 5 used for responsiveness -->
+To run website you need to have Xampp installed
 
-# Set up a database
+Link to xampp: [text](https://www.apachefriends.org/download.html)
 
-<!-- In progress
+When xampp control panel is installed you need to click start on Apache and mySQL
 
-have users, admin and posts
+![alt text](image.png)
 
-xampp used -->
+Go to explorer in xampp control panel and then when in file explorer click on the folder called htdocs
 
-# fix dark mode for bootstrap 5
+Clone the repository onto the desktop
 
-# fixes
+Once in htdocs drag the cloned repository into this folder
 
-passwords not recognized?
+Click on admin in xampp control panel for beside Apache
 
-sorted by changing the password character count to 256 in
-MySQL database.
+Click on threatre-website in the file directory on the browser
 
-# List of necessary functionality for website
+![alt text](image.png)
 
-<!-- Touch Events -->
+Instructions to install Database for Theatre-website
 
-myElement.addEventListener('touchstart', function(event) {
-  // Handle touchstart event
-});
+In the xampp control panel click admin beside mySQL
 
-<!-- Key Events -->
+Once in browser click on import on the top navbar
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    // Handle Enter key pressed
-  } else if (event.key === 'Escape') {
-    // Handle Escape key pressed
-  } else {
-    // Handle other key pressed
-  }
-});
+On the desktop make a text file and copy and paste the script I have provided below
 
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 02, 2024 at 01:09 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
-<!-- Page Events -->
-
-window.addEventListener('load', function() {
-  // Handle page load event
-});
-
-window.addEventListener('unload', function() {
-  // Handle page unload event
-});
-
-window.addEventListener('beforeunload', function() {
-  // Handle beforeunload event
-});
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-<!-- Button Events -->
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-let button = document.querySelector('button');
+--
+-- Database: `theatre`
+--
 
-button.addEventListener('click', function(event) {
-  // Handle button click event
-});
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userno` int(5) NOT NULL,
+  `firstname` text NOT NULL,
+  `lastname` text NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `isSuspended` tinyint(1) NOT NULL,
+  `isAdmin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userno`, `firstname`, `lastname`, `email`, `username`, `password`, `isSuspended`, `isAdmin`) VALUES
+(23, 'Andrew', 'Webster', 'andrew.webster403@hotmail.co.uk', 'andrew2', '$2y$10$DQFXt2RKnw0dVltnrllGVOO/bQIPk.elVYl9eSlTGJ3UgJRHc5b9O', 0, 1),
+(24, 'luke', 'skywalker', 'luke@gmail.com', 'luke2', '$2y$10$WUhWgTTFifE9nk7nXeJtFOFfg8HiUVUFGlOGhWhys6cq/u4qVZ8Y.', 0, 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userno` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-<!-- Change Events -->
+Save the script as theatre.sql
 
-let select = document.querySelector('select');
+Go back to browser and click on browse and select the sql script
 
-select.addEventListener('change', function(event) {
-  // Handle select change event
-});
-
-
-<!-- Cookies -->
-
-
-
-<!-- Responsiveness - achieveable with bootstrap 5 and certain media queries -->
-
-
-
-<!-- delete cascading -->
-
-
-
-<!-- modularity - trying to achieve this with PDOs.. still learning. -->
-
-
-<!-- client side  -->
-
-
-
-<!-- suspend users from posting -->
-
-
-
-<!-- administrator promotion -->
-
-
-
-<!-- admin post deletion and editing -->
-
-
+The database is now installed
 
 <!-- references -->
 
